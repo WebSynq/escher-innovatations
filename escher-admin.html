@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escher Innovations — Broadcast Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --gold:#c9a84c;--gold-light:#e2c47a;--gold-dim:#8a6f2e;
+      --bg:#080808;--bg2:#0f0f0f;--bg3:#161616;--bg4:#1e1e1e;
+      --border:#2a2a2a;--text:#f0f0f0;--text-muted:#888;
+      --red:#ff3b3b;--green:#22c55e;--blue:#3b82f6;
+    }
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;}
+
+    /* ── TOP BAR ── */
+    .topbar{
+      background:#000;border-bottom:1px solid var(--border);
+      padding:12px 28px;display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:100;
+    }
+    .logo{display:flex;align-items:center;gap:10px;}
+    .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));
+      border-radius:8px;display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:15px;color:#000;}
+    .logo-text{font-size:15px;font-weight:700;color:#fff;}
+    .logo-sub{font-size:10px;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;}
+    .admin-badge{
+      background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);
+      border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;
+      color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;
+    }
+
+    /* ── LAYOUT ── */
+    .page{max-width:1100px;margin:0 auto;padding:36px 24px 80px;}
+    .page-title{
+      font-family:'Playfair Display',serif;font-size:32px;font-weight:800;
+      color:#fff;margin-bottom:6px;
+    }
+    .page-title span{color:var(--gold);}
+    .page-sub{font-size:14px;color:var(--text-muted);margin-bottom:36px;line-height:1.6;}
+
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start;}
+
+    /* ── CARDS ── */
+    .card{
+      background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+      overflow:hidden;
+    }
+    .card-header{
+      padding:16px 22px;background:var(--bg3);border-bottom:1px solid var(--border);
+      display:flex;align-items:center;gap:10px;
+    }
+    .card-header-icon{font-size:18px;}
+    .card-header-title{font-size:14px;font-weight:700;color:#fff;}
+    .card-header-sub{font-size:11px;color:var(--text-muted);margin-top:1px;}
+    .card-body{padding:22px;}
+
+    /* ── FORM ELEMENTS ── */
+    .form-group{margin-bottom:18px;}
+    .form-label{
+      display:block;font-size:11px;font-weight:700;color:var(--gold);
+      letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;
+    }
+    .form-label span{color:var(--red);margin-left:2px;}
+    .form-input,.form-select,.form-textarea{
+      width:100%;background:#0a0a0a;border:1px solid var(--border);
+      border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;
+      font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;
+    }
+    .form-input::placeholder,.form-textarea::placeholder{color:#555;}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold-dim);}
+    .form-select{appearance:none;cursor:pointer;}
+    .form-select option{background:#1a1a1a;}
+    .form-textarea{resize:vertical;min-height:90px;line-height:1.6;}
+    .form-hint{font-size:11px;color:#555;margin-top:5px;line-height:1.5;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+    /* ── STATUS SELECTOR ── */
+    .status-row{display:flex;gap:10px;flex-wrap:wrap;}
+    .status-opt{
+      flex:1;min-width:100px;background:#0a0a0a;border:1px solid var(--border);
+      border-radius:8px;padding:10px 14px;cursor:pointer;transition:all .2s;
+      text-align:center;
+    }
+    .status-opt.active-upcoming{border-color:#f59e0b;background:rgba(245,158,11,0.08);}
+    .status-opt.active-live{border-color:var(--red);background:rgba(255,59,59,0.08);}
+    .status-opt.active-replay{border-color:var(--blue);background:rgba(59,130,246,0.08);}
+    .status-opt-icon{font-size:20px;margin-bottom:4px;}
+    .status-opt-label{font-size:11px;font-weight:700;letter-spacing:0.5px;}
+    .status-opt:hover{border-color:var(--gold-dim);}
+
+    /* ── TOPICS ── */
+    .topic-input-row{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+    .topic-bullet{
+      width:20px;height:20px;border-radius:50%;background:var(--gold-dim);
+      display:flex;align-items:center;justify-content:center;
+      font-size:10px;font-weight:900;color:#000;flex-shrink:0;
+    }
+    .topic-input{flex:1;}
+
+    /* ── PREVIEW PANEL ── */
+    .preview-card{position:sticky;top:80px;}
+    .preview-inner{padding:20px;}
+    .preview-label{
+      font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      color:var(--text-muted);margin-bottom:14px;display:flex;align-items:center;gap:6px;
+    }
+    .preview-label::after{content:'';flex:1;height:1px;background:var(--border);}
+    .preview-status{
+      display:inline-flex;align-items:center;gap:6px;border-radius:100px;
+      padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:1px;
+      text-transform:uppercase;margin-bottom:12px;
+    }
+    .status-live-pill{background:rgba(255,59,59,0.15);border:1px solid rgba(255,59,59,0.3);color:var(--red);}
+    .status-upcoming-pill{background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#f59e0b;}
+    .status-replay-pill{background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:var(--blue);}
+    .preview-ep{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+    .preview-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3;}
+    .preview-guest{font-size:13px;color:var(--text-muted);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+    .preview-guest::before{content:'👤';font-size:12px;}
+    .preview-desc{font-size:13px;color:#888;line-height:1.6;margin-bottom:14px;}
+    .preview-topics{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+    .preview-topic{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);}
+    .preview-topic::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+    .preview-meta{display:flex;flex-direction:column;gap:6px;}
+    .preview-meta-row{display:flex;align-items:center;gap:8px;font-size:12px;color:#555;}
+    .preview-meta-row strong{color:#888;}
+    .preview-divider{height:1px;background:var(--border);margin:16px 0;}
+
+    /* ── URL GENERATOR ── */
+    .url-box{
+      background:#0a0a0a;border:1px solid var(--border);border-radius:8px;
+      padding:12px 14px;font-size:11px;color:#555;word-break:break-all;
+      line-height:1.5;min-height:52px;max-height:100px;overflow-y:auto;
+      font-family:monospace;
+    }
+    .url-box.has-value{color:var(--green);}
+
+    /* ── BUTTONS ── */
+    .btn-primary{
+      width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-dim));
+      color:#000;border:none;border-radius:10px;padding:15px;font-size:15px;
+      font-weight:900;cursor:pointer;transition:opacity .2s;letter-spacing:0.3px;
+      font-family:'Inter',sans-serif;margin-bottom:10px;
+    }
+    .btn-primary:hover{opacity:0.9;}
+    .btn-secondary{
+      width:100%;background:transparent;color:var(--text-muted);
+      border:1px solid var(--border);border-radius:10px;padding:12px;font-size:13px;
+      font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;
+      margin-bottom:10px;
+    }
+    .btn-secondary:hover{border-color:var(--gold-dim);color:var(--gold);}
+    .btn-danger{
+      width:100%;background:transparent;color:#666;
+      border:1px solid var(--border);border-radius:10px;padding:10px;font-size:12px;
+      font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;
+    }
+    .btn-danger:hover{border-color:var(--red);color:var(--red);}
+
+    /* ── TOAST ── */
+    .toast{
+      position:fixed;bottom:28px;right:28px;
+      background:var(--bg3);border:1px solid var(--green);border-radius:12px;
+      padding:14px 20px;display:flex;align-items:center;gap:10px;
+      font-size:13px;font-weight:600;color:#fff;
+      transform:translateY(80px);opacity:0;transition:all .3s;z-index:9999;
+      max-width:320px;
+    }
+    .toast.show{transform:translateY(0);opacity:1;}
+    .toast-icon{font-size:20px;flex-shrink:0;}
+
+    /* ── DIVIDER ── */
+    .section-divider{
+      display:flex;align-items:center;gap:12px;margin:24px 0;
+    }
+    .section-divider-line{flex:1;height:1px;background:var(--border);}
+    .section-divider-text{font-size:11px;color:#555;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:800px){
+      .grid{grid-template-columns:1fr;}
+      .preview-card{position:static;}
+      .form-row{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <div class="logo">
+    <div class="logo-mark">EI</div>
+    <div>
+      <div class="logo-text">Escher Innovations</div>
+      <div class="logo-sub">Broadcast Admin</div>
+    </div>
+  </div>
+  <div class="admin-badge">⚙️ Admin Panel</div>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+  <h1 class="page-title">Episode <span>Control Panel</span></h1>
+  <p class="page-sub">
+    Fill in your episode details below. Click <strong style="color:#fff">"Push to Broadcast Page"</strong> 
+    and all values will automatically update on your live page — no coding required.
+  </p>
+
+  <div class="grid">
+
+    <!-- ════ LEFT: FORM ════ -->
+    <div>
+
+      <!-- BROADCAST STATUS -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <span class="card-header-icon">📡</span>
+          <div>
+            <div class="card-header-title">Broadcast Status</div>
+            <div class="card-header-sub">Set what viewers see when they land on the page</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="status-row">
+            <div class="status-opt" id="s-upcoming" onclick="setStatus('upcoming')">
+              <div class="status-opt-icon">⏰</div>
+              <div class="status-opt-label" style="color:#f59e0b;">Upcoming</div>
+            </div>
+            <div class="status-opt active-live" id="s-live" onclick="setStatus('live')">
+              <div class="status-opt-icon">🔴</div>
+              <div class="status-opt-label" style="color:var(--red);">Live Now</div>
+            </div>
+            <div class="status-opt" id="s-replay" onclick="setStatus('replay')">
+              <div class="status-opt-icon">▶️</div>
+              <div class="status-opt-label" style="color:var(--blue);">Replay</div>
+            </div>
+          </div>
+          <input type="hidden" id="f-status" value="live"/>
+        </div>
+      </div>
+
+      <!-- EPISODE DETAILS -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <span class="card-header-icon">🎙️</span>
+          <div>
+            <div class="card-header-title">Episode Details</div>
+            <div class="card-header-sub">Core info shown on the broadcast page</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Episode Number</label>
+              <input class="form-input" id="f-epnum" type="text" placeholder="e.g. EP. 001" value="EP. 001" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Season <span style="color:#555;font-size:10px;">(optional)</span></label>
+              <input class="form-input" id="f-season" type="text" placeholder="e.g. Season 1" oninput="updatePreview()"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Episode Title <span>*</span></label>
+            <input class="form-input" id="f-title" type="text" 
+              placeholder="e.g. From Idea to Funded: The Capital Readiness Blueprint"
+              value="From Idea to Funded: The Capital Readiness Blueprint"
+              oninput="updatePreview()"/>
+            <div class="form-hint">Keep it under 70 characters for best display on the page.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Guest Name <span style="color:#555;font-size:10px;">(leave blank if solo)</span></label>
+            <input class="form-input" id="f-guest" type="text" 
+              placeholder="e.g. Marcos Villa, CEO of Escher Innovations"
+              oninput="updatePreview()"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Episode Description <span>*</span></label>
+            <textarea class="form-textarea" id="f-desc" rows="3" 
+              placeholder="What is this episode about? Describe the main value for viewers..."
+              oninput="updatePreview()">Live conversations with founders, investors & operators on capital, growth, and execution. No fluff — just real strategies from real operators.</textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPICS -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <span class="card-header-icon">🎯</span>
+          <div>
+            <div class="card-header-title">Episode Topics</div>
+            <div class="card-header-sub">3 key points covered in this broadcast</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="topic-input-row">
+            <div class="topic-bullet">1</div>
+            <input class="form-input topic-input" id="f-topic1" type="text" 
+              placeholder="e.g. How to build a lender-ready business profile"
+              value="How to build a lender-ready business profile"
+              oninput="updatePreview()"/>
+          </div>
+          <div class="topic-input-row">
+            <div class="topic-bullet">2</div>
+            <input class="form-input topic-input" id="f-topic2" type="text" 
+              placeholder="e.g. Capital sequencing — what to apply for and when"
+              value="Capital sequencing — what to apply for and when"
+              oninput="updatePreview()"/>
+          </div>
+          <div class="topic-input-row">
+            <div class="topic-bullet">3</div>
+            <input class="form-input topic-input" id="f-topic3" type="text" 
+              placeholder="e.g. Real stories from the Escher portfolio"
+              value="Real stories from the Escher portfolio"
+              oninput="updatePreview()"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- YOUTUBE & BROADCAST SETTINGS -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <span class="card-header-icon">📺</span>
+          <div>
+            <div class="card-header-title">YouTube & Broadcast Settings</div>
+            <div class="card-header-sub">Video ID powers the live chat — get it from YouTube Studio</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label class="form-label">YouTube Video ID <span>*</span></label>
+            <input class="form-input" id="f-videoid" type="text" 
+              placeholder="e.g. dQw4w9WgXcQ  (from youtube.com/watch?v=THIS_PART)"
+              oninput="updatePreview()"/>
+            <div class="form-hint">
+              📌 Go to YouTube Studio → Your live stream → copy the ID from the URL after <code style="color:var(--gold);background:#1a1a1a;padding:1px 5px;border-radius:3px;">?v=</code>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Broadcast Date <span>*</span></label>
+              <input class="form-input" id="f-date" type="date" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Broadcast Time <span>*</span></label>
+              <input class="form-input" id="f-time" type="time" value="19:00" oninput="updatePreview()"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Timezone Label</label>
+            <input class="form-input" id="f-tz" type="text" 
+              placeholder="e.g. 7:00 PM EST / 4:00 PM PST" 
+              value="7:00 PM EST / 4:00 PM PST"
+              oninput="updatePreview()"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Broadcast Page URL</label>
+            <input class="form-input" id="f-pageurl" type="text" 
+              value="https://escher-innovations.com/webinar-broadcast"
+              oninput="updatePreview()"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- CALL TO ACTION -->
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <span class="card-header-icon">🔔</span>
+          <div>
+            <div class="card-header-title">Call to Action Text</div>
+            <div class="card-header-sub">What the notify button says on the broadcast page</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label class="form-label">CTA Headline</label>
+            <input class="form-input" id="f-ctahead" type="text" 
+              value="🔔 Never Miss a Broadcast"
+              oninput="updatePreview()"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">CTA Subtext</label>
+            <input class="form-input" id="f-ctasub" type="text" 
+              value="Get notified the moment we go live — plus exclusive pre-show notes and episode recaps."
+              oninput="updatePreview()"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END LEFT -->
+
+    <!-- ════ RIGHT: PREVIEW + ACTIONS ════ -->
+    <div class="preview-card">
+
+      <!-- LIVE PREVIEW -->
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-header">
+          <span class="card-header-icon">👁️</span>
+          <div>
+            <div class="card-header-title">Live Preview</div>
+            <div class="card-header-sub">Updates as you type</div>
+          </div>
+        </div>
+        <div class="preview-inner">
+          <div class="preview-label">Broadcast Page Preview</div>
+
+          <div id="prev-status-pill" class="preview-status status-live-pill">
+            <span>🔴</span> <span id="prev-status-text">Live Now</span>
+          </div>
+
+          <div id="prev-epnum" class="preview-ep">EP. 001</div>
+          <div id="prev-title" class="preview-title">From Idea to Funded: The Capital Readiness Blueprint</div>
+          <div id="prev-guest" class="preview-guest" style="display:none;"></div>
+          <div id="prev-desc" class="preview-desc">Live conversations with founders, investors & operators on capital, growth, and execution.</div>
+
+          <div class="preview-divider"></div>
+          <div class="preview-label">Topics Covered</div>
+          <div class="preview-topics">
+            <div class="preview-topic" id="prev-t1">How to build a lender-ready business profile</div>
+            <div class="preview-topic" id="prev-t2">Capital sequencing — what to apply for and when</div>
+            <div class="preview-topic" id="prev-t3">Real stories from the Escher portfolio</div>
+          </div>
+
+          <div class="preview-divider"></div>
+          <div class="preview-meta">
+            <div class="preview-meta-row">📅 <strong id="prev-date">Date not set</strong></div>
+            <div class="preview-meta-row">⏰ <strong id="prev-time">7:00 PM EST / 4:00 PM PST</strong></div>
+            <div class="preview-meta-row">📺 <strong id="prev-videoid" style="color:#555;">No Video ID set</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GENERATED URL -->
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-header">
+          <span class="card-header-icon">🔗</span>
+          <div>
+            <div class="card-header-title">Generated Broadcast URL</div>
+            <div class="card-header-sub">This URL loads all your episode data automatically</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="url-box" id="gen-url">Fill in the form to generate your URL...</div>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-header-icon">🚀</span>
+          <div>
+            <div class="card-header-title">Push to Broadcast Page</div>
+            <div class="card-header-sub">Publish your episode data instantly</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <button class="btn-primary" onclick="pushToBroadcast()">
+            🚀 Open Broadcast Page with Episode Data
+          </button>
+          <button class="btn-secondary" onclick="copyURL()">
+            🔗 Copy Generated URL
+          </button>
+          <button class="btn-secondary" onclick="saveToStorage()">
+            💾 Save as Default Episode
+          </button>
+          <div class="preview-divider"></div>
+          <button class="btn-danger" onclick="clearAll()">
+            🗑 Clear All Fields
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!-- END RIGHT -->
+
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toast-icon">✅</span>
+  <span id="toast-msg">Done!</span>
+</div>
+
+<script>
+  let currentStatus = 'live';
+
+  // ── SET BROADCAST STATUS ──
+  function setStatus(s) {
+    currentStatus = s;
+    ['upcoming','live','replay'].forEach(x => {
+      const el = document.getElementById('s-'+x);
+      el.className = 'status-opt';
+    });
+    const map = {upcoming:'active-upcoming',live:'active-live',replay:'active-replay'};
+    document.getElementById('s-'+s).className = 'status-opt ' + map[s];
+    document.getElementById('f-status').value = s;
+    updatePreview();
+  }
+
+  // ── LIVE PREVIEW UPDATER ──
+  function updatePreview() {
+    const title   = v('f-title')   || 'Episode Title';
+    const epnum   = v('f-epnum')   || 'EP. 001';
+    const guest   = v('f-guest');
+    const desc    = v('f-desc')    || '';
+    const t1      = v('f-topic1')  || '';
+    const t2      = v('f-topic2')  || '';
+    const t3      = v('f-topic3')  || '';
+    const date    = v('f-date');
+    const time    = v('f-tz')      || v('f-time') || '';
+    const vidid   = v('f-videoid') || '';
+    const status  = currentStatus;
+
+    set('prev-epnum', epnum);
+    set('prev-title', title);
+    set('prev-desc',  desc);
+    set('prev-t1', t1);
+    set('prev-t2', t2);
+    set('prev-t3', t3);
+    set('prev-time', time || '—');
+
+    // Guest
+    const guestEl = document.getElementById('prev-guest');
+    if (guest) { guestEl.style.display='flex'; guestEl.textContent = guest; }
+    else        { guestEl.style.display='none'; }
+
+    // Date
+    if (date) {
+      const d = new Date(date+'T12:00:00');
+      set('prev-date', d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}));
+    } else { set('prev-date','Date not set'); }
+
+    // Video ID
+    const vidEl = document.getElementById('prev-videoid');
+    if (vidid) { vidEl.textContent = vidid; vidEl.style.color = '#22c55e'; }
+    else        { vidEl.textContent = 'No Video ID set'; vidEl.style.color = '#555'; }
+
+    // Status pill
+    const pill = document.getElementById('prev-status-pill');
+    const pillTxt = document.getElementById('prev-status-text');
+    pill.className = 'preview-status';
+    if (status === 'live')     { pill.classList.add('status-live-pill');     pillTxt.textContent = 'Live Now'; }
+    if (status === 'upcoming') { pill.classList.add('status-upcoming-pill'); pillTxt.textContent = 'Coming Soon'; }
+    if (status === 'replay')   { pill.classList.add('status-replay-pill');   pillTxt.textContent = 'Replay'; }
+
+    generateURL();
+  }
+
+  // ── URL GENERATOR ──
+  function generateURL() {
+    const base    = v('f-pageurl') || 'https://escher-innovations.com/webinar-broadcast';
+    const params  = new URLSearchParams();
+    const fields  = {
+      title:   v('f-title'),
+      epnum:   v('f-epnum'),
+      season:  v('f-season'),
+      guest:   v('f-guest'),
+      desc:    v('f-desc'),
+      topic1:  v('f-topic1'),
+      topic2:  v('f-topic2'),
+      topic3:  v('f-topic3'),
+      videoid: v('f-videoid'),
+      date:    v('f-date'),
+      time:    v('f-tz') || v('f-time'),
+      status:  currentStatus,
+      ctahead: v('f-ctahead'),
+      ctasub:  v('f-ctasub'),
+    };
+    Object.entries(fields).forEach(([k,val]) => { if (val) params.set(k, val); });
+    const url = base + '?' + params.toString();
+    const box = document.getElementById('gen-url');
+    box.textContent = url;
+    box.className = 'url-box has-value';
+    return url;
+  }
+
+  // ── PUSH TO BROADCAST ──
+  function pushToBroadcast() {
+    const url = generateURL();
+    saveToStorage();
+    window.open(url, '_blank');
+    showToast('✅', 'Broadcast page opened with your episode data!');
+  }
+
+  // ── COPY URL ──
+  function copyURL() {
+    const url = generateURL();
+    navigator.clipboard.writeText(url).then(() => {
+      showToast('🔗', 'URL copied to clipboard!');
+    }).catch(() => {
+      prompt('Copy this URL:', url);
+    });
+  }
+
+  // ── SAVE TO LOCALSTORAGE ──
+  function saveToStorage() {
+    const data = {
+      status:  currentStatus,
+      title:   v('f-title'),
+      epnum:   v('f-epnum'),
+      season:  v('f-season'),
+      guest:   v('f-guest'),
+      desc:    v('f-desc'),
+      topic1:  v('f-topic1'),
+      topic2:  v('f-topic2'),
+      topic3:  v('f-topic3'),
+      videoid: v('f-videoid'),
+      date:    v('f-date'),
+      time:    v('f-time'),
+      tz:      v('f-tz'),
+      ctahead: v('f-ctahead'),
+      ctasub:  v('f-ctasub'),
+      pageurl: v('f-pageurl'),
+    };
+    localStorage.setItem('escher_episode', JSON.stringify(data));
+    showToast('💾', 'Episode saved as default!');
+  }
+
+  // ── CLEAR ALL ──
+  function clearAll() {
+    if (!confirm('Clear all fields? This cannot be undone.')) return;
+    ['f-title','f-epnum','f-season','f-guest','f-desc','f-topic1','f-topic2',
+     'f-topic3','f-videoid','f-date','f-time','f-tz','f-ctahead','f-ctasub']
+    .forEach(id => { document.getElementById(id).value = ''; });
+    setStatus('live');
+    updatePreview();
+    showToast('🗑️', 'All fields cleared.');
+  }
+
+  // ── TOAST ──
+  function showToast(icon, msg) {
+    document.getElementById('toast-icon').textContent = icon;
+    document.getElementById('toast-msg').textContent  = msg;
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3200);
+  }
+
+  // ── HELPERS ──
+  function v(id)       { return document.getElementById(id)?.value?.trim() || ''; }
+  function set(id, txt){ const el = document.getElementById(id); if(el) el.textContent = txt; }
+
+  // ── LOAD SAVED DATA ON START ──
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('escher_episode');
+    if (saved) {
+      try {
+        const d = JSON.parse(saved);
+        const map = {
+          'f-title':d.title,'f-epnum':d.epnum,'f-season':d.season,
+          'f-guest':d.guest,'f-desc':d.desc,'f-topic1':d.topic1,
+          'f-topic2':d.topic2,'f-topic3':d.topic3,'f-videoid':d.videoid,
+          'f-date':d.date,'f-time':d.time,'f-tz':d.tz,
+          'f-ctahead':d.ctahead,'f-ctasub':d.ctasub,'f-pageurl':d.pageurl
+        };
+        Object.entries(map).forEach(([id,val]) => {
+          if (val && document.getElementById(id)) document.getElementById(id).value = val;
+        });
+        if (d.status) setStatus(d.status);
+      } catch(e) {}
+    }
+    // Set today's date as default if blank
+    if (!v('f-date')) {
+      const t = new Date(); t.setDate(t.getDate()+3);
+      document.getElementById('f-date').value = t.toISOString().split('T')[0];
+    }
+    updatePreview();
+  });
+</script>
+</body>
+</html>

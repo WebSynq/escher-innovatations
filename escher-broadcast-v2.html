@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Escher Innovations LIVE | The Innovation Broadcast</title>
+  <meta name="description" id="page-meta" content="Watch the Escher Innovations LIVE Podcast — venture capital, startup funding, innovation & execution.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --gold:#c9a84c;--gold-light:#e2c47a;--gold-dim:#8a6f2e;
+      --bg:#080808;--bg2:#0f0f0f;--bg3:#161616;--bg4:#1e1e1e;
+      --border:#2a2a2a;--text:#f0f0f0;--text-muted:#888;
+      --red:#ff3b3b;--green:#22c55e;--blue:#3b82f6;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden;}
+
+    /* ── TOPBAR ── */
+    .topbar{
+      background:#000;border-bottom:1px solid var(--border);
+      padding:10px 24px;display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:100;
+    }
+    .topbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-mark{
+      width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));
+      border-radius:8px;display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:16px;color:#000;
+    }
+    .logo-text{font-size:15px;font-weight:700;color:#fff;}
+    .logo-sub{font-size:10px;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;}
+    .topbar-right{display:flex;align-items:center;gap:14px;}
+    .live-badge{
+      display:flex;align-items:center;gap:7px;
+      background:rgba(255,59,59,0.12);border:1px solid rgba(255,59,59,0.3);
+      border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;
+      color:var(--red);letter-spacing:1.5px;text-transform:uppercase;
+      animation:pulse-border 2s infinite;
+    }
+    .upcoming-badge{
+      display:flex;align-items:center;gap:7px;
+      background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);
+      border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;
+      color:#f59e0b;letter-spacing:1.5px;text-transform:uppercase;
+    }
+    .replay-badge{
+      display:flex;align-items:center;gap:7px;
+      background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.3);
+      border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;
+      color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;
+    }
+    .live-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse-dot 1.5s infinite;}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+    @keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(255,59,59,0);}50%{box-shadow:0 0 0 6px rgba(255,59,59,.08);}}
+    .topbar-link{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .2s;}
+    .topbar-link:hover{color:var(--gold);}
+
+    /* ── HERO ── */
+    .hero{
+      background:linear-gradient(180deg,#0a0a0a 0%,#080808 100%);
+      border-bottom:1px solid var(--border);
+      padding:40px 24px 32px;text-align:center;position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);
+      width:600px;height:200px;
+      background:radial-gradient(ellipse,rgba(201,168,76,.12) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);
+      border-radius:100px;padding:6px 16px;font-size:11px;font-weight:700;
+      color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;
+    }
+    .hero-epnum{font-size:12px;color:var(--gold-dim);letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px;}
+    .hero h1{
+      font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,50px);
+      font-weight:800;line-height:1.1;color:#fff;margin-bottom:12px;
+    }
+    .hero h1 span{color:var(--gold);}
+    .hero-guest{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--bg3);border:1px solid var(--border);border-radius:100px;
+      padding:6px 16px;font-size:13px;color:var(--text-muted);margin-bottom:14px;
+    }
+    .hero-desc{
+      font-size:clamp(13px,2vw,16px);color:var(--text-muted);
+      max-width:640px;margin:0 auto 26px;line-height:1.7;
+    }
+    .hero-meta{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--text-muted);}
+    .hero-meta-item{display:flex;align-items:center;gap:6px;}
+
+    /* ── MAIN ── */
+    .main{max-width:1400px;margin:0 auto;padding:28px 20px 60px;}
+
+    /* ── COUNTDOWN ── */
+    .countdown-bar{
+      background:linear-gradient(90deg,rgba(201,168,76,.08),rgba(201,168,76,.03));
+      border:1px solid rgba(201,168,76,.2);border-radius:10px;
+      padding:14px 20px;margin-bottom:20px;
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    }
+    .countdown-label{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
+    .countdown-digits{display:flex;align-items:center;gap:6px;}
+    .countdown-unit{
+      background:var(--bg4);border:1px solid var(--border);border-radius:6px;
+      padding:6px 10px;text-align:center;min-width:48px;
+    }
+    .countdown-unit .num{font-size:18px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;}
+    .countdown-unit .lbl{font-size:9px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;}
+    .countdown-sep{font-size:18px;font-weight:800;color:var(--gold-dim);}
+
+    /* ── BROADCAST GRID ── */
+    .broadcast-grid{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start;}
+
+    /* ── VIDEO PANEL ── */
+    .video-panel{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+    .video-header{
+      padding:14px 20px;display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid var(--border);background:var(--bg3);
+    }
+    .video-title-row{display:flex;align-items:center;gap:10px;}
+    .channel-icon{
+      width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));
+      border-radius:50%;display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:13px;color:#000;flex-shrink:0;
+    }
+    .vt-title{font-size:14px;font-weight:600;color:#fff;}
+    .vt-sub{font-size:11px;color:var(--text-muted);margin-top:1px;}
+    .btn-subscribe{
+      background:var(--red);color:#fff;border:none;border-radius:6px;
+      padding:7px 14px;font-size:12px;font-weight:700;cursor:pointer;
+      text-decoration:none;display:inline-block;transition:opacity .2s;
+    }
+    .btn-subscribe:hover{opacity:.85;}
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;background:#000;}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+    .video-footer{
+      padding:14px 20px;border-top:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+      background:var(--bg3);
+    }
+    .viewer-count{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text-muted);}
+    .viewer-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse-dot 1.5s infinite;}
+    .share-row{display:flex;align-items:center;gap:8px;}
+    .share-btn{
+      background:var(--bg4);border:1px solid var(--border);color:var(--text-muted);
+      border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;
+      transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+    }
+    .share-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+    /* ── CHAT PANEL ── */
+    .chat-panel{
+      background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+      overflow:hidden;display:flex;flex-direction:column;height:620px;
+    }
+    .chat-header{
+      padding:14px 18px;border-bottom:1px solid var(--border);background:var(--bg3);
+      display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+    }
+    .chat-header-left{display:flex;align-items:center;gap:8px;}
+    .chat-title{font-size:14px;font-weight:700;color:#fff;}
+    .chat-sub{font-size:11px;color:var(--text-muted);}
+    .chat-tab-row{display:flex;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0;}
+    .chat-tab{
+      flex:1;padding:10px;text-align:center;font-size:12px;font-weight:600;
+      color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;
+    }
+    .chat-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+    .chat-body{flex:1;overflow:hidden;position:relative;}
+    .chat-iframe{width:100%;height:100%;border:none;display:block;}
+
+    /* ── TOPICS BANNER ── */
+    .topics-banner{
+      background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+      padding:20px 24px;margin-bottom:20px;
+      display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;
+    }
+    .topics-banner-label{
+      font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;
+      text-transform:uppercase;white-space:nowrap;padding-top:2px;flex-shrink:0;
+    }
+    .topics-list{display:flex;flex-wrap:wrap;gap:8px;}
+    .topic-pill{
+      background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);
+      border-radius:100px;padding:5px 14px;font-size:12px;color:var(--text-muted);
+      display:flex;align-items:center;gap:7px;
+    }
+    .topic-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+    /* ── INFO CARDS ── */
+    .info-section{margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+    .info-card{
+      background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+      padding:20px;transition:border-color .2s;
+    }
+    .info-card:hover{border-color:var(--gold-dim);}
+    .info-card-icon{font-size:24px;margin-bottom:10px;}
+    .info-card-title{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+    .info-card-body{font-size:14px;color:var(--text-muted);line-height:1.6;}
+    .info-card-body strong{color:#fff;font-weight:600;}
+
+    /* ── STATS BAR ── */
+    .stats-bar{
+      margin-top:20px;background:var(--bg2);border:1px solid var(--border);
+      border-radius:12px;padding:20px 32px;
+      display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:20px;
+    }
+    .stat-item{text-align:center;}
+    .stat-number{font-size:28px;font-weight:900;color:var(--gold);font-family:'Playfair Display',serif;line-height:1;}
+    .stat-label{font-size:11px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+    .stat-div{width:1px;height:40px;background:var(--border);}
+
+    /* ── ABOUT + CTA ── */
+    .about-section{
+      margin-top:20px;background:var(--bg2);border:1px solid var(--border);
+      border-radius:16px;padding:28px 32px;
+      display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+    }
+    .about-text h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:14px;line-height:1.2;}
+    .about-text h2 span{color:var(--gold);}
+    .about-text p{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:10px;}
+    .topic-list{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+    .topic-list li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted);}
+    .topic-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+    .about-cta{background:linear-gradient(135deg,#1a1507 0%,#0f0f0f 100%);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:28px;text-align:center;}
+    .about-cta h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+    .about-cta p{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5;}
+    .cta-form{display:flex;flex-direction:column;gap:10px;}
+    .cta-input{background:#0a0a0a;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;width:100%;}
+    .cta-input::placeholder{color:var(--text-muted);}
+    .cta-input:focus{border-color:var(--gold-dim);}
+    .cta-btn{background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#000;border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:800;cursor:pointer;transition:opacity .2s;width:100%;font-family:'Inter',sans-serif;}
+    .cta-btn:hover{opacity:.9;}
+    .cta-note{font-size:11px;color:var(--text-muted);margin-top:2px;}
+
+    /* ── FOOTER ── */
+    .footer{background:#000;border-top:1px solid var(--border);padding:24px;text-align:center;}
+    .footer-links{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:12px;flex-wrap:wrap;}
+    .footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .2s;}
+    .footer-links a:hover{color:var(--gold);}
+    .footer-copy{font-size:12px;color:#444;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .broadcast-grid{grid-template-columns:1fr;}
+      .chat-panel{height:460px;}
+      .info-section{grid-template-columns:1fr;}
+      .about-section{grid-template-columns:1fr;}
+      .stats-bar{padding:16px;}
+      .stat-div{display:none;}
+    }
+    @media(max-width:600px){
+      .topbar{padding:10px 16px;}
+      .topbar-link{display:none;}
+      .hero{padding:24px 14px 20px;}
+      .main{padding:16px 12px 40px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <a href="https://escher-innovations.com" class="topbar-logo">
+    <div class="logo-mark">EI</div>
+    <div>
+      <div class="logo-text">Escher Innovations</div>
+      <div class="logo-sub">Live Broadcast</div>
+    </div>
+  </a>
+  <div class="topbar-right">
+    <div id="topbar-badge" class="live-badge">
+      <div class="live-dot"></div>
+      <span id="badge-text">Live Now</span>
+    </div>
+    <a href="https://escher-innovations.com" class="topbar-link">← Back to Site</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">🎙️ <span id="hero-eyebrow-txt">Weekly Live Broadcast</span></div>
+  <div id="hero-epnum" class="hero-epnum" style="display:none;"></div>
+  <h1 id="hero-title">The Escher Innovations <span>LIVE Show</span></h1>
+  <div id="hero-guest-row" class="hero-guest" style="display:none;">
+    <span>👤</span><span id="hero-guest-name"></span>
+  </div>
+  <p class="hero-desc" id="hero-desc">
+    Where capital meets execution. Live conversations on venture capital, startup funding, 
+    innovation strategy, and building companies that last.
+  </p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span>🌍</span><span>Global Audience</span></div>
+    <div class="hero-meta-item"><span>💼</span><span>25+ Portfolio Companies</span></div>
+    <div class="hero-meta-item"><span>📅</span><span id="hero-date-meta">Live Every Week</span></div>
+    <div class="hero-meta-item"><span>⏰</span><span id="hero-time-meta">Open Now</span></div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-bar" id="countdown-bar">
+    <div>
+      <div class="countdown-label" id="countdown-label">⏱ Next Broadcast</div>
+      <div id="countdown-sub" style="font-size:14px;color:#fff;font-weight:500;">Subscribe to get notified when we go live</div>
+    </div>
+    <div class="countdown-digits">
+      <div class="countdown-unit"><div class="num" id="cd-d">00</div><div class="lbl">Days</div></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit"><div class="num" id="cd-s">00</div><div class="lbl">Sec</div></div>
+    </div>
+  </div>
+
+  <!-- TOPICS BANNER -->
+  <div class="topics-banner" id="topics-banner" style="display:none;">
+    <div class="topics-banner-label">🎯 Today We Cover</div>
+    <div class="topics-list" id="topics-list"></div>
+  </div>
+
+  <!-- BROADCAST GRID -->
+  <div class="broadcast-grid">
+
+    <!-- VIDEO PANEL -->
+    <div class="video-panel">
+      <div class="video-header">
+        <div class="video-title-row">
+          <div class="channel-icon">EI</div>
+          <div>
+            <div class="vt-title" id="video-title">Escher Innovations LIVE</div>
+            <div class="vt-sub">@EscherInnovations · Capital. Innovation. Impact.</div>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/@EscherInnovations?sub_confirmation=1" target="_blank" class="btn-subscribe">▶ Subscribe</a>
+      </div>
+      <!-- YOUTUBE LIVE VIDEO EMBED — Channel ID: UC5PDRT2fm1uyHTKGbozPXVg -->
+      <div class="video-wrapper">
+        <iframe id="video-iframe"
+          src="https://www.youtube.com/embed/live_stream?channel=UC5PDRT2fm1uyHTKGbozPXVg&autoplay=1&mute=0&rel=0&modestbranding=1"
+          title="Escher Innovations Live"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowfullscreen frameborder="0">
+        </iframe>
+      </div>
+      <div class="video-footer">
+        <div class="viewer-count">
+          <div class="viewer-dot"></div>
+          <span>Live on YouTube — <strong style="color:#fff">@EscherInnovations</strong></span>
+        </div>
+        <div class="share-row">
+          <a href="https://www.youtube.com/@EscherInnovations" target="_blank" class="share-btn">▶ YouTube</a>
+          <button class="share-btn" onclick="copyLink()">🔗 Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT PANEL -->
+    <div class="chat-panel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <span style="font-size:16px;">💬</span>
+          <div>
+            <div class="chat-title">Live Chat</div>
+            <div class="chat-sub">Join the conversation</div>
+          </div>
+        </div>
+        <div class="live-badge" style="font-size:10px;padding:4px 10px;">
+          <div class="live-dot"></div> Open
+        </div>
+      </div>
+      <div class="chat-tab-row">
+        <div class="chat-tab active" onclick="switchTab('youtube',this)">YouTube Chat</div>
+        <div class="chat-tab" onclick="switchTab('tawk',this)">Live Support</div>
+      </div>
+      <div class="chat-body">
+        <!-- YOUTUBE LIVE CHAT EMBED — domain: escher-innovations.com -->
+        <iframe id="yt-chat-frame" class="chat-iframe"
+          src="about:blank"
+          title="YouTube Live Chat" frameborder="0">
+        </iframe>
+        <div id="tawk-placeholder" style="display:none;padding:28px;text-align:center;color:#888;">
+          <div style="font-size:38px;margin-bottom:12px;">💬</div>
+          <div style="font-weight:700;color:#fff;margin-bottom:8px;font-size:15px;">Live Support Chat</div>
+          <div style="font-size:13px;line-height:1.6;">Our team is standing by.<br>Use the chat bubble below to connect directly.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END BROADCAST GRID -->
+
+  <!-- INFO CARDS -->
+  <div class="info-section">
+    <div class="info-card">
+      <div class="info-card-icon">🎯</div>
+      <div class="info-card-title">Today's Episode</div>
+      <div class="info-card-body" id="card-episode">
+        <strong>The Innovation Table</strong><br>Live conversations on capital, growth, and execution with founders, investors & operators.
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">📅</div>
+      <div class="info-card-title">Broadcast Info</div>
+      <div class="info-card-body" id="card-schedule">
+        <strong>Live Every Week</strong><br>Subscribe on YouTube and turn on notifications to never miss a broadcast.
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🌍</div>
+      <div class="info-card-title">Who This Is For</div>
+      <div class="info-card-body">Founders seeking funding · Investors building portfolios · Operators scaling teams · Entrepreneurs with big ideas.</div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-number">25+</div><div class="stat-label">Portfolio Companies</div></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><div class="stat-number">80+</div><div class="stat-label">Countries Reached</div></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Free to Watch</div></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><div class="stat-number">LIVE</div><div class="stat-label">Every Week</div></div>
+  </div>
+
+  <!-- ABOUT + CTA -->
+  <div class="about-section">
+    <div class="about-text">
+      <h2>Capital Meets <span>Execution</span> Every Week. Live.</h2>
+      <p>Escher Innovations is a global venture capital platform that backs extraordinary people with ideas that deserve to become realities.</p>
+      <p>Every broadcast, we go deep on the topics that matter most to founders, operators, and investors — no fluff, no gatekeeping.</p>
+      <ul class="topic-list" id="about-topics">
+        <li>Venture capital strategy & capital readiness</li>
+        <li>Startup funding pathways & bankability</li>
+        <li>Governance, leadership & scaling frameworks</li>
+        <li>Founder stories from the portfolio</li>
+        <li>Innovation across Technology, Healthcare, Finance & more</li>
+      </ul>
+    </div>
+    <div class="about-cta">
+      <h3 id="cta-head">🔔 Never Miss a Broadcast</h3>
+      <p id="cta-sub">Get notified the moment we go live — plus exclusive pre-show notes and episode recaps.</p>
+      <div class="cta-form">
+        <input class="cta-input" id="notify-name"  type="text"  placeholder="Your First Name"/>
+        <input class="cta-input" id="notify-email" type="email" placeholder="Your Email Address"/>
+        <button class="cta-btn" onclick="handleNotify()">🎙️ Notify Me When We Go Live</button>
+        <div class="cta-note">🔒 No spam. Unsubscribe anytime. 100% free.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="https://escher-innovations.com">Home</a>
+    <a href="https://www.youtube.com/@EscherInnovations" target="_blank">YouTube</a>
+    <a href="https://www.linkedin.com/company/escherinnovations" target="_blank">LinkedIn</a>
+    <a href="https://www.facebook.com/p/Escher-Innovations-61575723085998" target="_blank">Facebook</a>
+  </div>
+  <div class="footer-copy">© 2026 Escher Innovations · All Rights Reserved · <a href="https://escher-innovations.com" style="color:#555;text-decoration:none;">escher-innovations.com</a></div>
+</footer>
+
+<!-- TAWK.TO LIVE CHAT -->
+<!-- Replace YOUR_PROPERTY_ID/YOUR_WIDGET_ID after signing up FREE at tawk.to -->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{},Tawk_LoadTime=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/YOUR_WIDGET_ID';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+</script>
+
+<!-- DYNAMIC EPISODE LOADER -->
+<script>
+  // ═══════════════════════════════════════════════════════
+  //  DYNAMIC EPISODE LOADER
+  //  Reads URL parameters set by the Admin Panel
+  //  and auto-populates ALL content on this page
+  // ═══════════════════════════════════════════════════════
+
+  function getParam(key, fallback) {
+    const url  = new URLSearchParams(window.location.search);
+    const ls   = (() => {
+      try { const d = JSON.parse(localStorage.getItem('escher_episode') || '{}'); return d[key] || ''; } catch(e) { return ''; }
+    })();
+    return url.get(key) || ls || fallback || '';
+  }
+
+  function loadEpisode() {
+    const status  = getParam('status',  'live');
+    const title   = getParam('title',   'The Escher Innovations LIVE Show');
+    const epnum   = getParam('epnum',   '');
+    const season  = getParam('season',  '');
+    const guest   = getParam('guest',   '');
+    const desc    = getParam('desc',    'Where capital meets execution. Live conversations on venture capital, startup funding, innovation strategy, and building companies that last.');
+    const topic1  = getParam('topic1',  '');
+    const topic2  = getParam('topic2',  '');
+    const topic3  = getParam('topic3',  '');
+    const videoid = getParam('videoid', '');
+    const date    = getParam('date',    '');
+    const tz      = getParam('time',    '');
+    const ctahead = getParam('ctahead', '🔔 Never Miss a Broadcast');
+    const ctasub  = getParam('ctasub',  'Get notified the moment we go live — plus exclusive pre-show notes and episode recaps.');
+
+    // ── PAGE TITLE ──
+    document.getElementById('page-title').textContent = title + ' | Escher Innovations';
+
+    // ── STATUS BADGE ──
+    const badge = document.getElementById('topbar-badge');
+    const badgeText = document.getElementById('badge-text');
+    const eyebrow   = document.getElementById('hero-eyebrow-txt');
+    badge.className = '';
+    if (status === 'live') {
+      badge.className = 'live-badge';
+      badge.innerHTML = '<div class="live-dot"></div><span>Live Now</span>';
+      eyebrow.textContent = '🔴 Broadcasting Live';
+      document.getElementById('countdown-label').textContent = '🔴 Currently Live';
+      document.getElementById('countdown-sub').textContent = 'Watch now below — we are LIVE!';
+    } else if (status === 'upcoming') {
+      badge.className = 'upcoming-badge';
+      badge.innerHTML = '<span>⏰ Coming Soon</span>';
+      eyebrow.textContent = '📅 Upcoming Broadcast';
+    } else if (status === 'replay') {
+      badge.className = 'replay-badge';
+      badge.innerHTML = '<span>▶️ Replay Available</span>';
+      eyebrow.textContent = '▶️ Watch the Replay';
+      document.getElementById('countdown-label').textContent = '▶️ Replay Available';
+      document.getElementById('countdown-sub').textContent = 'Watch the full episode below';
+    }
+
+    // ── HERO ──
+    if (epnum) {
+      const epEl = document.getElementById('hero-epnum');
+      epEl.style.display = 'block';
+      epEl.textContent   = (season ? season + ' · ' : '') + epnum;
+    }
+    document.getElementById('hero-title').innerHTML = title.includes('LIVE') || title.includes('Live')
+      ? title.replace(/(LIVE|Live)/g, '<span>$1</span>')
+      : title + ' <span style="color:var(--gold)">·</span> Live';
+    document.getElementById('hero-desc').textContent = desc;
+
+    // Guest
+    if (guest) {
+      document.getElementById('hero-guest-row').style.display = 'inline-flex';
+      document.getElementById('hero-guest-name').textContent  = guest;
+    }
+
+    // Date & Time meta
+    if (date) {
+      const d = new Date(date + 'T12:00:00');
+      const dateStr = d.toLocaleDateString('en-US', {weekday:'short',month:'long',day:'numeric',year:'numeric'});
+      document.getElementById('hero-date-meta').textContent = dateStr;
+    }
+    if (tz) document.getElementById('hero-time-meta').textContent = tz;
+
+    // ── VIDEO ID → CHAT IFRAME ──
+    if (videoid) {
+      document.getElementById('yt-chat-frame').src =
+        'https://www.youtube.com/live_chat?v=' + encodeURIComponent(videoid) +
+        '&embed_domain=escher-innovations.com';
+    }
+
+    // ── VIDEO TITLE ──
+    if (epnum) document.getElementById('video-title').textContent = 'Escher Innovations LIVE · ' + epnum;
+    else        document.getElementById('video-title').textContent = 'Escher Innovations LIVE';
+
+    // ── TOPICS BANNER ──
+    const topics = [topic1, topic2, topic3].filter(t => t);
+    if (topics.length) {
+      document.getElementById('topics-banner').style.display = 'flex';
+      const list = document.getElementById('topics-list');
+      list.innerHTML = topics.map(t =>
+        `<div class="topic-pill">${t}</div>`
+      ).join('');
+    }
+
+    // ── INFO CARD: Episode ──
+    const cardEp = document.getElementById('card-episode');
+    cardEp.innerHTML = `<strong>${title}</strong><br>${desc.substring(0,120)}${desc.length>120?'…':''}`;
+
+    // ── INFO CARD: Schedule ──
+    if (date || tz) {
+      const d   = date ? new Date(date+'T12:00:00') : null;
+      const dStr = d ? d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}) : '';
+      document.getElementById('card-schedule').innerHTML =
+        `<strong>${dStr || 'Scheduled'}</strong><br>${tz || 'Subscribe on YouTube for notifications.'}`;
+    }
+
+    // ── ABOUT TOPICS ──
+    if (topics.length) {
+      const ul = document.getElementById('about-topics');
+      ul.innerHTML = topics.map(t => `<li>${t}</li>`).join('') +
+        '<li>Venture capital strategy & capital readiness</li>' +
+        '<li>Innovation across all industry verticals</li>';
+    }
+
+    // ── CTA TEXT ──
+    document.getElementById('cta-head').textContent = ctahead;
+    document.getElementById('cta-sub').textContent  = ctasub;
+
+    // ── COUNTDOWN TIMER ──
+    if (date) {
+      const broadcastTime = new Date(date + 'T' + (getParam('rawtime','19:00')) + ':00');
+      startCountdown(broadcastTime);
+    } else {
+      // Default: 3 days from now
+      const def = new Date(); def.setDate(def.getDate()+3); def.setHours(19,0,0,0);
+      startCountdown(def);
+    }
+  }
+
+  // ── COUNTDOWN ──
+  function startCountdown(target) {
+    function tick() {
+      const now  = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000)  / 60000);
+      const s = Math.floor((diff % 60000)    / 1000);
+      document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+      document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // ── CHAT TABS ──
+  function switchTab(tab, el) {
+    document.querySelectorAll('.chat-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    const ytFrame = document.getElementById('yt-chat-frame');
+    const tawkDiv = document.getElementById('tawk-placeholder');
+    if (tab === 'youtube') {
+      ytFrame.style.display = 'block';
+      tawkDiv.style.display = 'none';
+    } else {
+      ytFrame.style.display = 'none';
+      tawkDiv.style.display = 'block';
+      if (typeof Tawk_API !== 'undefined' && Tawk_API.maximize) Tawk_API.maximize();
+    }
+  }
+
+  // ── COPY LINK ──
+  function copyLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => alert('✅ Link copied!')).catch(() => alert('Copy: ' + url));
+  }
+
+  // ── NOTIFY FORM ──
+  function handleNotify() {
+    const name  = document.getElementById('notify-name').value.trim();
+    const email = document.getElementById('notify-email').value.trim();
+    if (!name || !email)                        { alert('Please enter your name and email.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email.'); return; }
+    // 👉 CONNECT YOUR GOHIGHLEVEL WEBHOOK OR FORM ACTION HERE
+    alert('🎙️ You\'re in, ' + name + '! We\'ll notify you the moment we go live!');
+  }
+
+  // ── RUN ON LOAD ──
+  window.addEventListener('DOMContentLoaded', loadEpisode);
+</script>
+
+</body>
+</html>
