@@ -1,0 +1,676 @@
+<!-- ============================================================
+  ESCHER INNOVATIONS — CORE VALUES PAGE
+  URL: /core-values
+  Professional. No emojis. SVG icons only. All !important.
+  Single GHL Custom HTML block. Set section padding to 0.
+============================================================ -->
+
+<!-- GHL whitespace killer -->
+<style>
+[data-page-element="Section/V1"],[data-page-element="Section/V2"],
+[data-page-element="Row/V1"],[data-page-element="Row/V2"],
+[data-page-element="SubSection/V1"],[data-page-element="SubSection/V2"],
+.page-section,.section-box,.funnelish-section,.container-shadow-wrap,.section-content-box{
+  padding-top:0!important;padding-bottom:0!important;
+  margin-top:0!important;margin-bottom:0!important;min-height:unset!important;
+}
+[data-page-element="Section/V1"]>.inner-content,
+[data-page-element="Section/V2"]>.inner-content,
+[data-page-element="Row/V1"]>.inner-content{
+  padding-top:0!important;padding-bottom:0!important;
+}
+</style>
+
+<style>
+/* ── TOKENS & RESET ── */
+#cv *,#cv *::before,#cv *::after{box-sizing:border-box;margin:0;padding:0;}
+#cv{
+  --black:#06070d;--white:#fff;--off:#f6f7f4;
+  --ink:#0b1220;--muted:rgba(11,18,32,.72);--muted2:rgba(11,18,32,.45);
+  --border:rgba(11,18,32,.10);--border-d:rgba(255,255,255,.08);
+  --gold:#e7ff6e;--ease:cubic-bezier(.16,1,.3,1);
+  font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+
+/* ── NAV ── */
+#cv-nav *,#cv-nav *::before,#cv-nav *::after{box-sizing:border-box;margin:0;padding:0;}
+#cv-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;height:72px!important;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,box-shadow .3s;}
+#cv-nav.scrolled{background:rgba(6,7,13,.96)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06);}
+#cv-nav .ni{max-width:1320px!important;margin:0 auto!important;height:72px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 40px!important;gap:8px;}
+#cv-nav .logo{display:flex!important;flex-direction:column!important;text-decoration:none;line-height:1.15;flex-shrink:0;}
+#cv-nav .logo-n{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em;}
+#cv-nav .logo-t{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;}
+#cv-nav .gm{display:flex!important;align-items:center!important;gap:0;list-style:none;flex:1;justify-content:center;}
+#cv-nav .gi{position:relative;}
+#cv-nav .gl,.gtr{display:inline-flex;align-items:center;gap:4px;padding:8px 13px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;border-radius:999px;border:none;background:none;cursor:pointer;white-space:nowrap;transition:color .18s,background .18s;font-family:inherit;letter-spacing:.01em;line-height:1;}
+#cv-nav .gl:hover,.gtr:hover,#cv-nav .gi.open .gtr{color:#fff;background:rgba(255,255,255,.09);}
+#cv-nav .gl.active{color:#fff;background:rgba(255,255,255,.1);}
+#cv-nav .gc{width:12px;height:12px;opacity:.55;transition:transform .2s,opacity .2s;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#cv-nav .gi.open .gc{transform:rotate(180deg);opacity:1;}
+#cv-nav .gd{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:rgba(10,11,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;}
+#cv-nav .gi.open .gd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all;}
+#cv-nav .gd::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:6px;background:rgba(255,255,255,.09);clip-path:polygon(50% 0%,0% 100%,100% 100%);}
+#cv-nav .gsl{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s;}
+#cv-nav .gsl:hover{background:rgba(255,255,255,.07);}
+#cv-nav .gsi{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+#cv-nav .gsi svg{width:14px;height:14px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#cv-nav .gsn{font-size:13px;font-weight:600;color:rgba(255,255,255,.88);display:block;margin-bottom:2px;letter-spacing:-.01em;}
+#cv-nav .gsd{font-size:11px;color:rgba(255,255,255,.38);line-height:1.4;display:block;}
+#cv-nav .gdiv{height:1px;background:rgba(255,255,255,.07);margin:6px 0;}
+#cv-nav .gcta{display:inline-flex!important;align-items:center;gap:6px;padding:9px 20px!important;border-radius:999px;background:#e7ff6e!important;color:#06070d!important;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .18s,transform .18s;}
+#cv-nav .gcta:hover{background:#f2ff8c!important;transform:translateY(-1px);}
+#cv-nav .gb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+#cv-nav .gb span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s;}
+#cv-nav.mob-open .gb span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#cv-nav.mob-open .gb span:nth-child(2){opacity:0;}
+#cv-nav.mob-open .gb span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.cv-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,7,13,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);z-index:999;padding:0 0 24px;max-height:calc(100vh - 72px);overflow-y:auto;}
+#cv-nav.mob-open .cv-drawer{display:block;}
+.cv-ms{border-bottom:1px solid rgba(255,255,255,.06);}
+.cv-mt{display:flex;align-items:center;justify-content:space-between;padding:14px 28px!important;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+.cv-mch{width:14px;height:14px;opacity:.4;transition:transform .2s;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.cv-ms.open .cv-mch{transform:rotate(180deg);opacity:.8;}
+.cv-mch-wrap{display:none;padding:0 0 8px;}
+.cv-ms.open .cv-mch-wrap{display:block;}
+.cv-mc{display:block;padding:10px 28px 10px 40px!important;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.cv-mc:hover{color:#fff;}
+.cv-mcta{margin:20px 28px 0!important;display:block;text-align:center;padding:13px!important;background:#e7ff6e!important;color:#06070d!important;font-weight:700;font-size:14px;border-radius:999px;text-decoration:none;}
+@media(max-width:1024px){
+  #cv-nav .gm{display:none!important;}
+  #cv-nav .gcta{display:none!important;}
+  #cv-nav .gb{display:flex!important;}
+  #cv-nav .ni{padding:0 20px!important;}
+}
+
+/* ── HERO ── */
+#cv-hero{background:#06070d!important;padding:152px 40px 96px!important;position:relative;overflow:hidden;text-align:center;}
+#cv-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(231,255,110,.05) 0%,transparent 70%);pointer-events:none;}
+#cv-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+#cv-hero .ey{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:22px!important;position:relative;z-index:1;}
+#cv-hero .ed{width:5px;height:5px;border-radius:50%;background:#e7ff6e;box-shadow:0 0 8px rgba(231,255,110,.8);}
+#cv-hero h1{font-size:clamp(38px,5.5vw,76px)!important;font-weight:800!important;line-height:.97!important;letter-spacing:-.03em!important;color:#fff!important;margin-bottom:22px!important;position:relative;z-index:1;}
+#cv-hero h1 em{font-style:italic;color:#e7ff6e;}
+#cv-hero .hs{font-size:clamp(16px,2vw,19px)!important;font-weight:300!important;line-height:1.78!important;color:rgba(255,255,255,.58)!important;max-width:620px!important;margin:0 auto 52px!important;position:relative;z-index:1;}
+/* Value summary pills */
+#cv-hero .val-pills{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:center!important;position:relative;z-index:1;}
+#cv-hero .vp{display:inline-flex;align-items:center;gap:10px;padding:11px 20px!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:999px;background:rgba(255,255,255,.04)!important;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);white-space:nowrap;letter-spacing:.01em;}
+#cv-hero .vp-dot{width:5px;height:5px;border-radius:50%;background:#e7ff6e;flex-shrink:0;}
+
+/* ── SHARED ── */
+.cv-light{background:linear-gradient(180deg,#f6f7f4,#fff)!important;border-top:1px solid rgba(11,18,32,.10)!important;border-bottom:1px solid rgba(11,18,32,.10)!important;padding:88px 0!important;}
+.cv-dark{background:linear-gradient(180deg,rgba(11,18,32,.96),rgba(11,18,32,.92))!important;border-top:1px solid rgba(255,255,255,.08)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:88px 0!important;}
+.cv-wrap{max-width:1180px!important;margin:0 auto!important;padding:0 40px!important;}
+.cv-brow{display:flex!important;align-items:center!important;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px!important;}
+.cv-bdot{width:8px;height:8px;border-radius:99px;background:#e7ff6e;box-shadow:0 0 0 3px rgba(231,255,110,.25);flex-shrink:0;}
+.cv-brow-l{color:rgba(11,18,32,.6);}
+.cv-brow-d{color:rgba(255,255,255,.52);}
+.cv-h2{font-size:clamp(28px,3.6vw,50px)!important;font-weight:800!important;line-height:1.0!important;letter-spacing:-.025em!important;margin-bottom:18px!important;}
+.cv-h2-l{color:#0b1220!important;}
+.cv-h2-d{color:#fff!important;}
+.cv-h2 em{font-style:italic;}
+.cv-h2-l em{color:rgba(11,18,32,.42);border-bottom:3px solid #e7ff6e;padding-bottom:2px;}
+.cv-h2-d em{color:#e7ff6e;}
+.cv-body{font-size:15px!important;font-weight:300!important;line-height:1.82!important;margin-bottom:16px!important;}
+.cv-body-l{color:rgba(11,18,32,.72)!important;}
+.cv-body-d{color:rgba(255,255,255,.62)!important;}
+
+/* ── OVERVIEW (light, intro + 5 teaser cards) ── */
+#cv-overview .ov-intro{display:grid!important;grid-template-columns:1fr 1fr!important;gap:72px!important;align-items:center!important;margin-bottom:64px!important;}
+#cv-overview .ov-cards{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:1px!important;background:rgba(11,18,32,.1)!important;border:1px solid rgba(11,18,32,.1)!important;}
+#cv-overview .ovc{background:#fff!important;padding:28px 20px!important;position:relative;transition:background .2s;}
+#cv-overview .ovc:hover{background:var(--off)!important;}
+#cv-overview .ovc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background .25s;}
+#cv-overview .ovc:hover::before{background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.15));}
+#cv-overview .ovc-icon{width:40px;height:40px;border-radius:10px;background:rgba(231,255,110,.1);border:1px solid rgba(231,255,110,.22);display:grid;place-items:center;margin-bottom:16px!important;}
+#cv-overview .ovc-icon svg{width:18px;height:18px;stroke:#0b1220;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#cv-overview .ovc-n{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(11,18,32,.32);margin-bottom:8px!important;}
+#cv-overview .ovc h3{font-size:15px;font-weight:700;color:#0b1220;letter-spacing:-.01em;}
+
+/* ── VALUES DEEP DIVE (alternating light/dark) ── */
+.cv-value-l{background:linear-gradient(180deg,#f6f7f4,#fff)!important;border-top:1px solid rgba(11,18,32,.10)!important;border-bottom:1px solid rgba(11,18,32,.10)!important;padding:80px 0!important;}
+.cv-value-d{background:linear-gradient(180deg,rgba(11,18,32,.96),rgba(11,18,32,.92))!important;border-top:1px solid rgba(255,255,255,.08)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:80px 0!important;}
+.cv-val{display:grid!important;grid-template-columns:1fr 1fr!important;gap:72px!important;align-items:start!important;}
+.cv-val.flip{direction:rtl;}
+.cv-val.flip>*{direction:ltr;}
+.cv-val-num{font-size:clamp(80px,10vw,140px);font-weight:800;line-height:.85;letter-spacing:-.04em;color:rgba(11,18,32,.07);margin-bottom:4px!important;}
+.cv-val-num-d{color:rgba(255,255,255,.06);}
+.cv-val-tag{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,18,32,.38);margin-bottom:14px!important;}
+.cv-val-tag-d{color:rgba(255,255,255,.35);}
+.cv-val-title{font-size:clamp(26px,3vw,38px)!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1.1!important;color:#0b1220!important;margin-bottom:18px!important;}
+.cv-val-title-d{color:#fff!important;}
+.cv-val-body{font-size:15px!important;font-weight:300!important;line-height:1.82!important;color:rgba(11,18,32,.7)!important;margin-bottom:20px!important;}
+.cv-val-body-d{color:rgba(255,255,255,.6)!important;}
+.cv-val-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.cv-val-list li{font-size:14px;color:rgba(11,18,32,.65);display:flex;align-items:flex-start;gap:10px;line-height:1.6;}
+.cv-val-list-d li{color:rgba(255,255,255,.55);}
+.cv-val-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:#e7ff6e;flex-shrink:0;margin-top:8px;}
+.cv-val-panel{background:#fff!important;border:1px solid rgba(11,18,32,.1)!important;border-radius:20px!important;padding:36px!important;box-shadow:0 18px 45px rgba(11,18,32,.06)!important;position:relative;}
+.cv-val-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));border-radius:20px 20px 0 0;}
+.cv-val-panel-d{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:20px!important;padding:36px!important;position:relative;}
+.cv-val-panel-d::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));border-radius:20px 20px 0 0;}
+.cv-val-panel-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(11,18,32,.35);margin-bottom:14px!important;}
+.cv-val-panel-label-d{color:rgba(255,255,255,.35);}
+.cv-val-panel-q{font-size:clamp(15px,1.8vw,18px)!important;font-style:italic;font-weight:300;color:#0b1220!important;line-height:1.65!important;}
+.cv-val-panel-q-d{color:rgba(255,255,255,.75)!important;}
+.cv-val-icon{width:52px;height:52px;border-radius:14px;background:rgba(231,255,110,.1);border:1px solid rgba(231,255,110,.22);display:grid;place-items:center;margin-bottom:20px!important;}
+.cv-val-icon svg{width:24px;height:24px;stroke:#0b1220;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.cv-val-icon-d{background:rgba(231,255,110,.08)!important;border:1px solid rgba(231,255,110,.18)!important;}
+.cv-val-icon-d svg{stroke:rgba(255,255,255,.7);}
+
+/* ── IN PRACTICE (dark, table-style) ── */
+#cv-practice .pr-table{margin-top:48px!important;border:1px solid rgba(255,255,255,.07)!important;border-radius:16px!important;overflow:hidden;}
+#cv-practice .pr-head{display:grid!important;grid-template-columns:180px 1fr 1fr!important;background:rgba(255,255,255,.04)!important;border-bottom:1px solid rgba(255,255,255,.07)!important;}
+#cv-practice .pr-head-cell{padding:14px 20px!important;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.38);}
+#cv-practice .pr-row{display:grid!important;grid-template-columns:180px 1fr 1fr!important;border-bottom:1px solid rgba(255,255,255,.06)!important;}
+#cv-practice .pr-row:last-child{border-bottom:none!important;}
+#cv-practice .pr-row:hover{background:rgba(255,255,255,.03)!important;}
+#cv-practice .pr-cell{padding:20px!important;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.65;border-right:1px solid rgba(255,255,255,.06)!important;}
+#cv-practice .pr-cell:last-child{border-right:none!important;}
+#cv-practice .pr-cell-val{font-size:13px;font-weight:700;color:#fff;border-right:1px solid rgba(255,255,255,.06)!important;display:flex;align-items:center;gap:8px;}
+#cv-practice .pr-cell-dot{width:6px;height:6px;border-radius:50%;background:#e7ff6e;flex-shrink:0;}
+
+/* ── CTA ── */
+#cv-cta{background:#06070d!important;padding:96px 40px!important;text-align:center;border-top:1px solid rgba(255,255,255,.08)!important;position:relative;overflow:hidden;}
+#cv-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(231,255,110,.06) 0%,transparent 70%);}
+#cv-cta .ci{position:relative;z-index:1;max-width:600px;margin:0 auto!important;}
+#cv-cta h2{font-size:clamp(30px,4vw,52px)!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1.05!important;color:#fff!important;margin-bottom:16px!important;}
+#cv-cta h2 em{color:#e7ff6e;font-style:italic;}
+#cv-cta p{font-size:17px!important;font-weight:300!important;color:rgba(255,255,255,.5)!important;line-height:1.8!important;margin-bottom:38px!important;}
+#cv-cta .cbtns{display:flex!important;gap:14px!important;justify-content:center!important;flex-wrap:wrap!important;}
+.cv-btn-gold{display:inline-flex;align-items:center;gap:7px;padding:13px 26px!important;border-radius:999px;background:#e7ff6e!important;color:#06070d!important;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:inherit;}
+.cv-btn-gold:hover{background:#f2ff8c!important;transform:translateY(-2px);box-shadow:0 10px 28px rgba(231,255,110,.38);}
+.cv-btn-dk{display:inline-flex;align-items:center;gap:7px;padding:12px 24px!important;border-radius:999px;background:rgba(255,255,255,.08)!important;color:rgba(255,255,255,.75)!important;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.15)!important;cursor:pointer;transition:all .2s;font-family:inherit;}
+.cv-btn-dk:hover{background:rgba(255,255,255,.14)!important;color:#fff!important;}
+
+/* ── FOOTER ── */
+#cv-footer{background:#06070d!important;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07)!important;font-family:inherit;}
+#cv-footer .ft-top{max-width:1280px!important;margin:0 auto!important;padding:72px 40px 48px!important;display:grid!important;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr!important;gap:48px!important;}
+#cv-footer .ft-ln{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.01em;margin-bottom:4px!important;}
+#cv-footer .ft-lt{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;margin-bottom:18px!important;}
+#cv-footer .ft-tl{font-size:13px;line-height:1.75;color:rgba(255,255,255,.38);max-width:260px;margin-bottom:24px!important;}
+#cv-footer .ft-soc{display:flex!important;gap:10px!important;}
+#cv-footer .ft-soc a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12)!important;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;transition:border-color .18s,color .18s;}
+#cv-footer .ft-soc a:hover{border-color:#e7ff6e!important;color:#e7ff6e!important;}
+#cv-footer .ft-col h4{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px!important;}
+#cv-footer .ft-col ul{list-style:none;display:flex!important;flex-direction:column!important;gap:10px!important;padding:0;}
+#cv-footer .ft-col ul a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .18s;}
+#cv-footer .ft-col ul a:hover{color:#fff;}
+#cv-footer .ft-bot{border-top:1px solid rgba(255,255,255,.07)!important;max-width:1280px!important;margin:0 auto!important;padding:24px 40px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:12px!important;}
+#cv-footer .ft-copy{font-size:12px;color:rgba(255,255,255,.28);}
+#cv-footer .ft-leg{display:flex!important;gap:20px!important;}
+#cv-footer .ft-leg a{font-size:12px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .18s;}
+#cv-footer .ft-leg a:hover{color:rgba(255,255,255,.65);}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rv.in{opacity:1!important;transform:translateY(0)!important;}
+.rv.d1{transition-delay:.08s;}.rv.d2{transition-delay:.16s;}.rv.d3{transition-delay:.24s;}.rv.d4{transition-delay:.32s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .cv-wrap{padding:0 24px!important;}
+  #cv-hero{padding:130px 24px 60px!important;}
+  .cv-light,.cv-dark,.cv-value-l,.cv-value-d{padding:60px 0!important;}
+  #cv-overview .ov-intro{grid-template-columns:1fr!important;gap:32px!important;}
+  #cv-overview .ov-cards{grid-template-columns:1fr 1fr 1fr!important;}
+  .cv-val{grid-template-columns:1fr!important;gap:36px!important;}
+  .cv-val.flip{direction:ltr;}
+  #cv-practice .pr-head,#cv-practice .pr-row{grid-template-columns:140px 1fr 1fr!important;}
+  #cv-cta{padding:60px 24px!important;}
+  #cv-footer .ft-top{grid-template-columns:1fr 1fr!important;gap:36px!important;padding:48px 24px 32px!important;}
+  #cv-footer .ft-brand{grid-column:span 2;}
+  #cv-footer .ft-bot{padding:20px 24px!important;flex-direction:column!important;align-items:flex-start!important;}
+}
+@media(max-width:640px){
+  #cv-overview .ov-cards{grid-template-columns:1fr 1fr!important;}
+  #cv-practice .pr-head,#cv-practice .pr-row{grid-template-columns:1fr!important;}
+  #cv-practice .pr-head-cell:not(:first-child),#cv-practice .pr-cell:not(:first-child){display:none!important;}
+  #cv-footer .ft-top{grid-template-columns:1fr!important;}
+  #cv-footer .ft-brand{grid-column:span 1;}
+  #cv-hero .val-pills{gap:8px!important;}
+}
+</style>
+
+<div id="cv">
+
+<!-- ══ NAV ══ -->
+<nav id="cv-nav">
+  <div class="ni">
+    <a href="https://escher-innovations.com/home-4658" class="logo">
+      <span class="logo-n">Escher Innovations</span>
+      <span class="logo-t">Give · Gain · Grow</span>
+    </a>
+    <ul class="gm">
+      <li class="gi"><a href="https://escher-innovations.com/home-4658" class="gl">Home</a></li>
+      <li class="gi" data-drop="about">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">About<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/our-story" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div><span class="gsn">Our Story</span><span class="gsd">Who Escher is and why we exist</span></div></a></div>
+          <div><a href="https://escher-innovations.com/vision" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg></div><div><span class="gsn">Vision</span><span class="gsd">The future we are building</span></div></a></div>
+          <div><a href="https://escher-innovations.com/mission" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><span class="gsn">Mission</span><span class="gsd">What we do every day</span></div></a></div>
+          <div class="gdiv"></div>
+          <div><a href="https://escher-innovations.com/why-we-exist" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><span class="gsn">Why We Exist</span><span class="gsd">The problem we are solving</span></div></a></div>
+          <div><a href="https://escher-innovations.com/core-values" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><span class="gsn">Core Values</span><span class="gsd">How we operate</span></div></a></div>
+          <div><a href="https://escher-innovations.com/services" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><span class="gsn">What We Do</span><span class="gsd">Our services and approach</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/enterprise" class="gl">Portfolio</a></li>
+      <li class="gi" data-drop="strategy">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Strategy<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/core-technology" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div><div><span class="gsn">Core Technologies</span><span class="gsd">Membership and platform capabilities</span></div></a></div>
+          <div><a href="https://escher-innovations.com/services" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><span class="gsn">Services</span><span class="gsd">Strategic, financial and operational</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/technology-strategy" class="gl">Technology</a></li>
+      <li class="gi"><a href="https://escher-innovations.com/insight" class="gl">Insights</a></li>
+      <li class="gi" data-drop="team">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Team<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/team-5979" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><span class="gsn">About Us</span><span class="gsd">Our leadership team and story</span></div></a></div>
+          <div><a href="https://escher-innovations.com/governance" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><span class="gsn">Governance</span><span class="gsd">Escher Touche Group structure</span></div></a></div>
+        </div>
+      </li>
+    </ul>
+    <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="gcta" target="_blank">Request Briefing<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="gb" id="cv-burger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="cv-drawer" id="cv-drawer">
+  <div class="cv-ms"><a href="https://escher-innovations.com/home-4658" class="cv-mt" style="text-decoration:none">Home</a></div>
+  <div class="cv-ms" data-mob="about">
+    <button class="cv-mt">About<svg class="cv-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="cv-mch-wrap">
+      <a href="https://escher-innovations.com/our-story" class="cv-mc">Our Story</a>
+      <a href="https://escher-innovations.com/vision" class="cv-mc">Vision</a>
+      <a href="https://escher-innovations.com/mission" class="cv-mc">Mission</a>
+      <a href="https://escher-innovations.com/why-we-exist" class="cv-mc">Why We Exist</a>
+      <a href="https://escher-innovations.com/core-values" class="cv-mc">Core Values</a>
+      <a href="https://escher-innovations.com/services" class="cv-mc">What We Do</a>
+    </div>
+  </div>
+  <div class="cv-ms"><a href="https://escher-innovations.com/enterprise" class="cv-mt" style="text-decoration:none">Portfolio</a></div>
+  <div class="cv-ms" data-mob="strategy">
+    <button class="cv-mt">Strategy<svg class="cv-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="cv-mch-wrap">
+      <a href="https://escher-innovations.com/core-technology" class="cv-mc">Core Technologies</a>
+      <a href="https://escher-innovations.com/services" class="cv-mc">Services</a>
+    </div>
+  </div>
+  <div class="cv-ms"><a href="https://escher-innovations.com/technology-strategy" class="cv-mt" style="text-decoration:none">Technology</a></div>
+  <div class="cv-ms"><a href="https://escher-innovations.com/insight" class="cv-mt" style="text-decoration:none">Insights</a></div>
+  <div class="cv-ms" data-mob="team">
+    <button class="cv-mt">Team<svg class="cv-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="cv-mch-wrap">
+      <a href="https://escher-innovations.com/team-5979" class="cv-mc">About Us</a>
+      <a href="https://escher-innovations.com/governance" class="cv-mc">Governance</a>
+    </div>
+  </div>
+  <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="cv-mcta" target="_blank">Request Briefing</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="cv-hero">
+  <div class="ey"><span class="ed"></span> About Escher &nbsp;·&nbsp; Core Values <span class="ed"></span></div>
+  <h1>The principles that govern<br><em>how we operate.</em></h1>
+  <p class="hs">These are not aspirational statements. They are the operating principles by which every decision, every hire, every partnership, and every engagement at Escher Innovations is evaluated.</p>
+  <div class="val-pills rv">
+    <span class="vp"><span class="vp-dot"></span>Character Before Capability</span>
+    <span class="vp"><span class="vp-dot"></span>Relentless Growth</span>
+    <span class="vp"><span class="vp-dot"></span>Ambition With Discipline</span>
+    <span class="vp"><span class="vp-dot"></span>Radical Collaboration</span>
+    <span class="vp"><span class="vp-dot"></span>Long-Term Thinking</span>
+  </div>
+</section>
+
+<!-- ══ OVERVIEW (light) ══ -->
+<section id="cv-overview" class="cv-light">
+  <div class="cv-wrap">
+    <div class="ov-intro">
+      <div class="rv">
+        <div class="cv-brow cv-brow-l"><span class="cv-bdot"></span>THE FIVE VALUES</div>
+        <h2 class="cv-h2 cv-h2-l">Not rules. Not guidelines.<br><em>Non-negotiable operating principles.</em></h2>
+        <p class="cv-body cv-body-l" style="margin-top:16px!important">Most organizations list values on their website and forget them in their operations. At Escher Innovations, these five principles govern hiring decisions, client selection, deal structure, internal culture, and every strategic choice the firm makes. They are not aspirational — they are foundational.</p>
+      </div>
+      <p class="cv-body cv-body-l rv d1" style="align-self:start;padding-top:40px!important">"We believe that character, growth, discipline, collaboration, and long-term thinking are not soft attributes — they are the structural properties of organizations that endure. These values are the reason we turn down engagements, decline partnerships, and hold ourselves to standards that make working with us difficult to fake."<br><br><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,18,32,.38);">Marcos Villa — Founder &amp; CEO</span></p>
+    </div>
+    <div class="ov-cards">
+      <div class="ovc rv d1">
+        <div class="ovc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="ovc-n">Value 01</div>
+        <h3>Character Before Capability</h3>
+      </div>
+      <div class="ovc rv d2">
+        <div class="ovc-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <div class="ovc-n">Value 02</div>
+        <h3>Relentless Growth</h3>
+      </div>
+      <div class="ovc rv d3">
+        <div class="ovc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <div class="ovc-n">Value 03</div>
+        <h3>Ambition With Discipline</h3>
+      </div>
+      <div class="ovc rv d1">
+        <div class="ovc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="ovc-n">Value 04</div>
+        <h3>Radical Collaboration</h3>
+      </div>
+      <div class="ovc rv d2">
+        <div class="ovc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="ovc-n">Value 05</div>
+        <h3>Long-Term Thinking</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUE 01 — Character Before Capability (light) ══ -->
+<section class="cv-value-l">
+  <div class="cv-wrap">
+    <div class="cv-val rv">
+      <div>
+        <div class="cv-val-num">01</div>
+        <div class="cv-val-tag">Value One</div>
+        <div class="cv-val-title">Character Before Capability</div>
+        <p class="cv-val-body">Talent and intelligence matter. Technical skill matters. But character — the willingness to act with integrity when it costs something — is non-negotiable at Escher Innovations. We work with people of humility, honesty, and accountability, and we hold ourselves to the same standard without exception.</p>
+        <p class="cv-val-body">We have turned down engagements with capable clients because of character concerns. We have declined partnerships with technically excellent professionals because of misaligned values. This is not idealism — it is strategy. Trust is the foundation of every high-stakes business relationship, and trust is built on character, not credential.</p>
+        <ul class="cv-val-list">
+          <li>We evaluate every hire, client, and partner on character before capability</li>
+          <li>We operate with transparency even when it costs us commercially</li>
+          <li>We hold ourselves accountable to the same standards we require of others</li>
+          <li>We do not rationalize ethical compromises for short-term advantage</li>
+        </ul>
+      </div>
+      <div class="cv-val-panel rv d2">
+        <div class="cv-val-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="cv-val-panel-label">In Practice</div>
+        <p class="cv-val-panel-q">"The most expensive mistake an organization makes is hiring talented people with poor character. Skills can be developed. Character does not change under pressure — it reveals itself."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUE 02 — Relentless Growth (dark) ══ -->
+<section class="cv-value-d">
+  <div class="cv-wrap">
+    <div class="cv-val flip rv">
+      <div>
+        <div class="cv-val-num cv-val-num-d">02</div>
+        <div class="cv-val-tag cv-val-tag-d">Value Two</div>
+        <div class="cv-val-title cv-val-title-d">Relentless Growth</div>
+        <p class="cv-val-body cv-val-body-d">We believe individuals and organizations should always be learning, evolving, and improving. The world changes rapidly, and the companies that thrive are those that continuously adapt — not just their products and services, but their people, their thinking, and their systems.</p>
+        <p class="cv-val-body cv-val-body-d">At Escher, we surround ourselves with people committed to personal development, intellectual curiosity, and the willingness to be wrong. We invest in the growth of our partners, our team, and our own understanding — because growth is not optional. It is the foundation of innovation.</p>
+        <ul class="cv-val-list cv-val-list-d">
+          <li>We invest in continuous learning at every level of the organization</li>
+          <li>We create environments where questions are valued over certainty</li>
+          <li>We hold post-mortems on what did not work as rigorously as we celebrate what did</li>
+          <li>We require intellectual humility — the willingness to update a position when evidence demands it</li>
+        </ul>
+      </div>
+      <div class="cv-val-panel-d rv d2">
+        <div class="cv-val-icon cv-val-icon-d"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <div class="cv-val-panel-label cv-val-panel-label-d">In Practice</div>
+        <p class="cv-val-panel-q cv-val-panel-q-d">"The organizations that stagnate are not those that stopped moving. They are those that stopped questioning. Relentless growth is a discipline — the daily commitment to being more capable tomorrow than you were today."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUE 03 — Ambition With Discipline (light) ══ -->
+<section class="cv-value-l">
+  <div class="cv-wrap">
+    <div class="cv-val rv">
+      <div>
+        <div class="cv-val-num">03</div>
+        <div class="cv-val-tag">Value Three</div>
+        <div class="cv-val-title">Ambition With Discipline</div>
+        <p class="cv-val-body">Ambition without structure leads to chaos. Structure without ambition leads to stagnation. The most dangerous organizations are those that choose between vision and execution — treating them as competing forces rather than complementary requirements.</p>
+        <p class="cv-val-body">At Escher, we pursue bold ideas with rigorous execution. We set audacious goals and build the governance, systems, and accountability structures to achieve them without losing control in the process. This is not a tension to manage — it is a standard to uphold simultaneously.</p>
+        <ul class="cv-val-list">
+          <li>We set clear, measurable objectives and hold ourselves accountable to them</li>
+          <li>We build governance infrastructure before scaling, not after problems emerge</li>
+          <li>We pursue the bold path while maintaining the discipline to execute it correctly</li>
+          <li>We do not confuse activity with progress, or urgency with importance</li>
+        </ul>
+      </div>
+      <div class="cv-val-panel rv d2">
+        <div class="cv-val-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <div class="cv-val-panel-label">In Practice</div>
+        <p class="cv-val-panel-q">"We have seen what ambition without discipline produces — fast growth with fragile foundations, rapid scaling with zero governance, and businesses that collapse precisely because they succeeded too quickly to build the infrastructure to sustain it."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUE 04 — Radical Collaboration (dark) ══ -->
+<section class="cv-value-d">
+  <div class="cv-wrap">
+    <div class="cv-val flip rv">
+      <div>
+        <div class="cv-val-num cv-val-num-d">04</div>
+        <div class="cv-val-tag cv-val-tag-d">Value Four</div>
+        <div class="cv-val-title cv-val-title-d">Radical Collaboration</div>
+        <p class="cv-val-body cv-val-body-d">The best solutions emerge through open dialogue, intellectual honesty, and shared ownership of outcomes. We believe in co-creating solutions with our clients rather than prescribing them from the outside. We challenge ideas respectfully, encourage diverse perspectives, and prioritize truth over ego — our own included.</p>
+        <p class="cv-val-body cv-val-body-d">Radical collaboration means that we do not succeed by making clients dependent on us. We succeed when we build organizations that grow stronger on their own. That requires working alongside people — not above them — and treating every engagement as a genuine partnership with shared accountability for results.</p>
+        <ul class="cv-val-list cv-val-list-d">
+          <li>We co-create strategy and solutions rather than delivering from the outside</li>
+          <li>We challenge ideas, including our own, in service of the best outcome</li>
+          <li>We share credit, responsibility, and accountability with our partners</li>
+          <li>We build organizational capacity, not organizational dependency</li>
+        </ul>
+      </div>
+      <div class="cv-val-panel-d rv d2">
+        <div class="cv-val-icon cv-val-icon-d"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="cv-val-panel-label cv-val-panel-label-d">In Practice</div>
+        <p class="cv-val-panel-q cv-val-panel-q-d">"When the best idea wins, regardless of who produced it, everyone succeeds. Ego is not a strategy. Collaboration is not a courtesy — it is the mechanism through which the best outcomes are consistently produced."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUE 05 — Long-Term Thinking (light) ══ -->
+<section class="cv-value-l">
+  <div class="cv-wrap">
+    <div class="cv-val rv">
+      <div>
+        <div class="cv-val-num">05</div>
+        <div class="cv-val-tag">Value Five</div>
+        <div class="cv-val-title">Long-Term Thinking</div>
+        <p class="cv-val-body">We are not interested in quick wins that compromise the future. Our focus is helping organizations build sustainable systems, resilient companies, and enduring institutions. Every decision we make — in our own firm and in every engagement we take — should strengthen the foundation for long-term prosperity, not trade it away for short-term gain.</p>
+        <p class="cv-val-body">Long-term thinking means we decline engagements that would produce short-term revenue at the cost of our integrity. It means we structure deals to protect the long-term options of our partners, not just optimize the immediate transaction. It means we measure success in years and decades, not quarters.</p>
+        <ul class="cv-val-list">
+          <li>We structure every deal with long-term optionality as the primary constraint</li>
+          <li>We decline short-term opportunities that compromise long-term positioning</li>
+          <li>We measure the quality of our work in the durability of its outcomes</li>
+          <li>We build relationships, not transactions — and invest accordingly</li>
+        </ul>
+      </div>
+      <div class="cv-val-panel rv d2">
+        <div class="cv-val-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="cv-val-panel-label">In Practice</div>
+        <p class="cv-val-panel-q">"The companies that endure are those that made difficult decisions to protect their future when it was easy to compromise it. Long-term thinking is not patience — it is the discipline to choose compounding value over immediate return, consistently, even when the short-term pressure is real."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUES IN PRACTICE (dark, comparison table) ══ -->
+<section id="cv-practice" class="cv-dark">
+  <div class="cv-wrap">
+    <div class="rv">
+      <div class="cv-brow cv-brow-d"><span class="cv-bdot"></span>VALUES IN ACTION</div>
+      <h2 class="cv-h2 cv-h2-d">What these values look like<br><em>when they are actually applied.</em></h2>
+      <p class="cv-body cv-body-d" style="max-width:580px;margin-top:14px!important">Values are only real if they produce observable behavior. This is how each value manifests in the daily decisions we make at Escher Innovations.</p>
+    </div>
+    <div class="pr-table">
+      <div class="pr-head">
+        <div class="pr-head-cell">Value</div>
+        <div class="pr-head-cell">What it demands of us</div>
+        <div class="pr-head-cell">What it protects for our partners</div>
+      </div>
+      <div class="pr-row">
+        <div class="pr-cell-val"><span class="pr-cell-dot"></span>Character</div>
+        <div class="pr-cell">Declining profitable work when the partner's character does not meet our standard. Being transparent about what we cannot deliver, even when it costs us the engagement.</div>
+        <div class="pr-cell">A partner relationship built on honesty rather than commercial convenience. Advice that reflects reality, not what is easiest to hear.</div>
+      </div>
+      <div class="pr-row">
+        <div class="pr-cell-val"><span class="pr-cell-dot"></span>Growth</div>
+        <div class="pr-cell">Updating our approach when evidence shows it is not working. Investing in our own learning at the same standard we expect from our clients and team.</div>
+        <div class="pr-cell">A firm that does not apply yesterday's solutions to today's problems. Strategic thinking that evolves as markets and conditions change.</div>
+      </div>
+      <div class="pr-row">
+        <div class="pr-cell-val"><span class="pr-cell-dot"></span>Discipline</div>
+        <div class="pr-cell">Building governance infrastructure before recommending scale. Holding the line on quality and process even when the client's urgency creates pressure to cut corners.</div>
+        <div class="pr-cell">A business built on foundations that hold under stress. Growth that does not create the structural fragility that undoes it later.</div>
+      </div>
+      <div class="pr-row">
+        <div class="pr-cell-val"><span class="pr-cell-dot"></span>Collaboration</div>
+        <div class="pr-cell">Working alongside client teams rather than above them. Crediting the people who produce results and sharing accountability for what does not work.</div>
+        <div class="pr-cell">An organization that grows stronger through the engagement, not more dependent on it. Capability that stays when the engagement ends.</div>
+      </div>
+      <div class="pr-row">
+        <div class="pr-cell-val"><span class="pr-cell-dot"></span>Long-Term</div>
+        <div class="pr-cell">Structuring deals that protect the partner's future options, even when the immediate transaction could be structured to benefit Escher more. Measuring our success in the durability of outcomes.</div>
+        <div class="pr-cell">Capital structures and strategic decisions that do not foreclose future possibilities. An equity partner whose interest in your long-term success is genuine and structural.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section id="cv-cta">
+  <div class="ci rv">
+    <div class="cv-brow cv-brow-d" style="justify-content:center;margin-bottom:22px!important"><span class="cv-bdot"></span>WORK WITH US</div>
+    <h2>If these values reflect how<br>you want to <em>build and operate,</em></h2>
+    <p>we should be in conversation. We partner with founders, investors, and organizations who share these principles — because the best outcomes come from people who operate by the same standard.</p>
+    <div class="cbtns">
+      <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="cv-btn-gold" target="_blank">Book a Consultation — $500</a>
+      <a href="https://escher-innovations.com/our-story" class="cv-btn-dk">Read Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="cv-footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-ln">Escher Innovations</div>
+      <div class="ft-lt">Give · Gain · Grow</div>
+      <p class="ft-tl">A global capital and advisory firm dedicated to empowering founders, organizations, and investors to build extraordinary enterprises.</p>
+      <div class="ft-soc">
+        <a href="https://facebook.com" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://instagram.com" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://youtube.com" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#06070d"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Company</h4><ul>
+      <li><a href="https://escher-innovations.com/our-story">Our Story</a></li>
+      <li><a href="https://escher-innovations.com/vision">Vision</a></li>
+      <li><a href="https://escher-innovations.com/mission">Mission</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Portfolio</a></li>
+      <li><a href="https://escher-innovations.com/contact">Contact</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Services</h4><ul>
+      <li><a href="https://escher-innovations.com/services">Capital Readiness</a></li>
+      <li><a href="https://escher-innovations.com/services">Deal Structuring</a></li>
+      <li><a href="https://escher-innovations.com/services">Equity Partnership</a></li>
+      <li><a href="https://escher-innovations.com/products">Strategy</a></li>
+      <li><a href="https://escher-innovations.com/technology-strategy">Technology</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Industries</h4><ul>
+      <li><a href="https://escher-innovations.com/enterprise">Technology</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Healthcare</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Real Estate</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Finance</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">All Industries</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Legal</h4><ul>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Disclaimer</a></li>
+      <li><a href="#">Code of Conduct</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2026 Escher Innovations. All rights reserved. Marcos Villa.</span>
+    <div class="ft-leg"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Disclaimer</a></div>
+  </div>
+</footer>
+
+</div><!-- /cv -->
+
+<script>
+/* ── GHL NUKE ── */
+(function(){
+  function nuke(){
+    var el=document.getElementById('cv');if(!el)return;
+    var cur=el.parentElement;
+    while(cur&&cur!==document.body){
+      cur.style.setProperty('padding-top','0','important');
+      cur.style.setProperty('padding-bottom','0','important');
+      cur.style.setProperty('margin-top','0','important');
+      cur.style.setProperty('margin-bottom','0','important');
+      cur.style.setProperty('min-height','unset','important');
+      cur=cur.parentElement;
+    }
+    ['[data-page-element="Section/V1"]','[data-page-element="Section/V2"]','[data-page-element="Row/V1"]','.page-section','.section-box'].forEach(function(s){
+      document.querySelectorAll(s).forEach(function(n){
+        if(n.contains(el)){
+          n.style.setProperty('padding-top','0','important');
+          n.style.setProperty('padding-bottom','0','important');
+          n.style.setProperty('margin-top','0','important');
+          n.style.setProperty('margin-bottom','0','important');
+          n.style.setProperty('min-height','unset','important');
+        }
+      });
+    });
+  }
+  nuke();
+  window.addEventListener('load',function(){setTimeout(nuke,100);setTimeout(nuke,500);});
+})();
+
+/* ── NAV ── */
+(function(){
+  var nav=document.getElementById('cv-nav');
+  var burger=document.getElementById('cv-burger');
+  var drawer=document.getElementById('cv-drawer');
+  if(!nav)return;
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  var items=Array.from(nav.querySelectorAll('.gi[data-drop]'));
+  items.forEach(function(item){
+    var t=item.querySelector('.gtr');if(!t)return;
+    t.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=item.classList.contains('open');
+      items.forEach(function(i){i.classList.remove('open');var tr=i.querySelector('.gtr');if(tr)tr.setAttribute('aria-expanded','false');});
+      if(!isOpen){item.classList.add('open');t.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.addEventListener('click',function(){items.forEach(function(i){i.classList.remove('open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){items.forEach(function(i){i.classList.remove('open');});nav.classList.remove('mob-open');}});
+  if(burger&&drawer){
+    burger.addEventListener('click',function(e){e.stopPropagation();nav.classList.toggle('mob-open');});
+    Array.from(drawer.querySelectorAll('.cv-ms[data-mob]')).forEach(function(sec){
+      var btn=sec.querySelector('.cv-mt');if(!btn)return;
+      btn.addEventListener('click',function(){
+        var wasOpen=sec.classList.contains('open');
+        Array.from(drawer.querySelectorAll('.cv-ms')).forEach(function(s){s.classList.remove('open');});
+        if(!wasOpen)sec.classList.add('open');
+      });
+    });
+    drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('mob-open');});});
+  }
+})();
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+  },{threshold:0.06});
+  document.querySelectorAll('#cv .rv').forEach(function(el){obs.observe(el);});
+})();
+</script>
