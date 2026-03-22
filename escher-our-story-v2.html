@@ -1,0 +1,835 @@
+<!-- ============================================================
+  ESCHER INNOVATIONS — OUR STORY PAGE
+  URL: /our-story or /about
+  Same dark/light alternating theme as homepage.
+  Single GHL Custom HTML block. Set section padding to 0.
+  
+  Sections:
+  Nav → Hero → Why We Exist → Founder Story → Mission/Vision →
+  Values → EPM Framework → Governance → Team → CTA → Footer
+============================================================ -->
+
+<!-- GHL whitespace killer -->
+<style>
+[data-page-element="Section/V1"],[data-page-element="Section/V2"],
+[data-page-element="Row/V1"],[data-page-element="Row/V2"],
+[data-page-element="SubSection/V1"],[data-page-element="SubSection/V2"],
+.page-section,.section-box,.funnelish-section,.container-shadow-wrap,.section-content-box{
+  padding-top:0!important;padding-bottom:0!important;
+  margin-top:0!important;margin-bottom:0!important;min-height:unset!important;
+}
+[data-page-element="Section/V1"]>.inner-content,
+[data-page-element="Section/V2"]>.inner-content,
+[data-page-element="Row/V1"]>.inner-content{
+  padding-top:0!important;padding-bottom:0!important;
+}
+</style>
+
+<style>
+/* ════════════════════════════════════════
+   TOKENS & RESET
+════════════════════════════════════════ */
+#os-pg{
+  --black:   #06070d;
+  --dark:    #0b0d14;
+  --dark2:   #10121a;
+  --white:   #ffffff;
+  --off:     #f6f7f4;
+  --ink:     #0b1220;
+  --muted:   rgba(11,18,32,.72);
+  --muted2:  rgba(11,18,32,.52);
+  --border:  rgba(11,18,32,.11);
+  --border-d:rgba(255,255,255,.08);
+  --gold:    #e7ff6e;
+  --ease:    cubic-bezier(.16,1,.3,1);
+  font-family: -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+#os-pg *,#os-pg *::before,#os-pg *::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ════════════════════════════════════════
+   DROPDOWN NAV
+════════════════════════════════════════ */
+#os-nav *,#os-nav *::before,#os-nav *::after{box-sizing:border-box;margin:0;padding:0}
+#os-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;height:72px!important;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,box-shadow .3s;}
+#os-nav.scrolled{background:rgba(6,7,13,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06);}
+#os-nav .ni{max-width:1320px;margin:0 auto;height:72px;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 40px!important;gap:8px;}
+#os-nav .logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.15;flex-shrink:0;}
+#os-nav .logo-n{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em;}
+#os-nav .logo-t{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;}
+#os-nav .gm{display:flex;align-items:center;gap:0;list-style:none;flex:1;justify-content:center;}
+#os-nav .gi{position:relative;}
+#os-nav .gl,.gtr{display:inline-flex;align-items:center;gap:4px;padding:8px 13px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;border-radius:999px;border:none;background:none;cursor:pointer;white-space:nowrap;transition:color .18s,background .18s;font-family:inherit;letter-spacing:.01em;line-height:1;}
+#os-nav .gl:hover,.gtr:hover,#os-nav .gi.open .gtr{color:#fff;background:rgba(255,255,255,.09);}
+#os-nav .gl.active{color:#fff;background:rgba(255,255,255,.1);}
+#os-nav .gc{width:12px;height:12px;opacity:.55;transition:transform .2s,opacity .2s;flex-shrink:0;}
+#os-nav .gi.open .gc{transform:rotate(180deg);opacity:1;}
+#os-nav .gd{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:rgba(10,11,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;}
+#os-nav .gi.open .gd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all;}
+#os-nav .gd::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:6px;background:rgba(255,255,255,.09);clip-path:polygon(50% 0%,0% 100%,100% 100%);}
+#os-nav .gsl{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s;}
+#os-nav .gsl:hover{background:rgba(255,255,255,.07);}
+#os-nav .gsi{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;margin-top:1px;}
+#os-nav .gsn{font-size:13px;font-weight:600;color:rgba(255,255,255,.88);display:block;margin-bottom:2px;letter-spacing:-.01em;}
+#os-nav .gsd{font-size:11px;color:rgba(255,255,255,.38);line-height:1.4;display:block;}
+#os-nav .gdiv{height:1px;background:rgba(255,255,255,.07);margin:6px 0;}
+#os-nav .gcta{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;background:#e7ff6e;color:#06070d;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .18s,transform .18s;}
+#os-nav .gcta:hover{background:#f2ff8c;transform:translateY(-1px);}
+#os-nav .gb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+#os-nav .gb span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s;}
+#os-nav.mob-open .gb span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#os-nav.mob-open .gb span:nth-child(2){opacity:0;}
+#os-nav.mob-open .gb span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.os-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,7,13,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);z-index:999;padding:0 0 24px;max-height:calc(100vh - 72px);overflow-y:auto;}
+#os-nav.mob-open .os-drawer{display:block;}
+.os-ms{border-bottom:1px solid rgba(255,255,255,.06);}
+.os-mt{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+.os-mch{width:14px;height:14px;opacity:.4;transition:transform .2s;}
+.os-ms.open .os-mch{transform:rotate(180deg);opacity:.8;}
+.os-mch-wrap{display:none;padding:0 0 8px;}
+.os-ms.open .os-mch-wrap{display:block;}
+.os-mc{display:block;padding:10px 28px 10px 40px;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.os-mc:hover{color:#fff;}
+.os-mcta{margin:20px 28px 0;display:block;text-align:center;padding:13px;background:#e7ff6e;color:#06070d;font-weight:700;font-size:14px;border-radius:999px;text-decoration:none;}
+@media(max-width:1024px){
+  #os-nav .gm{display:none;}
+  #os-nav .gcta{display:none;}
+  #os-nav .gb{display:flex;}
+  #os-nav .ni{padding:0 20px;}
+}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+#os-hero{
+  background: var(--black) !important;
+  padding: 152px 40px 96px !important;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+#os-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(231,255,110,.05) 0%,transparent 70%);
+  pointer-events:none;
+}
+#os-hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;
+}
+#os-hero .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.48);margin-bottom:22px;position:relative;z-index:1;
+}
+#os-hero .edot{width:5px;height:5px;border-radius:50%;background:#e7ff6e;box-shadow:0 0 8px rgba(231,255,110,.8);}
+#os-hero h1{
+  font-size:clamp(40px,5.8vw,78px);font-weight:800;line-height:.97;
+  letter-spacing:-.03em;color:#fff;margin-bottom:22px;
+  position:relative;z-index:1;
+}
+#os-hero h1 em{font-style:italic;color:#e7ff6e;}
+#os-hero .hero-sub{
+  font-size:clamp(16px,2vw,19px);font-weight:300;line-height:1.78;
+  color:rgba(255,255,255,.6);max-width:620px;margin:0 auto 52px;
+  position:relative;z-index:1;
+}
+#os-hero .hero-pills{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  position:relative;z-index:1;
+}
+#os-hero .hpill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);white-space:nowrap;
+}
+#os-hero .hpill i{width:6px;height:6px;border-radius:50%;background:#e7ff6e;box-shadow:0 0 6px rgba(231,255,110,.7);}
+
+/* ════════════════════════════════════════
+   SHARED SECTION STYLES
+════════════════════════════════════════ */
+.os-light{background:linear-gradient(180deg,#f6f7f4,#fff)!important;border-top:1px solid rgba(11,18,32,.10);border-bottom:1px solid rgba(11,18,32,.10);padding:88px 0!important;}
+.os-dark{background:linear-gradient(180deg,rgba(11,18,32,.96),rgba(11,18,32,.92))!important;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:88px 0!important;}
+.os-wrap{max-width:1180px!important;margin:0 auto!important;padding:0 40px!important;}
+.os-2col{display:grid!important;grid-template-columns:1fr 1fr!important;gap:72px!important;align-items:center!important;}
+.os-2col-off{display:grid!important;grid-template-columns:.9fr 1.1fr!important;gap:64px!important;align-items:start!important;}
+.os-brow{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px;}
+.os-bdot{width:8px;height:8px;border-radius:99px;background:#e7ff6e;box-shadow:0 0 0 3px rgba(231,255,110,.25);flex-shrink:0;}
+.os-brow-l{color:rgba(11,18,32,.6);}
+.os-brow-d{color:rgba(255,255,255,.55);}
+.os-h2{font-size:clamp(28px,3.6vw,50px);font-weight:800;line-height:1.0;letter-spacing:-.025em;margin-bottom:18px;}
+.os-h2-l{color:var(--ink);}
+.os-h2-d{color:#fff;}
+.os-h2 em{font-style:italic;}
+.os-h2-l em{color:rgba(11,18,32,.45);border-bottom:3px solid #e7ff6e;padding-bottom:2px;}
+.os-h2-d em{color:#e7ff6e;}
+.os-body{font-size:15px;font-weight:300;line-height:1.82;margin-bottom:16px;}
+.os-body-l{color:var(--muted);}
+.os-body-d{color:rgba(255,255,255,.65);}
+
+/* Card base */
+.os-card{background:#fff;border:1px solid rgba(11,18,32,.11);border-radius:18px;padding:28px;box-shadow:0 18px 45px rgba(11,18,32,.06);position:relative;}
+.os-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));border-radius:18px 18px 0 0;}
+.os-card-d{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px;position:relative;}
+.os-card-d::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));border-radius:18px 18px 0 0;}
+
+/* Buttons */
+.os-btn-gold{display:inline-flex;align-items:center;gap:7px;padding:13px 26px;border-radius:999px;background:#e7ff6e;color:#06070d;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:inherit;}
+.os-btn-gold:hover{background:#f2ff8c;transform:translateY(-2px);box-shadow:0 10px 28px rgba(231,255,110,.38);}
+.os-btn-dk{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:999px;background:var(--ink);color:#fff;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:inherit;}
+.os-btn-dk:hover{background:#1a1e2a;transform:translateY(-1px);}
+.os-btn-outline-d{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:999px;background:transparent;color:rgba(255,255,255,.7);font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .2s;font-family:inherit;}
+.os-btn-outline-d:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rv.in{opacity:1;transform:translateY(0);}
+.rv.d1{transition-delay:.08s;}.rv.d2{transition-delay:.16s;}.rv.d3{transition-delay:.24s;}.rv.d4{transition-delay:.32s;}.rv.d5{transition-delay:.40s;}
+
+/* ════════════════════════════════════════
+   SECTION: WHY WE EXIST (light, 2col)
+════════════════════════════════════════ */
+#os-why .os-card{padding:36px;}
+#os-why .quote-mark{font-size:72px;line-height:.7;color:#e7ff6e;font-weight:900;margin-bottom:16px;display:block;}
+#os-why .quote-text{font-size:18px;line-height:1.72;color:var(--ink);margin-bottom:18px;}
+#os-why .quote-attr{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);}
+#os-why .pillars{display:flex;flex-direction:column;gap:22px;margin-top:32px;}
+#os-why .pillar{display:flex;gap:16px;align-items:flex-start;}
+#os-why .pnum{width:36px;height:36px;border-radius:50%;background:rgba(231,255,110,.14);border:1px solid rgba(231,255,110,.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink);flex-shrink:0;}
+#os-why .pbody h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+#os-why .pbody p{font-size:13px;color:var(--muted);line-height:1.65;}
+
+/* ════════════════════════════════════════
+   SECTION: MISSION + VISION (dark, 2col)
+════════════════════════════════════════ */
+#os-mv .mv-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:20px!important;margin-top:48px!important;}
+#os-mv .mv-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;position:relative;overflow:hidden;}
+#os-mv .mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));}
+#os-mv .mv-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(231,255,110,.7);margin-bottom:14px;}
+#os-mv .mv-card h3{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:14px;line-height:1.15;}
+#os-mv .mv-card p{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.78;}
+#os-mv .mv-qif{
+  margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);
+  font-size:13px;font-style:italic;color:rgba(231,255,110,.65);line-height:1.6;
+}
+
+/* ════════════════════════════════════════
+   SECTION: FOUNDER STORY (light, 2col)
+════════════════════════════════════════ */
+#os-founder .founder-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:20px;filter:grayscale(10%) contrast(1.05);}
+#os-founder .founder-img-wrap{position:relative;}
+#os-founder .ftag{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(6,7,13,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;}
+#os-founder .ftag-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;}
+#os-founder .ftag-title{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#e7ff6e;}
+#os-founder .fstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0;}
+#os-founder .fs{background:#fff;border:1px solid rgba(11,18,32,.1);border-radius:14px;padding:16px 14px;box-shadow:0 8px 24px rgba(11,18,32,.05);}
+#os-founder .fs-n{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+#os-founder .fs-l{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin-top:5px;}
+
+/* ════════════════════════════════════════
+   SECTION: CORE VALUES (light, 5-col)
+════════════════════════════════════════ */
+#os-values .vgrid{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:1px!important;background:rgba(11,18,32,.1)!important;border:1px solid rgba(11,18,32,.1)!important;margin-top:48px!important;}
+#os-values .vc{background:#fff;padding:32px 22px;position:relative;transition:background .2s;}
+#os-values .vc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background .25s;}
+#os-values .vc:hover{background:var(--off);}
+#os-values .vc:hover::before{background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.15));}
+#os-values .vnum{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(11,18,32,.28);margin-bottom:14px;}
+#os-values .vicon{font-size:26px;margin-bottom:12px;display:block;}
+#os-values .vc h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em;}
+#os-values .vc p{font-size:13px;color:var(--muted);line-height:1.68;}
+
+/* ════════════════════════════════════════
+   SECTION: EPM FRAMEWORK (dark, 3-col)
+════════════════════════════════════════ */
+#os-epm .epm-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:18px!important;margin-top:48px!important;}
+#os-epm .ec{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:32px 28px;position:relative;}
+#os-epm .ec::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));border-radius:18px 18px 0 0;}
+#os-epm .en{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(231,255,110,.65);margin-bottom:14px;}
+#os-epm .ec h3{font-size:19px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.01em;}
+#os-epm .ec>p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:18px;}
+#os-epm .elist{list-style:none;display:flex;flex-direction:column;gap:8px;}
+#os-epm .elist li{font-size:13px;color:rgba(255,255,255,.62);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+#os-epm .elist li::before{content:'→';color:#e7ff6e;flex-shrink:0;font-size:12px;margin-top:1px;}
+#os-epm .epm-note{margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+#os-epm .ebadge{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;}
+#os-epm .ebadge i{width:6px;height:6px;border-radius:50%;background:#e7ff6e;display:inline-block;flex-shrink:0;}
+
+/* ════════════════════════════════════════
+   SECTION: TEAM (dark, 4-col grid)
+════════════════════════════════════════ */
+#os-team .tgrid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:1px!important;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.07)!important;margin-top:48px!important;}
+#os-team .tm{background:var(--dark);display:flex;flex-direction:column;transition:background .2s;position:relative;overflow:hidden;}
+#os-team .tm:hover{background:rgba(16,18,26,1);}
+#os-team .tm-img-wrap{position:relative;overflow:hidden;aspect-ratio:3/4;}
+#os-team .tm-img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s var(--ease);filter:grayscale(20%);}
+#os-team .tm:hover .tm-img{transform:scale(1.04);}
+#os-team .tm-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,20,.92) 0%,rgba(11,13,20,.2) 45%,transparent 100%);}
+#os-team .tm-body{padding:18px;flex:1;display:flex;flex-direction:column;}
+#os-team .tm-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:3px;letter-spacing:-.01em;}
+#os-team .tm-title{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e7ff6e;margin-bottom:8px;}
+#os-team .tm-bio{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.62;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+#os-team .tm-li{margin-top:12px;display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .18s;}
+#os-team .tm-li:hover{color:#e7ff6e;}
+
+/* ════════════════════════════════════════
+   CTA BAND
+════════════════════════════════════════ */
+#os-cta{background:var(--black)!important;padding:96px 40px!important;text-align:center;border-top:1px solid var(--border-d);position:relative;overflow:hidden;}
+#os-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(231,255,110,.06) 0%,transparent 70%);}
+#os-cta .inner{position:relative;z-index:1;max-width:600px;margin:0 auto;}
+#os-cta h2{font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.05;color:#fff;margin-bottom:16px;}
+#os-cta h2 em{color:#e7ff6e;font-style:italic;}
+#os-cta p{font-size:17px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:38px;}
+#os-cta .cbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+#os-footer{background:#06070d;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07);font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
+#os-footer .ft-top{max-width:1280px;margin:0 auto;padding:72px 40px 48px!important;display:grid!important;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr!important;gap:48px!important;}
+#os-footer .ft-logo-n{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.01em;margin-bottom:4px;}
+#os-footer .ft-logo-t{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;margin-bottom:18px;}
+#os-footer .ft-tagline{font-size:13px;line-height:1.75;color:rgba(255,255,255,.38);max-width:260px;margin-bottom:24px;}
+#os-footer .ft-social{display:flex;gap:10px;}
+#os-footer .ft-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;transition:border-color .18s,color .18s;}
+#os-footer .ft-social a:hover{border-color:#e7ff6e;color:#e7ff6e;}
+#os-footer .ft-col h4{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px;}
+#os-footer .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;}
+#os-footer .ft-col ul a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .18s;}
+#os-footer .ft-col ul a:hover{color:#fff;}
+#os-footer .ft-bottom{border-top:1px solid rgba(255,255,255,.07);max-width:1280px;margin:0 auto;padding:24px 40px!important;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+#os-footer .ft-copy{font-size:12px;color:rgba(255,255,255,.28);}
+#os-footer .ft-legal{display:flex;gap:20px;}
+#os-footer .ft-legal a{font-size:12px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .18s;}
+#os-footer .ft-legal a:hover{color:rgba(255,255,255,.65);}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:1024px){
+  .os-wrap{padding:0 24px!important;}
+  .os-2col,.os-2col-off{grid-template-columns:1fr;gap:40px;}
+  #os-mv .mv-grid{grid-template-columns:1fr;}
+  #os-values .vgrid{grid-template-columns:1fr 1fr 1fr;}
+  #os-epm .epm-grid{grid-template-columns:1fr;}
+  #os-team .tgrid{grid-template-columns:1fr 1fr;}
+  #os-footer .ft-top{grid-template-columns:1fr 1fr;gap:36px;padding:48px 24px 32px;}
+  #os-footer .ft-brand{grid-column:span 2;}
+  #os-footer .ft-bottom{padding:20px 24px;flex-direction:column;align-items:flex-start;}
+  #os-hero{padding:130px 24px 60px!important;}
+  .os-light,.os-dark{padding:60px 0!important;}
+  #os-cta{padding:60px 24px;}
+}
+@media(max-width:640px){
+  #os-values .vgrid{grid-template-columns:1fr 1fr;}
+  #os-team .tgrid{grid-template-columns:1fr;}
+  #os-footer .ft-top{grid-template-columns:1fr;}
+  #os-footer .ft-brand{grid-column:span 1;}
+  #os-founder .fstats{grid-template-columns:1fr 1fr 1fr;}
+}
+</style>
+
+<div id="os-pg">
+
+<!-- ══ NAV ══════════════════════════════════════════════ -->
+<nav id="os-nav">
+  <div class="ni">
+    <a href="https://escher-innovations.com/home-4658" class="logo">
+      <span class="logo-n">Escher Innovations</span>
+      <span class="logo-t">Give · Gain · Grow</span>
+    </a>
+    <ul class="gm">
+      <li class="gi"><a href="https://escher-innovations.com/home-4658" class="gl">Home</a></li>
+      <li class="gi" data-drop="about">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">About<svg class="gc" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/our-story" class="gsl active-link"><div class="gsi">📖</div><div><span class="gsn">Our Story</span><span class="gsd">Who Escher is and why we exist</span></div></a></div>
+          <div><a href="#os-mv" class="gsl"><div class="gsi">🔭</div><div><span class="gsn">Vision</span><span class="gsd">The future we're building</span></div></a></div>
+          <div><a href="#os-mv" class="gsl"><div class="gsi">🎯</div><div><span class="gsn">Mission</span><span class="gsd">What we do every day</span></div></a></div>
+          <div class="gdiv"></div>
+          <div><a href="#os-why" class="gsl"><div class="gsi">💡</div><div><span class="gsn">Why We Exist</span><span class="gsd">The problem we're solving</span></div></a></div>
+          <div><a href="#os-values" class="gsl"><div class="gsi">⬡</div><div><span class="gsn">Core Values</span><span class="gsd">How we operate</span></div></a></div>
+          <div><a href="#os-epm" class="gsl"><div class="gsi">🏗️</div><div><span class="gsn">What We Do</span><span class="gsd">Our services and approach</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/enterprise" class="gl">Portfolio</a></li>
+      <li class="gi" data-drop="strategy">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Strategy<svg class="gc" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/core-technology" class="gsl"><div class="gsi">⚙️</div><div><span class="gsn">Core Technologies</span><span class="gsd">Membership &amp; platform capabilities</span></div></a></div>
+          <div><a href="https://escher-innovations.com/services" class="gsl"><div class="gsi">📋</div><div><span class="gsn">Services</span><span class="gsd">Strategic, financial &amp; operational</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/technology-strategy" class="gl">Technology</a></li>
+      <li class="gi"><a href="https://escher-innovations.com/insight" class="gl">Insights</a></li>
+      <li class="gi" data-drop="team">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Team<svg class="gc" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/team-5979" class="gsl"><div class="gsi">👥</div><div><span class="gsn">About Us</span><span class="gsd">Our leadership team &amp; story</span></div></a></div>
+          <div><a href="https://escher-innovations.com/governance" class="gsl"><div class="gsi">🏛️</div><div><span class="gsn">Governance</span><span class="gsd">Escher Touche Group structure</span></div></a></div>
+        </div>
+      </li>
+    </ul>
+    <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="gcta" target="_blank">Request Briefing <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <button class="gb" id="os-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="os-drawer" id="os-drawer">
+  <div class="os-ms"><a href="https://escher-innovations.com/home-4658" class="os-mt" style="text-decoration:none">Home</a></div>
+  <div class="os-ms" data-mob="about">
+    <button class="os-mt">About<svg class="os-mch" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="os-mch-wrap">
+      <a href="https://escher-innovations.com/our-story" class="os-mc">Our Story</a>
+      <a href="#os-mv" class="os-mc">Vision</a>
+      <a href="#os-mv" class="os-mc">Mission</a>
+      <a href="#os-why" class="os-mc">Why We Exist</a>
+      <a href="#os-values" class="os-mc">Core Values</a>
+      <a href="#os-epm" class="os-mc">What We Do</a>
+    </div>
+  </div>
+  <div class="os-ms"><a href="https://escher-innovations.com/enterprise" class="os-mt" style="text-decoration:none">Portfolio</a></div>
+  <div class="os-ms" data-mob="strategy">
+    <button class="os-mt">Strategy<svg class="os-mch" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="os-mch-wrap">
+      <a href="https://escher-innovations.com/core-technology" class="os-mc">Core Technologies</a>
+      <a href="https://escher-innovations.com/services" class="os-mc">Services</a>
+    </div>
+  </div>
+  <div class="os-ms"><a href="https://escher-innovations.com/technology-strategy" class="os-mt" style="text-decoration:none">Technology</a></div>
+  <div class="os-ms"><a href="https://escher-innovations.com/insight" class="os-mt" style="text-decoration:none">Insights</a></div>
+  <div class="os-ms" data-mob="team">
+    <button class="os-mt">Team<svg class="os-mch" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="os-mch-wrap">
+      <a href="https://escher-innovations.com/team-5979" class="os-mc">About Us</a>
+      <a href="https://escher-innovations.com/governance" class="os-mc">Governance</a>
+    </div>
+  </div>
+  <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="os-mcta" target="_blank">Request Briefing →</a>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section id="os-hero">
+  <div class="eyebrow"><span class="edot"></span> Our Story &nbsp;·&nbsp; Our People &nbsp;·&nbsp; Our Purpose <span class="edot"></span></div>
+  <h1>Built on the belief that<br><em>great companies are engineered.</em></h1>
+  <p class="hero-sub">Escher Innovations is a global capital and advisory firm founded to close the gap between extraordinary ideas and the resources needed to build them — one company at a time.</p>
+  <div class="hero-pills">
+    <span class="hpill"><i></i>Founded 2012</span>
+    <span class="hpill"><i></i>Princeton, NJ · Global Operations</span>
+    <span class="hpill"><i></i>150+ Countries</span>
+    <span class="hpill"><i></i>25+ Equity Positions</span>
+    <span class="hpill"><i></i>$75M+ Portfolios Guided</span>
+  </div>
+</section>
+
+<!-- ══ WHY WE EXIST (light) ══════════════════════════════ -->
+<section id="os-why" class="os-light">
+  <div class="os-wrap">
+    <div class="os-2col">
+      <div class="rv">
+        <div class="os-brow os-brow-l"><span class="os-bdot"></span>WHY WE EXIST</div>
+        <h2 class="os-h2 os-h2-l">The world doesn't lack great ideas.<br><em>It lacks access to build them.</em></h2>
+        <p class="os-body os-body-l" style="margin-top:16px">Access to capital. Access to strategy. Access to the systems that turn vision into reality. For decades, the most powerful tools of business have been concentrated among a small number of institutions. Escher Innovations exists to open those systems to the builders of tomorrow.</p>
+        <div class="pillars">
+          <div class="pillar rv d1">
+            <div class="pnum">1</div>
+            <div class="pbody"><h4>Democratize Elite Strategy</h4><p>We bring the same strategic frameworks used by the world's leading consulting firms to founders, organizations, and emerging markets.</p></div>
+          </div>
+          <div class="pillar rv d2">
+            <div class="pnum">2</div>
+            <div class="pbody"><h4>Deploy Capital With Discipline</h4><p>We invest where structural discipline and market timing converge — as an active equity partner, not just a check writer.</p></div>
+          </div>
+          <div class="pillar rv d3">
+            <div class="pnum">3</div>
+            <div class="pbody"><h4>Build Ecosystems, Not Just Companies</h4><p>We engineer the conditions for innovation to scale — connecting capital, knowledge, and talent across industries and borders.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="os-card rv d2">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Great businesses are not accidents — they are engineered. When the right people are given the right tools, innovation scales, communities prosper, and the future improves for everyone.</p>
+        <div class="quote-attr">— Marcos Villa, Founder &amp; CEO, Escher Innovations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MISSION + VISION (dark) ══════════════════════════ -->
+<section id="os-mv" class="os-dark">
+  <div class="os-wrap">
+    <div class="rv">
+      <div class="os-brow os-brow-d"><span class="os-bdot"></span>OUR PHILOSOPHY</div>
+      <h2 class="os-h2 os-h2-d">The strategic identity<br>that guides <em>every decision we make.</em></h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card rv d1">
+        <div class="mv-tag">PURPOSE — Why We Exist</div>
+        <h3>Break Down the Barriers to Extraordinary</h3>
+        <p>Escher Innovations exists to eliminate the structural barriers that prevent great ideas, entrepreneurs, and communities from accessing the knowledge, capital, and systems required to build world-class businesses. The tools that drive innovation have long been concentrated among a few institutions. We're changing that.</p>
+        <div class="mv-qif">"The world doesn't suffer from a lack of ideas. It suffers from a lack of access."</div>
+      </div>
+      <div class="mv-card rv d2">
+        <div class="mv-tag">VISION — The Future We're Building</div>
+        <h3>Every Company, Institutional-Grade</h3>
+        <p>We envision a world where every entrepreneur, organization, and community has access to the strategic intelligence, financial infrastructure, and technological systems required to build extraordinary companies — regardless of where they start. Businesses operating with the agility of startups and the discipline of the world's most established institutions.</p>
+        <div class="mv-qif">"What if every company could operate with the agility of a startup and the wisdom of a century-old institution?"</div>
+      </div>
+      <div class="mv-card rv d1" style="grid-column:span 1">
+        <div class="mv-tag">MISSION — What We Do Every Day</div>
+        <h3>Help Visionary People Build Extraordinary Companies</h3>
+        <p>Our mission is to help visionary people build extraordinary companies by giving them access to the same strategic tools used by the world's most powerful institutions — through consulting, partnerships, and ecosystem development that transforms ideas into scalable enterprises.</p>
+        <div class="mv-qif">"Great businesses are not accidents — they are engineered."</div>
+      </div>
+      <div class="mv-card rv d2" style="grid-column:span 1">
+        <div class="mv-tag">ONE-LINE PHILOSOPHY</div>
+        <h3>To Democratize World-Class Business Strategy</h3>
+        <p>Escher Innovations is a global capital and advisory firm dedicated to empowering individuals, organizations, and governments to achieve extraordinary success. We provide end-to-end solutions that bridge the gap between vision and execution, leveraging cutting-edge technologies, strategic capital deployment, and unparalleled expertise in finance, technology, and market expansion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER STORY (light) ═════════════════════════════ -->
+<section id="os-founder" class="os-light">
+  <div class="os-wrap">
+    <div class="os-2col-off">
+      <div class="founder-img-wrap rv">
+        <img class="founder-img"
+          src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/699bd651b2bafb17dfa2a3fb.png"
+          alt="Marcos Villa, Founder & CEO">
+        <div class="ftag">
+          <div class="ftag-name">Marcos Villa</div>
+          <div class="ftag-title">Founder &amp; CEO · Princeton, NJ</div>
+        </div>
+      </div>
+      <div class="rv d1">
+        <div class="os-brow os-brow-l"><span class="os-bdot"></span>FOUNDER'S STORY</div>
+        <h2 class="os-h2 os-h2-l">Started trading at 15.<br><em>Built for the long term.</em></h2>
+        <div class="fstats">
+          <div class="fs rv d1"><div class="fs-n">2012</div><div class="fs-l">Started Trading</div></div>
+          <div class="fs rv d2"><div class="fs-n">$75M+</div><div class="fs-l">Portfolios Guided</div></div>
+          <div class="fs rv d3"><div class="fs-n">150+</div><div class="fs-l">Countries Active</div></div>
+        </div>
+        <p class="os-body os-body-l">Marcos Villa began researching and trading stocks, ETFs, and currencies at age 15 in Cherry Hill, New Jersey. What started as intellectual curiosity became a professional foundation built on technical analysis, capital markets, and macroeconomic strategy.</p>
+        <p class="os-body os-body-l">By his early twenties he was advising ultra-high-net-worth individuals, government officials, and multinational corporations — recognized as among the top 0.0001% of financial practitioners globally. His work brought Realwear to international markets and established a reputation for executing where others only advise.</p>
+        <p class="os-body os-body-l">He founded Escher Innovations on a single belief: that the barriers separating great ideas from great outcomes are systemic — not personal — and therefore fixable. Today Escher operates across 6 continents, recognized by McKinsey, BCG, and Bain for its approach, and trusted by founders and institutions in 150+ countries.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+          <a href="https://www.linkedin.com/in/marcos-villa/" target="_blank" class="os-btn-dk">Connect on LinkedIn <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CORE VALUES (light) ══════════════════════════════ -->
+<section id="os-values" class="os-light" style="padding-top:0!important">
+  <div class="os-wrap">
+    <div class="rv">
+      <div class="os-brow os-brow-l"><span class="os-bdot"></span>HOW WE OPERATE</div>
+      <h2 class="os-h2 os-h2-l">Five principles that guide <em>every decision we make.</em></h2>
+    </div>
+    <div class="vgrid">
+      <div class="vc rv d1">
+        <div class="vnum">01</div>
+        <span class="vicon">⬡</span>
+        <h3>Character Before Capability</h3>
+        <p>Talent and intelligence matter, but character is non-negotiable. We work with people of integrity, humility, and accountability — and we hold ourselves to the same standard.</p>
+      </div>
+      <div class="vc rv d2">
+        <div class="vnum">02</div>
+        <span class="vicon">↑</span>
+        <h3>Relentless Growth</h3>
+        <p>We surround ourselves with people committed to personal development, intellectual curiosity, and continuous improvement. The world changes rapidly — and so do we.</p>
+      </div>
+      <div class="vc rv d3">
+        <div class="vnum">03</div>
+        <span class="vicon">◈</span>
+        <h3>Ambition With Discipline</h3>
+        <p>Ambition without structure leads to chaos. Structure without ambition leads to stagnation. We pursue bold ideas with rigorous execution — always.</p>
+      </div>
+      <div class="vc rv d4">
+        <div class="vnum">04</div>
+        <span class="vicon">⟡</span>
+        <h3>Radical Collaboration</h3>
+        <p>We co-create solutions with our clients and partners. We challenge ideas respectfully, encourage diverse perspectives, and prioritize the best outcome over ego.</p>
+      </div>
+      <div class="vc rv d5">
+        <div class="vnum">05</div>
+        <span class="vicon">∞</span>
+        <h3>Long-Term Thinking</h3>
+        <p>We are not interested in quick wins that compromise the future. We build companies designed to endure — sustainable systems, resilient enterprises, lasting impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EPM FRAMEWORK (dark) ══════════════════════════════ -->
+<section id="os-epm" class="os-dark">
+  <div class="os-wrap">
+    <div class="rv">
+      <div class="os-brow os-brow-d"><span class="os-bdot"></span>PROPRIETARY FRAMEWORK</div>
+      <h2 class="os-h2 os-h2-d">The Escher Persona Model™ —<br><em>leadership as a learnable skill.</em></h2>
+      <p class="os-body os-body-d" style="max-width:680px;margin-top:14px">Developed from decades of behavioral psychology and cognitive science, the EPM is our proprietary system for identifying, cultivating, and sustaining the mindsets and behaviors that drive strategic leadership at every level of an organization. Used in 150+ countries with startups, Fortune 500s, and governments.</p>
+    </div>
+    <div class="epm-grid">
+      <div class="ec rv d1">
+        <div class="en">Component 01 — Mindsets</div>
+        <h3>Cognitive &amp; Emotional Anchors</h3>
+        <p>The beliefs and orientations that shape how an individual interprets challenges, leads others, and grows over time.</p>
+        <ul class="elist">
+          <li>Strategic self-awareness</li>
+          <li>Growth orientation</li>
+          <li>Adaptive confidence</li>
+          <li>Purpose-driven intention</li>
+        </ul>
+      </div>
+      <div class="ec rv d2">
+        <div class="en">Component 02 — Behaviors</div>
+        <h3>Thriving &amp; Inspiring Actions</h3>
+        <p>Tactical behaviors that translate mindset into movement — classified into personal thriving and leadership impact.</p>
+        <ul class="elist">
+          <li>Thriving: rest, focus, emotional regulation</li>
+          <li>Thriving: strategic planning, resource prioritization</li>
+          <li>Inspiring: inclusion, coaching others</li>
+          <li>Inspiring: decisive action, communication clarity</li>
+        </ul>
+      </div>
+      <div class="ec rv d3">
+        <div class="en">Component 03 — Outcomes</div>
+        <h3>Trackable, Measurable Results</h3>
+        <p>The beneficial results that emerge from aligned mindsets and consistent behaviors — tracked and reported continuously.</p>
+        <ul class="elist">
+          <li>Resilience under pressure</li>
+          <li>Team performance &amp; organizational alignment</li>
+          <li>Innovation output</li>
+          <li>Job satisfaction &amp; talent retention</li>
+        </ul>
+      </div>
+    </div>
+    <div class="epm-note rv">
+      <span class="ebadge"><i></i> 150+ Countries</span>
+      <span class="ebadge"><i></i> Startups to Fortune 500s</span>
+      <span class="ebadge"><i></i> Government Advisory</span>
+      <span class="ebadge"><i></i> Executive Coaching</span>
+      <a href="https://www.escherinnovations.com/post/the-escher-persona-model-a-dynamic-framework-for-developing-strategic-leaders-and-thriving-teams" target="_blank" class="os-btn-gold" style="margin-left:auto">Read the Full Article →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM (dark) ════════════════════════════════════════ -->
+<section id="os-team" class="os-dark" style="padding-top:0!important">
+  <div class="os-wrap">
+    <div class="rv">
+      <div class="os-brow os-brow-d"><span class="os-bdot"></span>LEADERSHIP</div>
+      <h2 class="os-h2 os-h2-d">Meet the team.<br><em>Built for outcomes.</em></h2>
+      <p class="os-body os-body-d" style="max-width:520px;margin-top:12px">High standards, clean execution, and decision-making that holds up under scrutiny.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tm rv d1">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/699bd651b2bafb17dfa2a3fb.png" alt="Marcos Villa"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Marcos Villa</div><div class="tm-title">Founder &amp; CEO</div>
+          <div class="tm-bio">Seasoned asset manager and strategic advisor who transforms market insight into high-yield opportunities across private capital and emerging markets. Orchestrates $75M+ portfolios across 6 continents.</div>
+          <a href="https://www.linkedin.com/in/marcos-villa/" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="tm rv d2">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/68507b0990fc43c4d4b82a00.png" alt="Alessandro Latif"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Alessandro Latif</div><div class="tm-title">Chief Technology Officer</div>
+          <div class="tm-bio">Former Le Mans race car driver turned quantum-computing entrepreneur. Builds mission-critical simulations for Olympians, Fortune 500 supply chains, and neural science labs at the intersection of biophysics and AI.</div>
+          <a href="https://www.linkedin.com/in/alexlatif" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="tm rv d3">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/6850dc8babc3e08a65645f4e.png" alt="Dwayne Locker"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Dwayne Locker</div><div class="tm-title">Chief Entertainment Officer</div>
+          <div class="tm-bio">Trusted advisor to A-list celebrities, Hall of Fame athletes, and entertainment titans. Decades of experience brokering high-stakes deals at the intersection of talent, media, and commerce.</div>
+          <a href="https://www.linkedin.com/in/dwayne-locker-7a430717" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="tm rv d1">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/6850df39abc3e0adb064ad30.png" alt="Les Dean"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Les Dean</div><div class="tm-title">Chief Revenue Officer</div>
+          <div class="tm-bio">28+ years across marketing, media production, and advertising. Specializes in brand development, sales strategy, and high-impact campaign execution for global corporations and emerging businesses.</div>
+          <a href="https://www.linkedin.com/in/les-dean-33544516" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="tm rv d2">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/6850df2c5cc8476926ff8ce8.png" alt="Victor Long"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Victor Long</div><div class="tm-title">Chief Information Officer</div>
+          <div class="tm-bio">Co-Founder of Meta Alpha, price prediction software trusted by Bridgewater, Bloomberg, and RennTech. Board advisor to Stanford University. BA from Yale, MBA from Stanford.</div>
+          <a href="https://www.linkedin.com/in/marcos-villa/" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="tm rv d3">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/6850df3eabc3e0072264ad32.png" alt="Tom Mitchell"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Tom Mitchell</div><div class="tm-title">Chief Science Officer</div>
+          <div class="tm-bio">Pioneer in machine learning and former Dean of Computer Science at Carnegie Mellon University — where he founded the machine learning department. MSe EE from MIT, PhD CS from Stanford.</div>
+          <a href="https://www.linkedin.com/in/alexlatif" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="tm rv d1">
+        <div class="tm-img-wrap"><img class="tm-img" src="https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/6850df196b97b259cd005e37.jpeg" alt="Bin Zhao"><div class="tm-ov"></div></div>
+        <div class="tm-body">
+          <div class="tm-name">Bin Zhao</div><div class="tm-title">Chief AI Scientist</div>
+          <div class="tm-bio">Former machine learning VP at SoftBank, founder of Molecular ML, and Chief AI Scientist in medical diagnostics. PhD in physics and expert in computer vision.</div>
+          <a href="https://www.linkedin.com/in/dwayne-locker-7a430717" target="_blank" class="tm-li"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════════ -->
+<section id="os-cta">
+  <div class="inner rv">
+    <div class="os-brow os-brow-d" style="justify-content:center;margin-bottom:22px"><span class="os-bdot"></span>WORK WITH US</div>
+    <h2>Ready to build something<br><em>extraordinary?</em></h2>
+    <p>We partner with founders and investors who are serious about building institutional-grade enterprises. Book a consultation and find out if we're the right fit.</p>
+    <div class="cbtns">
+      <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="os-btn-gold" target="_blank">Book a Consultation — $500</a>
+      <a href="https://escher-innovations.com/home-4658" class="os-btn-outline-d">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer id="os-footer">
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo-n">Escher Innovations</div>
+      <div class="ft-logo-t">Give · Gain · Grow</div>
+      <p class="ft-tagline">A global capital and advisory firm dedicated to empowering founders, organizations, and investors to build extraordinary enterprises.</p>
+      <div class="ft-social">
+        <a href="https://facebook.com" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://instagram.com" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://youtube.com" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#06070d"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Company</h4><ul>
+      <li><a href="https://escher-innovations.com/our-story">Our Story</a></li>
+      <li><a href="https://escher-innovations.com/team-5979">Leadership Team</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Portfolio</a></li>
+      <li><a href="https://escher-innovations.com/insight">Insights</a></li>
+      <li><a href="https://escher-innovations.com/contact">Contact</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Services</h4><ul>
+      <li><a href="https://escher-innovations.com/services">Capital Readiness</a></li>
+      <li><a href="https://escher-innovations.com/services">Deal Structuring</a></li>
+      <li><a href="https://escher-innovations.com/services">Equity Partnership</a></li>
+      <li><a href="https://escher-innovations.com/products">Strategy</a></li>
+      <li><a href="https://escher-innovations.com/technology-strategy">Technology</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Industries</h4><ul>
+      <li><a href="https://escher-innovations.com/enterprise">Technology</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Healthcare</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Real Estate</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Finance</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">All Industries →</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Legal</h4><ul>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Disclaimer</a></li>
+      <li><a href="#">Code of Conduct</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Escher Innovations. All rights reserved. Marcos Villa.</span>
+    <div class="ft-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Disclaimer</a></div>
+  </div>
+</footer>
+
+</div><!-- /os-pg -->
+
+<script>
+/* ── GHL NUKE ── */
+(function(){
+  function nuke(){
+    var el=document.getElementById('os-pg');
+    if(!el)return;
+    var cur=el.parentElement;
+    while(cur&&cur!==document.body){
+      cur.style.setProperty('padding-top','0','important');
+      cur.style.setProperty('padding-bottom','0','important');
+      cur.style.setProperty('margin-top','0','important');
+      cur.style.setProperty('margin-bottom','0','important');
+      cur.style.setProperty('min-height','unset','important');
+      cur=cur.parentElement;
+    }
+    ['[data-page-element="Section/V1"]','[data-page-element="Section/V2"]','[data-page-element="Row/V1"]','.page-section','.section-box'].forEach(function(s){
+      document.querySelectorAll(s).forEach(function(n){if(n.contains(el)){n.style.setProperty('padding-top','0','important');n.style.setProperty('padding-bottom','0','important');n.style.setProperty('margin-top','0','important');n.style.setProperty('margin-bottom','0','important');n.style.setProperty('min-height','unset','important');}});
+    });
+  }
+  nuke();
+  window.addEventListener('load',function(){setTimeout(nuke,100);setTimeout(nuke,500);});
+})();
+
+/* ── NAV ── */
+(function(){
+  var nav=document.getElementById('os-nav');
+  var burger=document.getElementById('os-burger');
+  var drawer=document.getElementById('os-drawer');
+  if(!nav)return;
+
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var items=Array.from(nav.querySelectorAll('.gi[data-drop]'));
+  items.forEach(function(item){
+    var t=item.querySelector('.gtr');
+    if(!t)return;
+    t.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=item.classList.contains('open');
+      items.forEach(function(i){i.classList.remove('open');var tr=i.querySelector('.gtr');if(tr)tr.setAttribute('aria-expanded','false');});
+      if(!isOpen){item.classList.add('open');t.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.addEventListener('click',function(){items.forEach(function(i){i.classList.remove('open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){items.forEach(function(i){i.classList.remove('open');});nav.classList.remove('mob-open');}});
+
+  if(burger&&drawer){
+    burger.addEventListener('click',function(e){e.stopPropagation();nav.classList.toggle('mob-open');});
+    Array.from(drawer.querySelectorAll('.os-ms[data-mob]')).forEach(function(sec){
+      var btn=sec.querySelector('.os-mt');
+      if(!btn)return;
+      btn.addEventListener('click',function(){
+        var wasOpen=sec.classList.contains('open');
+        Array.from(drawer.querySelectorAll('.os-ms')).forEach(function(s){s.classList.remove('open');});
+        if(!wasOpen)sec.classList.add('open');
+      });
+    });
+    drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('mob-open');});});
+  }
+})();
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+  },{threshold:0.07});
+  document.querySelectorAll('#os-pg .rv').forEach(function(el){obs.observe(el);});
+})();
+
+/* ── SMOOTH SCROLL for anchor links ── */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
