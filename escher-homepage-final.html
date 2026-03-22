@@ -1,0 +1,1188 @@
+<!-- ============================================================
+  ESCHER INNOVATIONS — COMPLETE HOMEPAGE
+  Exact content from escher-innovations.com/home-4658
+  + Scroll-over-hero effect (hero stays fixed, everything slides over it)
+  
+  DROP INTO GHL as one Custom HTML block.
+  Set the GHL section padding to ZERO top and bottom.
+  Navigation and Footer remain as separate GHL sections.
+============================================================ -->
+
+<!-- Nuclear GHL whitespace killer — fires before anything else renders -->
+<style>
+/* Target every possible GHL section/row wrapper that could add whitespace */
+[data-page-element="Section/V1"],
+[data-page-element="Section/V2"],
+[data-page-element="Row/V1"],
+[data-page-element="Row/V2"],
+[data-page-element="SubSection/V1"],
+[data-page-element="SubSection/V2"],
+.page-section,
+.section-box,
+.funnelish-section,
+.container-shadow-wrap,
+.section-content-box {
+  padding-top:    0 !important;
+  padding-bottom: 0 !important;
+  margin-top:     0 !important;
+  margin-bottom:  0 !important;
+  min-height:     unset !important;
+}
+/* Kill any inner-content wrapper GHL adds */
+[data-page-element="Section/V1"] > .inner-content,
+[data-page-element="Section/V2"] > .inner-content,
+[data-page-element="Row/V1"] > .inner-content,
+[data-page-element="Row/V2"] > .inner-content {
+  padding-top:    0 !important;
+  padding-bottom: 0 !important;
+}
+</style>
+
+<style>
+
+/* ── KILL GHL whitespace above this block ── */
+/* Targets every common GHL wrapper that adds padding/margin */
+.elfsight-app-placeholder,
+[data-page-element="Section/V1"] > .inner-content,
+[data-page-element="Section/V1"],
+.page-section,
+.funnelish-section,
+.section-box,
+#ei-pg-wrap {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── GLOBAL RESET scoped to this block ── */
+#ei-pg *,
+#ei-pg *::before,
+#ei-pg *::after {
+  box-sizing: border-box;
+}
+#ei-pg {
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════
+   HERO — fixed, stays behind everything
+════════════════════════════════════════ */
+#ei-hero {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 100vh;
+  min-height: 580px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #06070d;
+  font-family: inherit;
+}
+
+/* Ken Burns background */
+#ei-hero .bg {
+  position: absolute;
+  inset: -8%;
+  width: 116%; height: 116%;
+  background-image: url('https://assets.cdn.filesafe.space/Zy5Nui7niXyA7IL9kZwA/media/694dc756dda1922708632301.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes kenburns {
+  0%   { transform: scale(1.00) translate(0%,    0%); }
+  33%  { transform: scale(1.06) translate(-1.5%, -1%); }
+  66%  { transform: scale(1.04) translate(1.5%,  .5%); }
+  100% { transform: scale(1.08) translate(-.5%, -1.5%); }
+}
+
+/* Overlays */
+#ei-hero .ov {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom,
+    rgba(6,7,13,.60) 0%,
+    rgba(6,7,13,.28) 38%,
+    rgba(6,7,13,.44) 65%,
+    rgba(6,7,13,.85) 100%);
+}
+#ei-hero .vig {
+  position: absolute; inset: 0; z-index: 1;
+  background: radial-gradient(ellipse 80% 78% at 50% 50%, transparent 33%, rgba(6,7,13,.65) 100%);
+}
+
+/* Content */
+#ei-hero .hc {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 900px; width: 100%;
+}
+
+/* Eyebrow */
+#ei-hero .eyebrow {
+  font-size: 13px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* H1 */
+#ei-hero h1 {
+  font-size: clamp(40px, 6.5vw, 88px);
+  font-weight: 800;
+  line-height: .97;
+  letter-spacing: -.03em;
+  color: #fff;
+  margin: 0 0 20px;
+  text-shadow: 0 2px 40px rgba(0,0,0,.5);
+}
+
+/* Sub */
+#ei-hero .sub {
+  font-size: clamp(15px, 1.9vw, 18px);
+  line-height: 1.75;
+  color: rgba(255,255,255,.7);
+  max-width: 640px;
+  margin: 0 auto 38px;
+  font-weight: 300;
+}
+
+/* Buttons */
+#ei-hero .btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+#ei-hero .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: .02em;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform .2s ease, box-shadow .2s, background .2s;
+  font-family: inherit;
+}
+#ei-hero .btn-outline {
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.26);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#ei-hero .btn-outline:hover { background: rgba(255,255,255,.18); transform: translateY(-2px); }
+#ei-hero .btn-gold { background: #e7ff6e; color: #06070d; font-weight: 700; }
+#ei-hero .btn-gold:hover { background: #f2ff8c; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(231,255,110,.4); }
+
+/* Tagline */
+#ei-hero .tagline {
+  font-style: italic;
+  color: #e7ff6e;
+  font-size: 16px;
+  letter-spacing: .03em;
+}
+
+/* Stats strip inside hero (bottom) */
+#ei-hero .hero-stats {
+  position: relative; z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: auto;
+}
+#ei-hero .hs {
+  padding: 28px 40px;
+  border-right: 1px solid rgba(255,255,255,.1);
+  text-align: left;
+}
+#ei-hero .hs:last-child { border-right: none; }
+#ei-hero .hs-n {
+  font-size: 42px;
+  font-weight: 800;
+  color: #e7ff6e;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+#ei-hero .hs-l {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  margin-top: 4px;
+}
+#ei-hero .hs-s {
+  font-size: 12px;
+  color: rgba(255,255,255,.38);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* Scroll hint */
+#ei-hero .scrollhint {
+  position: absolute;
+  bottom: 100px; /* above stats strip */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: .3;
+  pointer-events: none;
+  animation: bobbing 2.4s ease-in-out infinite;
+}
+#ei-hero .scrollhint span { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: #fff; }
+#ei-hero .scrollhint svg  { width: 16px; height: 16px; color: #fff; }
+@keyframes bobbing { 0%,100%{ transform: translateX(-50%) translateY(0); } 50%{ transform: translateX(-50%) translateY(7px); } }
+
+/* Stagger fade-in */
+#ei-hero .hc > * { opacity: 0; transform: translateY(16px); animation: fadeup .8s ease forwards; }
+#ei-hero .eyebrow { animation-delay: .1s; }
+#ei-hero h1       { animation-delay: .25s; }
+#ei-hero .sub     { animation-delay: .42s; }
+#ei-hero .btns    { animation-delay: .56s; }
+#ei-hero .tagline { animation-delay: .7s; }
+@keyframes fadeup { to { opacity: 1; transform: translateY(0); } }
+
+/* ── SPACER: holds the scroll room ── */
+#ei-spacer {
+  height: 100vh;
+  min-height: 580px;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════
+   SURFACE — slides up over the fixed hero
+════════════════════════════════════════ */
+#ei-surface {
+  position: relative;
+  z-index: 50;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -28px 60px rgba(0,0,0,.55);
+  border-top: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+  /* No peek — surface starts exactly at the bottom of the hero */
+  margin-top: 0;
+}
+
+/* ════════════════════════════════════════
+   SECTION: INVESTMENT DISCIPLINE (light)
+   Exact original CSS
+════════════════════════════════════════ */
+.inst-section {
+  padding: 84px 0;
+  background: linear-gradient(180deg, #f6f7f4 0%, #ffffff 100%);
+  color: #0b1220;
+  border-top: 1px solid rgba(11,18,32,.10);
+  border-bottom: 1px solid rgba(11,18,32,.10);
+}
+.inst-wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.inst-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(11,18,32,.68); }
+.inst-dot { width: 8px; height: 8px; border-radius: 99px; background: #e7ff6e; box-shadow: 0 0 0 3px rgba(231,255,110,.28); }
+.inst-title { margin: 14px 0 10px; font-size: 44px; line-height: 1.05; letter-spacing: -.03em; font-weight: 650; }
+.inst-title em { font-style: normal; border-bottom: 3px solid #e7ff6e; padding-bottom: 2px; }
+.inst-sub { max-width: 860px; font-size: 16px; line-height: 1.75; color: rgba(11,18,32,.78); margin: 0 0 28px; }
+.inst-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 16px; margin-top: 18px; }
+.inst-card { grid-column: span 4; background: #fff; border: 1px solid rgba(11,18,32,.12); border-radius: 18px; padding: 22px; box-shadow: 0 18px 45px rgba(11,18,32,.06); position: relative; }
+.inst-card:before { content:""; position: absolute; top:0; left:0; right:0; height: 3px; background: linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.15)); border-top-left-radius: 18px; border-top-right-radius: 18px; }
+.inst-kicker { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(11,18,32,.62); margin-bottom: 10px; }
+.inst-card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -.01em; font-weight: 650; }
+.inst-card p  { margin: 0; font-size: 14.5px; line-height: 1.7; color: rgba(11,18,32,.78); }
+.inst-stats { margin-top: 26px; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.inst-stat { background: #fff; border: 1px solid rgba(11,18,32,.12); border-radius: 16px; padding: 16px 18px; box-shadow: 0 18px 45px rgba(11,18,32,.06); }
+.inst-stat .num { font-size: 28px; letter-spacing: -.02em; font-weight: 750; }
+.inst-stat .lab { margin-top: 6px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: rgba(11,18,32,.62); }
+.inst-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.inst-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 16px; border-radius: 999px; text-decoration: none; font-weight: 650; font-size: 14px; border: 1px solid rgba(11,18,32,.18); transition: .18s ease; cursor: pointer; font-family: inherit; background: transparent; color: #0b1220; }
+.inst-btn.primary { background: #0b1220; color: #fff; border-color: #0b1220; }
+.inst-btn.primary span { display: inline-block; margin-left: 10px; width: 10px; height: 10px; border-radius: 99px; background: #e7ff6e; }
+.inst-btn:hover { transform: translateY(-1px); }
+
+/* ════════════════════════════════════════
+   SECTION: CAPITAL MANDATE (dark)
+   Exact original CSS
+════════════════════════════════════════ */
+.mandate-section {
+  position: relative; padding: 90px 0;
+  background: linear-gradient(180deg,rgba(11,18,32,.92),rgba(11,18,32,.96)),
+    url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.mandate-wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+.mandate-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+.mandate-dot { width: 8px; height: 8px; border-radius: 99px; background: #e7ff6e; box-shadow: 0 0 0 4px rgba(231,255,110,.25); }
+.mandate-title { margin: 16px 0 12px; font-size: 44px; letter-spacing: -.03em; line-height: 1.05; font-weight: 650; }
+.mandate-title em { font-style: normal; border-bottom: 3px solid #e7ff6e; padding-bottom: 2px; }
+.mandate-sub { max-width: 880px; font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.78); margin-bottom: 36px; }
+.mandate-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.mandate-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 26px 24px; backdrop-filter: blur(6px); position: relative; }
+.mandate-card:before { content:""; position: absolute; top:0; left:0; right:0; height: 3px; background: linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.15)); border-radius: 18px 18px 0 0; }
+.mandate-kicker { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 10px; }
+.mandate-card h3 { margin: 0 0 10px; font-size: 19px; font-weight: 650; letter-spacing: -.01em; }
+.mandate-card p  { margin: 0; font-size: 14.8px; line-height: 1.7; color: rgba(255,255,255,.78); }
+.mandate-proof { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: rgba(255,255,255,.70); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.mandate-proof span { display: inline-flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); white-space: nowrap; }
+.mandate-proof i { width: 9px; height: 9px; border-radius: 999px; background: rgba(231,255,110,.95); box-shadow: 0 0 0 3px rgba(231,255,110,.18); display: inline-block; }
+
+/* ════════════════════════════════════════
+   SECTION: CAPITAL DISCIPLINE ACCORDION
+   Exact original CSS
+════════════════════════════════════════ */
+.acc-ui { --ink:#0b1220; --paper:#fff; --stone:#f6f7f4; --line:rgba(11,18,32,.12); --muted:rgba(11,18,32,.78); --muted2:rgba(11,18,32,.62); --accent:#e7ff6e; --shadow:0 18px 45px rgba(11,18,32,.06); --radius:18px; }
+.acc-ui.section { padding: 84px 0; background: linear-gradient(180deg,var(--stone) 0%,var(--paper) 100%); color: var(--ink); border-top: 1px solid rgba(11,18,32,.10); border-bottom: 1px solid rgba(11,18,32,.10); }
+.acc-ui .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.acc-ui .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(11,18,32,.68); }
+.acc-ui .dot { width: 8px; height: 8px; border-radius: 99px; background: var(--accent); box-shadow: 0 0 0 3px rgba(231,255,110,.28); }
+.acc-ui .title { margin: 14px 0 10px; font-size: 42px; line-height: 1.05; letter-spacing: -.03em; font-weight: 650; }
+.acc-ui .title em { font-style: normal; border-bottom: 3px solid var(--accent); padding-bottom: 2px; }
+.acc-ui .sub { max-width: 860px; font-size: 16px; line-height: 1.75; color: var(--muted); margin: 0 0 28px; }
+.acc-ui .grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 16px; margin-top: 18px; }
+.acc-ui .card { grid-column: span 4; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; position: relative; transition: transform .18s ease,box-shadow .18s ease,border-color .18s ease; }
+.acc-ui .card::before { content:""; position: absolute; top:0; left:0; right:0; height: 3px; background: linear-gradient(90deg,var(--accent),rgba(231,255,110,.15)); }
+.acc-ui .card-btn { width:100%; text-align:left; background:transparent; border:0; padding:20px 20px 16px; cursor:pointer; display:flex; gap:14px; align-items:flex-start; font-family:inherit; }
+.acc-ui .kicker { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted2); margin:2px 0 8px; }
+.acc-ui .h3 { margin:0 0 6px; font-size:18px; letter-spacing:-.01em; font-weight:650; color:var(--ink); }
+.acc-ui .p  { margin:0; font-size:14.5px; line-height:1.7; color:var(--muted); }
+.acc-ui .chev { margin-left:auto; margin-top:6px; width:34px; height:34px; border-radius:999px; border:1px solid var(--line); display:grid; place-items:center; flex:0 0 auto; transition:transform .18s ease,background .18s ease,border-color .18s ease; }
+.acc-ui .chev svg { width:16px; height:16px; opacity:.82; }
+.acc-ui .card:hover { transform:translateY(-2px); border-color:rgba(11,18,32,.18); box-shadow:0 22px 55px rgba(11,18,32,.10); }
+.acc-ui .panel { max-height:0; overflow:hidden; transition:max-height .26s ease; border-top:1px solid rgba(11,18,32,.08); background:linear-gradient(180deg,rgba(246,247,244,.55),rgba(255,255,255,1)); }
+.acc-ui .panel-inner { padding:16px 20px 20px; }
+.acc-ui .bullets { margin:0; padding-left:18px; color:rgba(11,18,32,.78); font-size:14px; line-height:1.7; }
+.acc-ui .bullets li { margin:6px 0; }
+.acc-ui .micro { margin-top:12px; font-size:12.5px; color:rgba(11,18,32,.62); border-left:3px solid var(--accent); padding-left:10px; }
+.acc-ui .card[data-open="true"] .panel { max-height:420px; }
+.acc-ui .card[data-open="true"] .chev { background:rgba(231,255,110,.22); border-color:rgba(11,18,32,.16); transform:rotate(180deg); }
+.acc-ui .actions { margin-top:26px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.acc-ui .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; border-radius:999px; text-decoration:none; font-weight:650; font-size:14px; border:1px solid rgba(11,18,32,.18); transition:.18s ease; cursor:pointer; font-family:inherit; color:#0b1220; background:transparent; }
+.acc-ui .btn.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+.acc-ui .btn.primary .pip { margin-left:10px; width:10px; height:10px; border-radius:99px; background:var(--accent); display:inline-block; }
+.acc-ui .btn:hover { transform:translateY(-1px); }
+.acc-ui .disclosure { margin-top:14px; font-size:12.5px; color:rgba(11,18,32,.62); }
+.acc-ui .disclosure b { color:rgba(11,18,32,.82); font-weight:650; }
+
+/* ════════════════════════════════════════
+   SECTION: ENGAGEMENT MODEL
+   Exact original CSS
+════════════════════════════════════════ */
+.engage { --ink:#0b1220; --paper:#fff; --stone:#f6f7f4; --line:rgba(11,18,32,.12); --muted:rgba(11,18,32,.78); --accent:#e7ff6e; padding:90px 0; background:linear-gradient(180deg,var(--stone),var(--paper)); border-top:1px solid rgba(11,18,32,.10); border-bottom:1px solid rgba(11,18,32,.10); color:var(--ink); }
+.engage .wrap { max-width:1180px; margin:0 auto; padding:0 24px; }
+.engage .eyebrow { display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:rgba(11,18,32,.65); }
+.engage .dot { width:8px; height:8px; border-radius:99px; background:var(--accent); box-shadow:0 0 0 3px rgba(231,255,110,.28); }
+.engage h2 { margin:16px 0 10px; font-size:42px; letter-spacing:-.03em; line-height:1.05; font-weight:650; }
+.engage .sub { max-width:820px; font-size:16px; line-height:1.75; color:var(--muted); margin-bottom:34px; }
+.engage-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.engage-card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px 24px; box-shadow:0 18px 45px rgba(11,18,32,.06); position:relative; }
+.engage-card:before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),rgba(231,255,110,.15)); border-radius:18px 18px 0 0; }
+.engage-step { font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:rgba(11,18,32,.55); margin-bottom:10px; }
+.engage-card h3 { margin:0 0 10px; font-size:20px; letter-spacing:-.01em; }
+.engage-card ul { margin:0; padding-left:18px; font-size:14.5px; line-height:1.7; color:var(--muted); }
+.engage-card li { margin:6px 0; }
+.engage-outcome { margin-top:14px; font-size:13px; color:rgba(11,18,32,.75); border-left:3px solid var(--accent); padding-left:10px; }
+
+/* ════════════════════════════════════════
+   SECTION: SECTOR COVERAGE
+   Exact original CSS
+════════════════════════════════════════ */
+#sector-ui-01 { --ink:#0b1220; --paper:#fff; --stone:#f6f7f4; --line:rgba(11,18,32,.12); --muted:rgba(11,18,32,.78); --muted2:rgba(11,18,32,.62); --accent:#e7ff6e; --shadow:0 18px 45px rgba(11,18,32,.06); --radius:18px; --img-h:220px; }
+#sector-ui-01.section { padding:86px 0; background:linear-gradient(180deg,var(--stone) 0%,var(--paper) 100%); color:var(--ink); border-top:1px solid rgba(11,18,32,.10); border-bottom:1px solid rgba(11,18,32,.10); }
+#sector-ui-01 .wrap { max-width:1180px; margin:0 auto; padding:0 24px; }
+#sector-ui-01 .eyebrow { display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:rgba(11,18,32,.68); }
+#sector-ui-01 .dot { width:8px; height:8px; border-radius:99px; background:var(--accent); box-shadow:0 0 0 3px rgba(231,255,110,.28); }
+#sector-ui-01 h2 { margin:14px 0 10px; font-size:42px; letter-spacing:-.03em; line-height:1.05; font-weight:650; }
+#sector-ui-01 h2 em { font-style:normal; border-bottom:3px solid var(--accent); padding-bottom:2px; }
+#sector-ui-01 .sub { max-width:860px; color:var(--muted); font-size:16px; line-height:1.75; margin:0 0 22px; }
+#sector-ui-01 .layout { display:grid; grid-template-columns:1.05fr .95fr; gap:16px; align-items:start; margin-top:18px; }
+#sector-ui-01 .left-col { display:flex; flex-direction:column; gap:14px; }
+#sector-ui-01 .pills { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:14px; }
+#sector-ui-01 .pill-grid { display:flex; flex-wrap:wrap; gap:10px; }
+#sector-ui-01 .pill { appearance:none; border:1px solid rgba(11,18,32,.16); background:#fff; color:rgba(11,18,32,.92); border-radius:999px; padding:10px 14px; font-size:14px; font-weight:600; cursor:pointer; transition:.18s ease; letter-spacing:-.01em; font-family:inherit; }
+#sector-ui-01 .pill:hover { transform:translateY(-1px); border-color:rgba(11,18,32,.24); box-shadow:0 10px 22px rgba(11,18,32,.06); }
+#sector-ui-01 .pill[aria-pressed="true"] { background:rgba(231,255,110,.55); border-color:rgba(11,18,32,.18); color:var(--ink); }
+#sector-ui-01 .pills-note { margin-top:12px; font-size:12.5px; color:var(--muted2); border-left:3px solid var(--accent); padding-left:10px; }
+#sector-ui-01 .sector-img-wrap { position:relative; width:100%; height:var(--img-h); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); background:#0b1220; }
+#sector-ui-01 .sector-img-wrap img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity .7s ease; }
+#sector-ui-01 .sector-img-wrap img.layer-a { opacity:1; z-index:1; }
+#sector-ui-01 .sector-img-wrap img.layer-b { opacity:0; z-index:2; }
+#sector-ui-01 .sector-img-wrap img.layer-b.visible { opacity:1; }
+@keyframes kenburns-1 { 0%{transform:scale(1.0) translate(0%,0%)}100%{transform:scale(1.08) translate(-1.5%,-1%)} }
+@keyframes kenburns-2 { 0%{transform:scale(1.08) translate(-1%,-1%)}100%{transform:scale(1.0) translate(1%,.5%)} }
+#sector-ui-01 .sector-img-wrap img.kb-1 { animation:kenburns-1 8s ease-in-out forwards; }
+#sector-ui-01 .sector-img-wrap img.kb-2 { animation:kenburns-2 8s ease-in-out forwards; }
+#sector-ui-01 .sector-img-wrap .img-overlay { position:absolute; inset:0; z-index:3; background:linear-gradient(to top,rgba(11,18,32,.72) 0%,rgba(11,18,32,.10) 55%,transparent 100%); pointer-events:none; }
+#sector-ui-01 .sector-img-label { position:absolute; bottom:14px; left:16px; z-index:4; display:flex; align-items:center; gap:8px; }
+#sector-ui-01 .sector-img-label .img-dot { width:7px; height:7px; border-radius:99px; background:var(--accent); flex-shrink:0; }
+#sector-ui-01 .sector-img-label span { font-size:13px; font-weight:650; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.92); }
+#sector-ui-01 .panel { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+#sector-ui-01 .panel-head { padding:18px 18px 14px; position:relative; }
+#sector-ui-01 .panel-head:before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),rgba(231,255,110,.15)); }
+#sector-ui-01 .panel-title { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+#sector-ui-01 .panel-title h3 { margin:0; font-size:18px; font-weight:750; letter-spacing:-.01em; }
+#sector-ui-01 .tag { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(11,18,32,.62); border:1px solid rgba(11,18,32,.12); border-radius:999px; padding:6px 10px; background:rgba(246,247,244,.65); }
+#sector-ui-01 .panel-sub { margin-top:8px; font-size:14.5px; color:var(--muted); line-height:1.7; }
+#sector-ui-01 .panel-body { padding:0 18px 18px; }
+#sector-ui-01 .cols { display:grid; grid-template-columns:1fr; gap:10px; margin-top:12px; }
+#sector-ui-01 .box { border:1px solid rgba(11,18,32,.10); border-radius:14px; padding:12px; background:linear-gradient(180deg,rgba(246,247,244,.55),#fff); }
+#sector-ui-01 .box .lbl { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(11,18,32,.62); margin-bottom:8px; }
+#sector-ui-01 .box ul { margin:0; padding-left:18px; color:rgba(11,18,32,.78); font-size:14px; line-height:1.65; }
+#sector-ui-01 .box li { margin:6px 0; }
+#sector-ui-01 .actions { margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+#sector-ui-01 .btn { display:inline-flex; align-items:center; justify-content:center; padding:11px 14px; border-radius:999px; text-decoration:none; font-weight:650; font-size:14px; border:1px solid rgba(11,18,32,.18); transition:.18s ease; cursor:pointer; font-family:inherit; background:transparent; color:var(--ink); }
+#sector-ui-01 .btn.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+#sector-ui-01 .btn:hover { transform:translateY(-1px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width:980px) {
+  .inst-title,.mandate-title,.acc-ui .title,.engage h2,#sector-ui-01 h2 { font-size:32px; }
+  .inst-card,.acc-ui .card { grid-column:span 12; }
+  .inst-stats,.mandate-grid,.engage-grid { grid-template-columns:1fr; }
+  #sector-ui-01 .layout { grid-template-columns:1fr; }
+  #ei-hero .hero-stats { grid-template-columns:1fr; }
+  #ei-hero .hs { border-right:none; border-bottom:1px solid rgba(255,255,255,.1); }
+  #ei-hero .btns { flex-direction:column; align-items:center; }
+  #ei-hero .btn { width:100%; max-width:280px; justify-content:center; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #ei-hero .bg { animation:none; }
+  #ei-hero .hc > * { animation:none; opacity:1; transform:none; }
+  #ei-hero .scrollhint { animation:none; }
+}
+</style>
+
+<div id="ei-pg">
+
+<!-- ═══════════════════════════════════════
+     HERO — fixed
+═══════════════════════════════════════ -->
+<section id="ei-hero">
+  <div class="bg"></div>
+  <div class="ov"></div>
+  <div class="vig"></div>
+
+  <div class="hc">
+    <p class="eyebrow">Global Capital &nbsp;·&nbsp; Institutional Partnership &nbsp;·&nbsp; Active Ownership</p>
+    <h1>Structured Capital for<br>Transformational Growth.</h1>
+    <p class="sub">We partner with founders and investors to deploy capital, build the right structures, and execute with the discipline that turns high-potential businesses into institutional-grade enterprises.</p>
+    <div class="btns">
+      <a class="btn btn-outline" href="#ei-investment-framework">Explore How We Work →</a>
+      <a class="btn btn-gold" href="#briefing">Book a Consultation — $500</a>
+    </div>
+    <p class="tagline">What we do — it's different.</p>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="hero-stats">
+    <div class="hs">
+      <div class="hs-n">25+</div>
+      <div class="hs-l">Portfolio Companies</div>
+      <div class="hs-s">Capital readiness &amp; execution</div>
+    </div>
+    <div class="hs">
+      <div class="hs-n">Global</div>
+      <div class="hs-l">Worldwide Reach</div>
+      <div class="hs-s">Cross-border advisory support</div>
+    </div>
+    <div class="hs">
+      <div class="hs-n">Multi</div>
+      <div class="hs-l">Industry Verticals</div>
+      <div class="hs-s">Eligibility-based funding pathways</div>
+    </div>
+  </div>
+
+  <div class="scrollhint">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- Spacer -->
+<div id="ei-spacer"></div>
+
+<!-- ═══════════════════════════════════════
+     SURFACE — all content slides over hero
+═══════════════════════════════════════ -->
+<div id="ei-surface">
+
+<!-- ─── INVESTMENT DISCIPLINE ─────────── -->
+<section class="inst-section" id="ei-investment-framework">
+  <div class="inst-wrap">
+    <div class="inst-eyebrow"><span class="inst-dot"></span> HOW WE WORK</div>
+    <div class="inst-title">Three things we do <em>better than anyone else.</em></div>
+    <div class="inst-sub">Whether you're a founder trying to raise capital or an investor looking for a real partner — this is what Escher brings to the table. No vague promises, no generic advice. Just a clear, proven approach that gets results for both sides of the table.</div>
+    <div class="inst-grid">
+      <div class="inst-card">
+        <div class="inst-kicker">For Founders</div>
+        <h3>We Get You Fundable</h3>
+        <p>Most businesses aren't ready when they approach lenders or investors — and they don't know why they keep getting turned down. We find the gaps, fix them, and position you to get approved.</p>
+      </div>
+      <div class="inst-card">
+        <div class="inst-kicker">For Everyone</div>
+        <h3>We Build the Right Structure</h3>
+        <p>The wrong deal structure costs you equity, control, and future options. We make sure you enter every conversation set up correctly — protecting what you've already built and what you're working toward.</p>
+      </div>
+      <div class="inst-card">
+        <div class="inst-kicker">For Investors</div>
+        <h3>We Execute, Not Just Advise</h3>
+        <p>We don't hand you a report and walk away. We manage the entire process — from preparation to submission to close — handling every detail so nothing falls through the cracks.</p>
+      </div>
+    </div>
+    <div class="inst-stats">
+      <div class="inst-stat"><div class="num">25+</div><div class="lab">Companies Partnered</div></div>
+      <div class="inst-stat"><div class="num">$75M+</div><div class="lab">Portfolios Guided</div></div>
+      <div class="inst-stat"><div class="num">Global</div><div class="lab">Reach &amp; Network</div></div>
+    </div>
+    <div class="inst-actions">
+      <a class="inst-btn primary" href="#briefing">Book a Consultation — $500 <span></span></a>
+      <a class="inst-btn" href="/portfolio">See Our Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAPITAL MANDATE ────────────────── -->
+<section class="mandate-section" id="ei-capital-mandate">
+  <div class="mandate-wrap">
+    <div class="mandate-eyebrow"><span class="mandate-dot"></span> WHAT WE DO</div>
+    <div class="mandate-title">We don't just advise. <em>We invest, build, and grow alongside you.</em></div>
+    <div class="mandate-sub">Escher Innovations partners directly with founders and investors — bringing capital, real-world experience, and a hands-on team to help your business raise money, grow with intention, and build something built to last. We only win when you do.</div>
+    <div class="mandate-grid">
+      <div class="mandate-card">
+        <div class="mandate-kicker">01 — Our Commitment</div>
+        <h3>We Take Ownership</h3>
+        <p>We take equity positions in the companies we believe in — which means our incentives are permanently tied to your outcome. No retainer. No disengagement after delivery. We're in it with you for the long run.</p>
+      </div>
+      <div class="mandate-card">
+        <div class="mandate-kicker">02 — Our Standard</div>
+        <h3>Structure Before Speed</h3>
+        <p>Scaling without the right foundation is how businesses lose control. We put governance, accountability, and financial structure in place first — so when capital comes in, your business is built to handle it.</p>
+      </div>
+      <div class="mandate-card">
+        <div class="mandate-kicker">03 — Our Role</div>
+        <h3>More Than a Check</h3>
+        <p>Money alone doesn't build great companies. We work alongside you on strategy, operations, and execution — the way a seasoned co-founder would, backed by decades of experience across global markets.</p>
+      </div>
+    </div>
+    <div class="mandate-proof">
+      <span><i></i> Equity-Aligned</span>
+      <span><i></i> Hands-On Partnership</span>
+      <span><i></i> Global Reach</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAPITAL DISCIPLINE ACCORDION ───── -->
+<section class="acc-ui section" data-acc="1">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> OUR PROCESS</div>
+    <div class="title">Here's exactly how we <em>get you to capital.</em></div>
+    <div class="sub">Most businesses don't fail to raise money because the opportunity isn't there — they fail because they're not packaged correctly. We fix that. Click any step below to see what we actually do.</div>
+    <div class="grid">
+      <div class="card" data-open="false">
+        <button class="card-btn" type="button" aria-expanded="false">
+          <div><div class="kicker">Step 01</div><div class="h3">Clean Up &amp; Strengthen Your Profile</div><div class="p">Before you approach any lender or investor, we audit your business from the outside in — the same way an underwriter would. We find every red flag and fix it before it costs you an approval.</div></div>
+          <div class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </button>
+        <div class="panel"><div class="panel-inner"><ul class="bullets"><li>Full review of your business credit, documentation, and financial presentation</li><li>Identify and close the gaps that trigger automatic rejections</li><li>Position your profile to match exactly what lenders and investors want to see</li></ul><div class="micro">Result: You walk into every conversation looking like a business that's ready — because you are.</div></div></div>
+      </div>
+      <div class="card" data-open="false">
+        <button class="card-btn" type="button" aria-expanded="false">
+          <div><div class="kicker">Step 02</div><div class="h3">Match You to the Right Capital</div><div class="p">Not all money is the same. The wrong financing can damage your credit, cost you equity, or lock you into terms that limit your future. We find the right fit for your specific goal and stage.</div></div>
+          <div class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </button>
+        <div class="panel"><div class="panel-inner"><ul class="bullets"><li>Identify whether you need working capital, term debt, revolving credit, or equity — and in what order</li><li>Map your goals to the capital types that fit your business stage and risk profile</li><li>Avoid applications that waste time or damage your credibility with future lenders</li></ul><div class="micro">Result: A clear, sequenced roadmap that protects your options and your reputation going forward.</div></div></div>
+      </div>
+      <div class="card" data-open="false">
+        <button class="card-btn" type="button" aria-expanded="false">
+          <div><div class="kicker">Step 03</div><div class="h3">Package, Submit &amp; Close</div><div class="p">We handle the entire submission process — building your file, writing your narrative, managing communication with underwriters, and optimizing every decision until the deal is done.</div></div>
+          <div class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </button>
+        <div class="panel"><div class="panel-inner"><ul class="bullets"><li>Build a complete, lender-ready package with supporting documentation and a compelling narrative</li><li>Sequence submissions strategically so each application strengthens the next</li><li>Manage responses, follow-ups, and post-approval planning all the way through to close</li></ul><div class="micro">Result: Less back-and-forth, faster decisions, and a cleaner outcome — every time.</div></div></div>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="#briefing">Start the Process — Book for $500 <span class="pip"></span></a>
+      <a class="btn" href="/portfolio">See Our Work</a>
+    </div>
+    <div class="disclosure"><b>Important:</b> Escher Innovations is not a lender and does not guarantee approvals. Results depend on your business profile and documentation.</div>
+  </div>
+</section>
+
+<!-- ─── ENGAGEMENT MODEL ───────────────── -->
+<section class="engage">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> WORK WITH US</div>
+    <h2>Pick the level of support <em>you actually need.</em></h2>
+    <div class="sub">You don't have to commit to a full partnership to work with Escher. Start where you are. Every path leads to the same place — a stronger business with better access to capital and a team that's genuinely invested in your outcome.</div>
+    <div class="engage-grid">
+      <div class="engage-card">
+        <div class="engage-step">01 / Start Here</div>
+        <h3>Get Funded</h3>
+        <ul><li>We audit your business the way a lender would</li><li>Find and close every gap that's blocking your approvals</li><li>Deliver a clear action plan you can move on immediately</li></ul>
+        <div class="engage-outcome">Best for: Founders who keep getting declined and don't understand why.</div>
+      </div>
+      <div class="engage-card">
+        <div class="engage-step">02 / Go Deeper</div>
+        <h3>Structure Your Deal</h3>
+        <ul><li>Work directly with our senior advisors on your deal</li><li>Investor materials, pitch narrative, and term sheet guidance</li><li>Cap table analysis and pre-close preparation</li></ul>
+        <div class="engage-outcome">Best for: Founders preparing for a raise or investors structuring a new deal.</div>
+      </div>
+      <div class="engage-card">
+        <div class="engage-step">03 / Full Partnership</div>
+        <h3>We Become Your Partner</h3>
+        <ul><li>Escher takes an equity stake and works alongside you long-term</li><li>Board-level involvement, capital access, and hands-on execution</li><li>We win only when you win — fully aligned from day one</li></ul>
+        <div class="engage-outcome">Best for: Founders and investors ready to build something significant together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECTOR COVERAGE ────────────────── -->
+<section id="sector-ui-01" class="section">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> WHO WE WORK WITH</div>
+    <h2>We work across every industry. <em>Your sector is covered.</em></h2>
+    <div class="sub">Escher has active partnerships and completed deals across 12 industries. No matter what you build or where you operate — we know your space, we understand your challenges, and we know how to get you funded. Click your sector below to see exactly how we help.</div>
+    <div class="layout">
+      <div class="left-col">
+        <div class="pills">
+          <div class="pill-grid" role="group" aria-label="Select your industry">
+            <button class="pill" type="button" aria-pressed="true"  data-sector="technology">Technology</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="healthcare">Healthcare</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="finance">Finance</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="education">Education</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="manufacturing">Manufacturing</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="retail">Retail</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="energy">Energy</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="transportation">Transportation</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="realestate">Real Estate</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="agriculture">Agriculture</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="entertainment">Entertainment</button>
+            <button class="pill" type="button" aria-pressed="false" data-sector="nonprofit">Non-Profit</button>
+          </div>
+          <div class="pills-note">Click your industry to see how we help, what capital looks like, and what we deliver.</div>
+        </div>
+        <div class="sector-img-wrap" aria-hidden="true">
+          <img id="sectorImgA" class="layer-a kb-1" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop" alt="">
+          <img id="sectorImgB" class="layer-b" src="" alt="">
+          <div class="img-overlay"></div>
+          <div class="sector-img-label"><span class="img-dot"></span><span id="sectorImgLabel">Technology</span></div>
+        </div>
+      </div>
+      <div class="panel" aria-live="polite">
+        <div class="panel-head">
+          <div class="panel-title"><h3 id="sectorTitle">Technology</h3><span class="tag" id="sectorTag">How we help</span></div>
+          <div class="panel-sub" id="sectorDesc">We help tech companies clean up their financials, get lender-ready, and raise the capital they need to build, hire, and grow — without giving away more equity than necessary.</div>
+        </div>
+        <div class="panel-body">
+          <div class="cols">
+            <div class="box"><div class="lbl">What you typically need capital for</div><ul id="sectorUse"><li>Runway extension + key hires</li><li>Product development + infrastructure</li><li>Marketing + customer acquisition</li></ul></div>
+            <div class="box"><div class="lbl">What lenders and investors focus on</div><ul id="sectorFocus"><li>Revenue consistency + burn rate control</li><li>Documentation integrity and completeness</li><li>Existing obligations + utilization levels</li></ul></div>
+            <div class="box"><div class="lbl">What Escher delivers</div><ul id="sectorDeliver"><li>Fundability scorecard + gap action plan</li><li>Credit profile cleanup + alignment</li><li>Complete package + submission management</li></ul></div>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="#briefing">Book a Consultation — $500</a>
+            <a class="btn" href="/programs">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ═══════════ NAV (dropdown) ═══════════ -->
+<nav id="ei-gnav">
+  <div class="gn-inner">
+    <a href="https://escher-innovations.com/home-4658" class="gn-logo">
+      <span class="gn-logo-n">Escher Innovations</span>
+      <span class="gn-logo-t">Give · Gain · Grow</span>
+    </a>
+    <ul class="gn-menu">
+      <li class="gn-item"><a href="https://escher-innovations.com/home-4658" class="gn-link active">Home</a></li>
+      <li class="gn-item" data-drop="about">
+        <button class="gn-trigger" aria-haspopup="true" aria-expanded="false">About<svg class="gn-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="gn-drop">
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979" class="gn-sub-link"><div class="gn-sub-icon">📖</div><div class="gn-sub-text"><span class="gn-sub-name">Our Story</span><span class="gn-sub-desc">Who Escher is and why we exist</span></div></a></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979#vision" class="gn-sub-link"><div class="gn-sub-icon">🔭</div><div class="gn-sub-text"><span class="gn-sub-name">Vision</span><span class="gn-sub-desc">The future we're building</span></div></a></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979#mission" class="gn-sub-link"><div class="gn-sub-icon">🎯</div><div class="gn-sub-text"><span class="gn-sub-name">Mission</span><span class="gn-sub-desc">What we do every day</span></div></a></div>
+          <div class="gn-divider"></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979#why" class="gn-sub-link"><div class="gn-sub-icon">💡</div><div class="gn-sub-text"><span class="gn-sub-name">Why We Exist</span><span class="gn-sub-desc">The problem we're solving</span></div></a></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979#values" class="gn-sub-link"><div class="gn-sub-icon">⬡</div><div class="gn-sub-text"><span class="gn-sub-name">Core Values</span><span class="gn-sub-desc">How we operate</span></div></a></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979#what" class="gn-sub-link"><div class="gn-sub-icon">🏗️</div><div class="gn-sub-text"><span class="gn-sub-name">What We Do</span><span class="gn-sub-desc">Our services and approach</span></div></a></div>
+        </div>
+      </li>
+      <li class="gn-item"><a href="https://escher-innovations.com/enterprise" class="gn-link">Portfolio</a></li>
+      <li class="gn-item" data-drop="strategy">
+        <button class="gn-trigger" aria-haspopup="true" aria-expanded="false">Strategy<svg class="gn-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="gn-drop">
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/core-technology" class="gn-sub-link"><div class="gn-sub-icon">⚙️</div><div class="gn-sub-text"><span class="gn-sub-name">Core Technologies</span><span class="gn-sub-desc">Membership &amp; platform capabilities</span></div></a></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/services" class="gn-sub-link"><div class="gn-sub-icon">📋</div><div class="gn-sub-text"><span class="gn-sub-name">Services</span><span class="gn-sub-desc">Strategic, financial &amp; operational services</span></div></a></div>
+        </div>
+      </li>
+      <li class="gn-item"><a href="https://escher-innovations.com/technology-strategy" class="gn-link">Technology</a></li>
+      <li class="gn-item"><a href="https://escher-innovations.com/insight" class="gn-link">Insights</a></li>
+      <li class="gn-item" data-drop="team">
+        <button class="gn-trigger" aria-haspopup="true" aria-expanded="false">Team<svg class="gn-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="gn-drop">
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/team-5979" class="gn-sub-link"><div class="gn-sub-icon">👥</div><div class="gn-sub-text"><span class="gn-sub-name">About Us</span><span class="gn-sub-desc">Our leadership team &amp; story</span></div></a></div>
+          <div class="gn-sub-item"><a href="https://escher-innovations.com/governance" class="gn-sub-link"><div class="gn-sub-icon">🏛️</div><div class="gn-sub-text"><span class="gn-sub-name">Governance</span><span class="gn-sub-desc">Escher Touche Group structure</span></div></a></div>
+        </div>
+      </li>
+    </ul>
+    <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="gn-cta" target="_blank">Request Briefing <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <button class="gn-burger" id="gn-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="gn-drawer" id="gn-drawer">
+  <div class="gn-mob-section"><a href="https://escher-innovations.com/home-4658" class="gn-mob-top is-link">Home</a></div>
+  <div class="gn-mob-section" data-mob="about">
+    <button class="gn-mob-top">About<svg class="gn-mob-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="gn-mob-children">
+      <a href="https://escher-innovations.com/team-5979" class="gn-mob-child">Our Story</a>
+      <a href="https://escher-innovations.com/team-5979#vision" class="gn-mob-child">Vision</a>
+      <a href="https://escher-innovations.com/team-5979#mission" class="gn-mob-child">Mission</a>
+      <a href="https://escher-innovations.com/team-5979#why" class="gn-mob-child">Why We Exist</a>
+      <a href="https://escher-innovations.com/team-5979#values" class="gn-mob-child">Core Values</a>
+      <a href="https://escher-innovations.com/team-5979#what" class="gn-mob-child">What We Do</a>
+    </div>
+  </div>
+  <div class="gn-mob-section"><a href="https://escher-innovations.com/enterprise" class="gn-mob-top is-link">Portfolio</a></div>
+  <div class="gn-mob-section" data-mob="strategy">
+    <button class="gn-mob-top">Strategy<svg class="gn-mob-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="gn-mob-children">
+      <a href="https://escher-innovations.com/core-technology" class="gn-mob-child">Core Technologies</a>
+      <a href="https://escher-innovations.com/services" class="gn-mob-child">Services</a>
+    </div>
+  </div>
+  <div class="gn-mob-section"><a href="https://escher-innovations.com/technology-strategy" class="gn-mob-top is-link">Technology</a></div>
+  <div class="gn-mob-section"><a href="https://escher-innovations.com/insight" class="gn-mob-top is-link">Insights</a></div>
+  <div class="gn-mob-section" data-mob="team">
+    <button class="gn-mob-top">Team<svg class="gn-mob-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="gn-mob-children">
+      <a href="https://escher-innovations.com/team-5979" class="gn-mob-child">About Us</a>
+      <a href="https://escher-innovations.com/governance" class="gn-mob-child">Governance</a>
+    </div>
+  </div>
+  <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="gn-mob-cta" target="_blank">Request Briefing →</a>
+</div>
+
+
+</div><!-- /ei-surface -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="ei-footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-logo-name">Escher Innovations</div>
+      <div class="ft-logo-tag">Give · Gain · Grow</div>
+      <p class="ft-tagline">A global capital and innovation firm dedicated to empowering founders, organizations, and investors to build extraordinary enterprises.</p>
+      <div class="ft-social">
+        <a href="https://facebook.com" aria-label="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://linkedin.com" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://youtube.com" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#06070d"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="ft-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="https://escher-innovations.com/home-4658">About Us</a></li>
+        <li><a href="https://escher-innovations.com/team-5979">Our Team</a></li>
+        <li><a href="https://escher-innovations.com/enterprise">Portfolio</a></li>
+        <li><a href="https://escher-innovations.com/insight">Insights</a></li>
+        <li><a href="https://escher-innovations.com/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="https://escher-innovations.com/services">Capital Readiness</a></li>
+        <li><a href="https://escher-innovations.com/services">Deal Structuring</a></li>
+        <li><a href="https://escher-innovations.com/services">Equity Partnership</a></li>
+        <li><a href="https://escher-innovations.com/products">Strategy</a></li>
+        <li><a href="https://escher-innovations.com/technology-strategy">Technology</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Industries</h4>
+      <ul>
+        <li><a href="https://escher-innovations.com/enterprise">Technology</a></li>
+        <li><a href="https://escher-innovations.com/enterprise">Healthcare</a></li>
+        <li><a href="https://escher-innovations.com/enterprise">Real Estate</a></li>
+        <li><a href="https://escher-innovations.com/enterprise">Finance</a></li>
+        <li><a href="https://escher-innovations.com/enterprise">All Industries →</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Code of Conduct</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2026 Escher Innovations. All rights reserved. Marcos Villa.</span>
+    <div class="ft-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /ei-pg -->
+
+<style>
+/* ═══════════ DROPDOWN NAV CSS ═══════════ */
+#ei-gnav *,#ei-gnav *::before,#ei-gnav *::after{box-sizing:border-box;margin:0;padding:0}
+#ei-gnav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s ease,box-shadow .3s ease;}
+#ei-gnav.scrolled{background:rgba(6,7,13,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06);}
+#ei-gnav .gn-inner{max-width:1320px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;gap:8px;}
+#ei-gnav .gn-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.15;flex-shrink:0;}
+#ei-gnav .gn-logo-n{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em;}
+#ei-gnav .gn-logo-t{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;}
+#ei-gnav .gn-menu{display:flex;align-items:center;gap:0;list-style:none;flex:1;justify-content:center;}
+#ei-gnav .gn-item{position:relative;}
+#ei-gnav .gn-link,#ei-gnav .gn-trigger{display:inline-flex;align-items:center;gap:4px;padding:8px 13px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;border-radius:999px;border:none;background:none;cursor:pointer;white-space:nowrap;transition:color .18s,background .18s;font-family:inherit;letter-spacing:.01em;line-height:1;}
+#ei-gnav .gn-link:hover,#ei-gnav .gn-trigger:hover,#ei-gnav .gn-item.open .gn-trigger{color:#fff;background:rgba(255,255,255,.09);}
+#ei-gnav .gn-link.active{color:#fff;background:rgba(255,255,255,.1);}
+#ei-gnav .gn-chev{width:12px;height:12px;opacity:.55;transition:transform .2s ease,opacity .2s;flex-shrink:0;}
+#ei-gnav .gn-item.open .gn-chev{transform:rotate(180deg);opacity:1;}
+#ei-gnav .gn-drop{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:rgba(10,11,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility .2s;pointer-events:none;}
+#ei-gnav .gn-item.open .gn-drop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all;}
+#ei-gnav .gn-drop::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:6px;background:rgba(255,255,255,.09);clip-path:polygon(50% 0%,0% 100%,100% 100%);}
+#ei-gnav .gn-sub-link{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s;cursor:pointer;}
+#ei-gnav .gn-sub-link:hover{background:rgba(255,255,255,.07);}
+#ei-gnav .gn-sub-icon{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;margin-top:1px;}
+#ei-gnav .gn-sub-name{font-size:13px;font-weight:600;color:rgba(255,255,255,.88);display:block;margin-bottom:2px;letter-spacing:-.01em;}
+#ei-gnav .gn-sub-desc{font-size:11px;color:rgba(255,255,255,.38);line-height:1.4;display:block;}
+#ei-gnav .gn-divider{height:1px;background:rgba(255,255,255,.07);margin:6px 0;}
+#ei-gnav .gn-cta{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;background:#e7ff6e;color:#06070d;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .18s,transform .18s,box-shadow .18s;}
+#ei-gnav .gn-cta:hover{background:#f2ff8c;transform:translateY(-1px);box-shadow:0 6px 20px rgba(231,255,110,.3);}
+#ei-gnav .gn-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+#ei-gnav .gn-burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s ease;}
+#ei-gnav.mob-open .gn-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#ei-gnav.mob-open .gn-burger span:nth-child(2){opacity:0;}
+#ei-gnav.mob-open .gn-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.gn-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,7,13,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);z-index:999;padding:0 0 24px;max-height:calc(100vh - 72px);overflow-y:auto;}
+#ei-gnav.mob-open .gn-drawer{display:block;}
+.gn-mob-section{border-bottom:1px solid rgba(255,255,255,.06);}
+.gn-mob-top{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+.gn-mob-chev{width:14px;height:14px;opacity:.4;transition:transform .2s;}
+.gn-mob-section.open .gn-mob-chev{transform:rotate(180deg);opacity:.8;}
+.gn-mob-children{display:none;padding:0 0 8px;}
+.gn-mob-section.open .gn-mob-children{display:block;}
+.gn-mob-child{display:block;padding:10px 28px 10px 40px;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.gn-mob-child:hover{color:#fff;}
+.gn-mob-cta{margin:20px 28px 0;display:block;text-align:center;padding:13px;background:#e7ff6e;color:#06070d;font-weight:700;font-size:14px;border-radius:999px;text-decoration:none;}
+
+/* Hero offset for nav */
+#ei-hero{padding-top:72px;}
+
+@media(max-width:1024px){
+  #ei-gnav .gn-menu{display:none;}
+  #ei-gnav .gn-cta{display:none;}
+  #ei-gnav .gn-burger{display:flex;}
+  #ei-gnav .gn-inner{padding:0 20px;}
+}
+
+/* ═══════════ FOOTER CSS ═══════════ */
+#ei-footer { background: #06070d; color: rgba(255,255,255,.5); font-family: -apple-system,'Segoe UI',Helvetica,Arial,sans-serif; border-top: 1px solid rgba(255,255,255,.07); }
+#ei-footer .ft-top { max-width: 1280px; margin: 0 auto; padding: 72px 40px 48px; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 48px; }
+#ei-footer .ft-logo-name { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -.01em; margin-bottom: 4px; }
+#ei-footer .ft-logo-tag  { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #e7ff6e; margin-bottom: 18px; }
+#ei-footer .ft-tagline { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,.4); max-width: 260px; margin-bottom: 24px; }
+#ei-footer .ft-social { display: flex; gap: 10px; }
+#ei-footer .ft-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); text-decoration: none; transition: border-color .18s, color .18s; }
+#ei-footer .ft-social a:hover { border-color: #e7ff6e; color: #e7ff6e; }
+#ei-footer .ft-col h4 { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #fff; margin-bottom: 18px; }
+#ei-footer .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding: 0; margin: 0; }
+#ei-footer .ft-col ul a { font-size: 13px; color: rgba(255,255,255,.42); text-decoration: none; transition: color .18s; }
+#ei-footer .ft-col ul a:hover { color: #fff; }
+#ei-footer .ft-bottom { border-top: 1px solid rgba(255,255,255,.07); max-width: 1280px; margin: 0 auto; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+#ei-footer .ft-copy { font-size: 12px; color: rgba(255,255,255,.28); }
+#ei-footer .ft-legal { display: flex; gap: 20px; }
+#ei-footer .ft-legal a { font-size: 12px; color: rgba(255,255,255,.28); text-decoration: none; transition: color .18s; }
+#ei-footer .ft-legal a:hover { color: rgba(255,255,255,.65); }
+@media (max-width: 900px) {
+  #ei-footer .ft-top { grid-template-columns: 1fr 1fr; gap: 36px; padding: 48px 24px 32px; }
+  #ei-footer .ft-brand { grid-column: span 2; }
+  #ei-footer .ft-bottom { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  #ei-footer .ft-top { grid-template-columns: 1fr; }
+  #ei-footer .ft-brand { grid-column: span 1; }
+}
+</style>
+<script>
+/* ── SCROLL-OVER-HERO ── */
+(function(){
+
+  function nukeGHL(){
+    // 1. Kill padding/margin on every ancestor of #ei-pg up to body
+    var el = document.getElementById('ei-pg');
+    if(!el) return;
+    var cur = el.parentElement;
+    while(cur && cur !== document.body){
+      cur.style.setProperty('padding-top',    '0', 'important');
+      cur.style.setProperty('padding-bottom', '0', 'important');
+      cur.style.setProperty('margin-top',     '0', 'important');
+      cur.style.setProperty('margin-bottom',  '0', 'important');
+      cur.style.setProperty('min-height',     'unset', 'important');
+      cur = cur.parentElement;
+    }
+
+    // 2. Also nuke by GHL data attribute class names
+    var ghlSelectors = [
+      '[data-page-element="Section/V1"]',
+      '[data-page-element="Row/V1"]',
+      '[data-page-element="SubSection/V1"]',
+      '.page-section',
+      '.section-box',
+      '.funnelish-section',
+      '.container-shadow-wrap'
+    ];
+    ghlSelectors.forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(node){
+        // Only nuke wrappers that are ancestors of our block
+        if(node.contains(el)){
+          node.style.setProperty('padding-top',    '0', 'important');
+          node.style.setProperty('padding-bottom', '0', 'important');
+          node.style.setProperty('margin-top',     '0', 'important');
+          node.style.setProperty('margin-bottom',  '0', 'important');
+          node.style.setProperty('min-height',     'unset', 'important');
+        }
+      });
+    });
+  }
+
+  function init(){
+    nukeGHL();
+
+    var hero   = document.getElementById('ei-hero');
+    var spacer = document.getElementById('ei-spacer');
+    if(!hero || !spacer) return;
+
+    // Set hero + spacer to exact viewport height
+    function setH(){
+      var vh = window.innerHeight;
+      hero.style.setProperty('height', vh + 'px', 'important');
+      spacer.style.height = vh + 'px';
+    }
+    setH();
+    window.addEventListener('resize', setH);
+
+    // Subtle parallax: hero bg scales down as surface covers it
+    var bg = hero.querySelector('.bg');
+    window.addEventListener('scroll', function(){
+      if(!bg) return;
+      var p = Math.min(window.scrollY / window.innerHeight, 1);
+      bg.style.transform = 'scale(' + (1.06 - p * 0.06) + ')';
+    }, {passive: true});
+  }
+
+  // Run at multiple points to catch GHL's lazy rendering
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(init, 50); });
+  } else {
+    setTimeout(init, 50);
+  }
+  window.addEventListener('load', function(){
+    setTimeout(nukeGHL, 100);
+    setTimeout(nukeGHL, 500);
+    setTimeout(nukeGHL, 1000);
+  });
+})();
+
+/* ── ACCORDION ── */
+(function(){
+  document.querySelectorAll('[data-acc="1"] .card').forEach(function(card){
+    var btn = card.querySelector('.card-btn');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var isOpen = card.dataset.open === 'true';
+      // Close all
+      document.querySelectorAll('[data-acc="1"] .card').forEach(function(c){
+        c.dataset.open = 'false';
+        var b = c.querySelector('.card-btn');
+        if(b) b.setAttribute('aria-expanded','false');
+      });
+      // Open clicked if it was closed
+      if(!isOpen){
+        card.dataset.open = 'true';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
+
+/* ── SECTOR PILLS ── */
+(function(){
+  var root = document.getElementById('sector-ui-01');
+  if(!root) return;
+
+  var pills    = Array.from(root.querySelectorAll('.pill'));
+  var title    = root.querySelector('#sectorTitle');
+  var tag      = root.querySelector('#sectorTag');
+  var desc     = root.querySelector('#sectorDesc');
+  var use      = root.querySelector('#sectorUse');
+  var focus    = root.querySelector('#sectorFocus');
+  var deliver  = root.querySelector('#sectorDeliver');
+  var imgA     = root.querySelector('#sectorImgA');
+  var imgB     = root.querySelector('#sectorImgB');
+  var imgLabel = root.querySelector('#sectorImgLabel');
+  var frontIsA = true, kbToggle = false;
+
+  var data = {
+    technology:{title:"Technology",tag:"How we help",img:"https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop",desc:"We help tech companies clean up their financials, get lender-ready, and raise the capital they need to build, hire, and grow — without giving away more equity than necessary.",use:["Runway extension + key hires","Product development + infrastructure","Marketing + customer acquisition"],focus:["Revenue consistency + burn rate control","Documentation integrity and completeness","Existing obligations + utilization levels"],deliver:["Fundability scorecard + gap action plan","Credit profile cleanup + alignment","Complete package + submission management"]},
+    healthcare:{title:"Healthcare",tag:"How we help",img:"https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=80&auto=format&fit=crop",desc:"We work with clinics, practices, and health businesses to cut through the documentation-heavy approval process and access the capital needed to expand, upgrade equipment, and stabilize operations.",use:["Clinic expansion + new locations","Equipment upgrades + technology","Working capital for payroll + billing cycles"],focus:["Revenue cycle documentation + receivables","Licensing, credentials + compliance records","Debt coverage + utilization management"],deliver:["Lender-ready package + narrative","Credit profile strengthening","Capital sequencing plan tailored to your cycle"]},
+    finance:{title:"Finance",tag:"How we help",img:"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80&auto=format&fit=crop",desc:"We help finance businesses access working capital and growth funding while managing their risk profile carefully — because credibility is everything in this space, and one misstep costs you future options.",use:["Operating capital + liquidity reserves","Strategic growth initiatives","Bridge funding where eligibility allows"],focus:["Cash flow consistency + documentation","Existing obligations + exposure management","Governance and reporting integrity"],deliver:["Full underwriting alignment review","Submission discipline + strategic sequencing","Post-close optimization for future rounds"]},
+    education:{title:"Education",tag:"How we help",img:"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80&auto=format&fit=crop",desc:"We help schools, training programs, and education companies access stable, affordable funding for growth — built around the documentation and stability standards lenders expect from this sector.",use:["Facility improvements + expansions","New program development + staffing","Operating capital for enrollment cycles"],focus:["Enrollment stability + revenue predictability","Documentation completeness","Utilization + existing obligations"],deliver:["Readiness plan + full packaging","Credit profile enhancement","Submission management from start to close"]},
+    manufacturing:{title:"Manufacturing",tag:"How we help",img:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80&auto=format&fit=crop",desc:"We help manufacturers access equipment financing, inventory capital, and growth funding — structured to fit your asset cycles, production timelines, and the way lenders evaluate your industry.",use:["Equipment + machinery purchases","Inventory financing","Facility expansion + capacity upgrades"],focus:["Margins + cash conversion timing","Collateral documentation + asset value","Utilization + obligation management"],deliver:["Capital roadmap aligned to your cycles","Packaging built for equipment financing pathways","Profile alignment + documentation cleanup"]},
+    retail:{title:"Retail",tag:"How we help",img:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=80&auto=format&fit=crop",desc:"We help retail businesses access the inventory and working capital they need — with a financial profile that reflects seasonal rhythms and keeps approvals moving without unnecessary friction.",use:["Inventory + seasonal stock purchases","Working capital between sales cycles","Location expansion + build-outs"],focus:["Revenue consistency + seasonality patterns","Bank statements + bookkeeping accuracy","Utilization strategy across cycles"],deliver:["Fundability scorecard + gap plan","Package + funding narrative","Submission sequenced to your sales calendar"]},
+    energy:{title:"Energy",tag:"How we help",img:"https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&q=80&auto=format&fit=crop",desc:"We work with energy companies to build funding packages around their contracts, project timelines, and documentation — structured to be defensible at every stage of the review process.",use:["Project mobilization + startup costs","Equipment + fleet + infrastructure","Working capital between contract cycles"],focus:["Contracts + receivables documentation","Project risk posture and mitigation","Documentation integrity across all filings"],deliver:["Underwriting alignment review","Complete package + strategic sequencing","Post-close positioning for follow-on capital"]},
+    transportation:{title:"Transportation",tag:"How we help",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop",desc:"We help transportation and logistics businesses access fleet and operating capital by building a funding profile that accurately reflects your assets, revenue, and operational consistency.",use:["Fleet acquisition + expansion","Maintenance + operational costs","Fuel + working capital reserves"],focus:["Asset documentation + title records","Revenue consistency + customer concentration","Utilization + outstanding obligations"],deliver:["Full readiness review","Capital roadmap + lender match","Package + submission management"]},
+    realestate:{title:"Real Estate",tag:"How we help",img:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&auto=format&fit=crop",desc:"We work with real estate operators and investors to access capital for specific deals and projects — structured around your documentation, exposure levels, and how you want to sequence your next move.",use:["Renovation + value-add projects","Bridge financing where applicable","Operating reserves + cash flow management"],focus:["Current exposure + outstanding obligations","Income validation + property documentation","Utilization strategy across the portfolio"],deliver:["Deal-specific readiness plan","Package + funding narrative","Submission discipline from offer to close"]},
+    agriculture:{title:"Agriculture",tag:"How we help",img:"https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=900&q=80&auto=format&fit=crop",desc:"We help agricultural businesses access equipment, input, and operating capital that fits how farming actually works — seasonal income, long lead times, and documentation that tells the right story.",use:["Equipment + machinery upgrades","Seed, fertilizer + input costs","Working capital between harvest cycles"],focus:["Seasonal revenue timing + income documentation","Equipment value + collateral integrity","Obligations + utilization across the year"],deliver:["Fundability scorecard + gap plan","Credit profile enhancement","Package + sequencing built for your season"]},
+    entertainment:{title:"Entertainment",tag:"How we help",img:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&q=80&auto=format&fit=crop",desc:"We help entertainment companies access production and operating capital despite the variable income that comes with the industry — by building a documentation profile that gives lenders the confidence they need to say yes.",use:["Production + content creation costs","Marketing + distribution spend","Working capital between projects"],focus:["Income verification + contract documentation","Obligations + current exposure","Documentation consistency across periods"],deliver:["Readiness plan tailored to your income profile","Package + lender-ready narrative","Submission sequencing to maximize approvals"]},
+    nonprofit:{title:"Non-Profit",tag:"How we help",img:"https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=900&q=80&auto=format&fit=crop",desc:"We help nonprofits access funding for growth and operations by strengthening the governance, documentation, and financial presentation that funders and lenders require — so your mission doesn't stall because of paperwork.",use:["Program expansion + new initiatives","Operational stability + staffing","Facilities improvements + capital projects"],focus:["Governance structure + board documentation","Revenue sources + grant stability","Utilization + outstanding obligations"],deliver:["Readiness review + action plan","Package + funding narrative","Sequencing plan aligned to your funding calendar"]}
+  };
+
+  function setList(el, items){
+    el.innerHTML = items.map(function(i){ return '<li>'+i+'</li>'; }).join('');
+  }
+
+  function activate(key){
+    var d = data[key]; if(!d) return;
+    title.textContent = d.title;
+    tag.textContent   = d.tag;
+    desc.textContent  = d.desc;
+    setList(use,     d.use);
+    setList(focus,   d.focus);
+    setList(deliver, d.deliver);
+    pills.forEach(function(p){ p.setAttribute('aria-pressed', String(p.dataset.sector===key)); });
+    kbToggle = !kbToggle;
+    var kc = kbToggle ? 'kb-1' : 'kb-2';
+    if(frontIsA){
+      imgB.src = d.img; imgB.className = 'layer-b '+kc;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        imgB.classList.add('visible'); imgA.style.opacity = '0';
+      });});
+      setTimeout(function(){
+        imgA.src=d.img; imgA.className='layer-a'; imgA.style.opacity='1';
+        imgB.classList.remove('visible'); frontIsA=false;
+      },750);
+    } else {
+      imgA.src=d.img; imgA.className='layer-a '+kc; imgA.style.opacity='0';
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        imgA.style.opacity='1'; imgB.classList.remove('visible');
+      });});
+      setTimeout(function(){ imgB.src=d.img; imgB.className='layer-b'; frontIsA=true; },750);
+    }
+    imgLabel.textContent = d.title;
+  }
+
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){ activate(p.dataset.sector); });
+  });
+  activate('technology');
+})();
+</script>
+
+<script>
+/* ── DROPDOWN NAV ── */
+(function(){
+  var nav    = document.getElementById('ei-gnav');
+  var burger = document.getElementById('gn-burger');
+  var drawer = document.getElementById('gn-drawer');
+  if(!nav) return;
+
+  // Scroll state
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Desktop dropdowns
+  var items = Array.from(nav.querySelectorAll('.gn-item[data-drop]'));
+  items.forEach(function(item){
+    var trigger = item.querySelector('.gn-trigger');
+    if(!trigger) return;
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = item.classList.contains('open');
+      items.forEach(function(i){ i.classList.remove('open'); var t=i.querySelector('.gn-trigger'); if(t) t.setAttribute('aria-expanded','false'); });
+      if(!isOpen){ item.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(){
+    items.forEach(function(i){ i.classList.remove('open'); var t=i.querySelector('.gn-trigger'); if(t) t.setAttribute('aria-expanded','false'); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){
+      items.forEach(function(i){ i.classList.remove('open'); });
+      if(nav) nav.classList.remove('mob-open');
+    }
+  });
+
+  // Mobile burger
+  if(burger && drawer){
+    burger.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('mob-open');
+    });
+    // Mobile accordion
+    Array.from(drawer.querySelectorAll('.gn-mob-section[data-mob]')).forEach(function(sec){
+      var btn = sec.querySelector('.gn-mob-top');
+      if(!btn || btn.classList.contains('is-link')) return;
+      btn.addEventListener('click', function(){
+        var wasOpen = sec.classList.contains('open');
+        Array.from(drawer.querySelectorAll('.gn-mob-section')).forEach(function(s){ s.classList.remove('open'); });
+        if(!wasOpen) sec.classList.add('open');
+      });
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('mob-open'); });
+    });
+  }
+})();
+</script>
