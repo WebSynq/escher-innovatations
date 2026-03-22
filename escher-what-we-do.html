@@ -1,0 +1,790 @@
+<!-- ============================================================
+  ESCHER INNOVATIONS — WHAT WE DO PAGE
+  URL: /what-we-do
+  Professional. No emojis. SVG icons only. All !important.
+  Single GHL Custom HTML block. Set section padding to 0.
+============================================================ -->
+
+<!-- GHL whitespace killer -->
+<style>
+[data-page-element="Section/V1"],[data-page-element="Section/V2"],
+[data-page-element="Row/V1"],[data-page-element="Row/V2"],
+[data-page-element="SubSection/V1"],[data-page-element="SubSection/V2"],
+.page-section,.section-box,.funnelish-section,.container-shadow-wrap,.section-content-box{
+  padding-top:0!important;padding-bottom:0!important;
+  margin-top:0!important;margin-bottom:0!important;min-height:unset!important;
+}
+[data-page-element="Section/V1"]>.inner-content,
+[data-page-element="Section/V2"]>.inner-content,
+[data-page-element="Row/V1"]>.inner-content{
+  padding-top:0!important;padding-bottom:0!important;
+}
+</style>
+
+<style>
+/* ── TOKENS & RESET ── */
+#wd *,#wd *::before,#wd *::after{box-sizing:border-box;margin:0;padding:0;}
+#wd{
+  --black:#06070d;--white:#fff;--off:#f6f7f4;
+  --ink:#0b1220;--muted:rgba(11,18,32,.72);--muted2:rgba(11,18,32,.45);
+  --border:rgba(11,18,32,.10);--border-d:rgba(255,255,255,.08);
+  --gold:#e7ff6e;--ease:cubic-bezier(.16,1,.3,1);
+  font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+
+/* ── NAV ── */
+#wd-nav *,#wd-nav *::before,#wd-nav *::after{box-sizing:border-box;margin:0;padding:0;}
+#wd-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;height:72px!important;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,box-shadow .3s;}
+#wd-nav.scrolled{background:rgba(6,7,13,.96)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06);}
+#wd-nav .ni{max-width:1320px!important;margin:0 auto!important;height:72px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 40px!important;gap:8px;}
+#wd-nav .logo{display:flex!important;flex-direction:column!important;text-decoration:none;line-height:1.15;flex-shrink:0;}
+#wd-nav .logo-n{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em;}
+#wd-nav .logo-t{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;}
+#wd-nav .gm{display:flex!important;align-items:center!important;gap:0;list-style:none;flex:1;justify-content:center;}
+#wd-nav .gi{position:relative;}
+#wd-nav .gl,.gtr{display:inline-flex;align-items:center;gap:4px;padding:8px 13px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;border-radius:999px;border:none;background:none;cursor:pointer;white-space:nowrap;transition:color .18s,background .18s;font-family:inherit;letter-spacing:.01em;line-height:1;}
+#wd-nav .gl:hover,.gtr:hover,#wd-nav .gi.open .gtr{color:#fff;background:rgba(255,255,255,.09);}
+#wd-nav .gc{width:12px;height:12px;opacity:.55;transition:transform .2s;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#wd-nav .gi.open .gc{transform:rotate(180deg);opacity:1;}
+#wd-nav .gd{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:rgba(10,11,18,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;}
+#wd-nav .gi.open .gd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all;}
+#wd-nav .gd::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:6px;background:rgba(255,255,255,.09);clip-path:polygon(50% 0%,0% 100%,100% 100%);}
+#wd-nav .gsl{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s;}
+#wd-nav .gsl:hover{background:rgba(255,255,255,.07);}
+#wd-nav .gsi{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+#wd-nav .gsi svg{width:14px;height:14px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#wd-nav .gsn{font-size:13px;font-weight:600;color:rgba(255,255,255,.88);display:block;margin-bottom:2px;letter-spacing:-.01em;}
+#wd-nav .gsd{font-size:11px;color:rgba(255,255,255,.38);line-height:1.4;display:block;}
+#wd-nav .gdiv{height:1px;background:rgba(255,255,255,.07);margin:6px 0;}
+#wd-nav .gcta{display:inline-flex!important;align-items:center;gap:6px;padding:9px 20px!important;border-radius:999px;background:#e7ff6e!important;color:#06070d!important;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .18s,transform .18s;}
+#wd-nav .gcta:hover{background:#f2ff8c!important;transform:translateY(-1px);}
+#wd-nav .gb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+#wd-nav .gb span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s;}
+#wd-nav.mob-open .gb span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#wd-nav.mob-open .gb span:nth-child(2){opacity:0;}
+#wd-nav.mob-open .gb span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.wd-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,7,13,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);z-index:999;padding:0 0 24px;max-height:calc(100vh - 72px);overflow-y:auto;}
+#wd-nav.mob-open .wd-drawer{display:block;}
+.wd-ms{border-bottom:1px solid rgba(255,255,255,.06);}
+.wd-mt{display:flex;align-items:center;justify-content:space-between;padding:14px 28px!important;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+.wd-mch{width:14px;height:14px;opacity:.4;transition:transform .2s;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.wd-ms.open .wd-mch{transform:rotate(180deg);opacity:.8;}
+.wd-mch-wrap{display:none;padding:0 0 8px;}
+.wd-ms.open .wd-mch-wrap{display:block;}
+.wd-mc{display:block;padding:10px 28px 10px 40px!important;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.wd-mc:hover{color:#fff;}
+.wd-mcta{margin:20px 28px 0!important;display:block;text-align:center;padding:13px!important;background:#e7ff6e!important;color:#06070d!important;font-weight:700;font-size:14px;border-radius:999px;text-decoration:none;}
+@media(max-width:1024px){
+  #wd-nav .gm{display:none!important;}
+  #wd-nav .gcta{display:none!important;}
+  #wd-nav .gb{display:flex!important;}
+  #wd-nav .ni{padding:0 20px!important;}
+}
+
+/* ── HERO ── */
+#wd-hero{background:#06070d!important;padding:152px 40px 96px!important;position:relative;overflow:hidden;text-align:center;}
+#wd-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(231,255,110,.05) 0%,transparent 70%);pointer-events:none;}
+#wd-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+#wd-hero .ey{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:22px!important;position:relative;z-index:1;}
+#wd-hero .ed{width:5px;height:5px;border-radius:50%;background:#e7ff6e;box-shadow:0 0 8px rgba(231,255,110,.8);}
+#wd-hero h1{font-size:clamp(38px,5.5vw,76px)!important;font-weight:800!important;line-height:.97!important;letter-spacing:-.03em!important;color:#fff!important;margin-bottom:22px!important;position:relative;z-index:1;}
+#wd-hero h1 em{font-style:italic;color:#e7ff6e;}
+#wd-hero .hs{font-size:clamp(16px,2vw,19px)!important;font-weight:300!important;line-height:1.78!important;color:rgba(255,255,255,.58)!important;max-width:640px!important;margin:0 auto 52px!important;position:relative;z-index:1;}
+#wd-hero .hero-pills{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:center!important;position:relative;z-index:1;}
+#wd-hero .hp{display:inline-flex;align-items:center;gap:10px;padding:11px 20px!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:999px;background:rgba(255,255,255,.04)!important;font-size:13px;font-weight:600;color:rgba(255,255,255,.6);white-space:nowrap;letter-spacing:.01em;}
+#wd-hero .hp-dot{width:5px;height:5px;border-radius:50%;background:#e7ff6e;flex-shrink:0;}
+
+/* ── SHARED ── */
+.wd-light{background:linear-gradient(180deg,#f6f7f4,#fff)!important;border-top:1px solid rgba(11,18,32,.10)!important;border-bottom:1px solid rgba(11,18,32,.10)!important;padding:88px 0!important;}
+.wd-dark{background:linear-gradient(180deg,rgba(11,18,32,.96),rgba(11,18,32,.92))!important;border-top:1px solid rgba(255,255,255,.08)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:88px 0!important;}
+.wd-wrap{max-width:1180px!important;margin:0 auto!important;padding:0 40px!important;}
+.wd-brow{display:flex!important;align-items:center!important;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px!important;}
+.wd-bdot{width:8px;height:8px;border-radius:99px;background:#e7ff6e;box-shadow:0 0 0 3px rgba(231,255,110,.25);flex-shrink:0;}
+.wd-brow-l{color:rgba(11,18,32,.6);}
+.wd-brow-d{color:rgba(255,255,255,.52);}
+.wd-h2{font-size:clamp(28px,3.6vw,50px)!important;font-weight:800!important;line-height:1.0!important;letter-spacing:-.025em!important;margin-bottom:18px!important;}
+.wd-h2-l{color:#0b1220!important;}
+.wd-h2-d{color:#fff!important;}
+.wd-h2 em{font-style:italic;}
+.wd-h2-l em{color:rgba(11,18,32,.42);border-bottom:3px solid #e7ff6e;padding-bottom:2px;}
+.wd-h2-d em{color:#e7ff6e;}
+.wd-body{font-size:15px!important;font-weight:300!important;line-height:1.82!important;margin-bottom:16px!important;}
+.wd-body-l{color:rgba(11,18,32,.72)!important;}
+.wd-body-d{color:rgba(255,255,255,.62)!important;}
+
+/* ── OVERVIEW (light, 3 core commitments) ── */
+#wd-overview .ov-intro{display:grid!important;grid-template-columns:1fr 1fr!important;gap:72px!important;align-items:center!important;margin-bottom:64px!important;}
+#wd-overview .ov-3{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:1px!important;background:rgba(11,18,32,.1)!important;border:1px solid rgba(11,18,32,.1)!important;}
+#wd-overview .ov-c{background:#fff!important;padding:36px 28px!important;position:relative;}
+#wd-overview .ov-c::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));}
+#wd-overview .ov-c-tag{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,18,32,.32);margin-bottom:16px!important;}
+#wd-overview .ov-c-icon{width:44px;height:44px;border-radius:11px;background:rgba(231,255,110,.1);border:1px solid rgba(231,255,110,.22);display:grid;place-items:center;margin-bottom:16px!important;}
+#wd-overview .ov-c-icon svg{width:20px;height:20px;stroke:#0b1220;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#wd-overview .ov-c h3{font-size:19px;font-weight:700;color:#0b1220;margin-bottom:10px!important;letter-spacing:-.01em;}
+#wd-overview .ov-c p{font-size:14px;color:rgba(11,18,32,.65);line-height:1.72;}
+
+/* ── SERVICE AREAS (dark, 5 deep-dive sections) ── */
+#wd-services .sv-list{display:flex;flex-direction:column;gap:0;margin-top:48px!important;}
+#wd-services .sv{border-bottom:1px solid rgba(255,255,255,.07)!important;padding:40px 0!important;display:grid!important;grid-template-columns:280px 1fr!important;gap:48px!important;align-items:start!important;}
+#wd-services .sv:last-child{border-bottom:none!important;}
+#wd-services .sv-left{}
+#wd-services .sv-num{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(231,255,110,.55);margin-bottom:12px!important;}
+#wd-services .sv-icon{width:52px;height:52px;border-radius:13px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:grid;place-items:center;margin-bottom:16px!important;}
+#wd-services .sv-icon svg{width:24px;height:24px;stroke:rgba(255,255,255,.65);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#wd-services .sv-left h3{font-size:20px;font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1.2;}
+#wd-services .sv-right p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:22px!important;}
+#wd-services .sv-cols{display:grid!important;grid-template-columns:1fr 1fr!important;gap:20px!important;}
+#wd-services .sv-col h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(231,255,110,.65);margin-bottom:12px!important;}
+#wd-services .sv-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+#wd-services .sv-col ul li{font-size:13.5px;color:rgba(255,255,255,.55);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+#wd-services .sv-col ul li::before{content:'';width:4px;height:4px;border-radius:50%;background:#e7ff6e;flex-shrink:0;margin-top:7px;}
+
+/* ── HOW IT WORKS (light, process) ── */
+#wd-process .pr-intro{display:grid!important;grid-template-columns:1fr 1fr!important;gap:64px!important;margin-bottom:56px!important;align-items:end!important;}
+#wd-process .pr-steps{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:1px!important;background:rgba(11,18,32,.1)!important;border:1px solid rgba(11,18,32,.1)!important;}
+#wd-process .pr-step{background:#fff!important;padding:32px 24px!important;position:relative;}
+#wd-process .pr-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));}
+#wd-process .pr-n{font-size:clamp(48px,5vw,72px);font-weight:800;color:rgba(11,18,32,.07);line-height:1;letter-spacing:-.04em;margin-bottom:16px!important;}
+#wd-process .pr-tag{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(11,18,32,.35);margin-bottom:8px!important;}
+#wd-process .pr-step h3{font-size:16px;font-weight:700;color:#0b1220;margin-bottom:8px!important;letter-spacing:-.01em;}
+#wd-process .pr-step p{font-size:13px;color:rgba(11,18,32,.6);line-height:1.68;}
+
+/* ── WHO BENEFITS (dark, audience + outcomes) ── */
+#wd-audience .au-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:18px!important;margin-top:48px!important;}
+#wd-audience .au-c{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.09)!important;border-radius:18px!important;padding:32px 28px!important;position:relative;}
+#wd-audience .au-c::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));border-radius:18px 18px 0 0;}
+#wd-audience .au-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(231,255,110,.6);margin-bottom:14px!important;}
+#wd-audience .au-c h3{font-size:19px;font-weight:700;color:#fff;margin-bottom:10px!important;letter-spacing:-.01em;}
+#wd-audience .au-c p{font-size:14px;color:rgba(255,255,255,.52);line-height:1.72;margin-bottom:18px!important;}
+#wd-audience .au-outcomes{list-style:none;display:flex;flex-direction:column;gap:8px;}
+#wd-audience .au-outcomes li{font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+#wd-audience .au-outcomes li::before{content:'';width:4px;height:4px;border-radius:50%;background:#e7ff6e;flex-shrink:0;margin-top:7px;}
+
+/* ── DIFFERENCE (light, comparison 2col) ── */
+#wd-diff .df-2col{display:grid!important;grid-template-columns:1fr 1fr!important;gap:64px!important;align-items:start!important;}
+#wd-diff .df-col-head{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:12px 16px!important;border-radius:8px;margin-bottom:20px!important;display:inline-block;}
+#wd-diff .df-col-head-l{background:rgba(11,18,32,.07);color:rgba(11,18,32,.5);}
+#wd-diff .df-col-head-r{background:rgba(231,255,110,.18);color:#0b1220;}
+#wd-diff .df-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+#wd-diff .df-list li{font-size:14px;line-height:1.7;padding-left:18px!important;position:relative;}
+#wd-diff .df-list-l li{color:rgba(11,18,32,.55);}
+#wd-diff .df-list-l li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:1px;background:rgba(11,18,32,.3);}
+#wd-diff .df-list-r li{color:rgba(11,18,32,.75);font-weight:500;}
+#wd-diff .df-list-r li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#e7ff6e;}
+
+/* ── CTA ── */
+#wd-cta{background:#06070d!important;padding:96px 40px!important;text-align:center;border-top:1px solid rgba(255,255,255,.08)!important;position:relative;overflow:hidden;}
+#wd-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(231,255,110,.06) 0%,transparent 70%);}
+#wd-cta .ci{position:relative;z-index:1;max-width:600px;margin:0 auto!important;}
+#wd-cta h2{font-size:clamp(30px,4vw,52px)!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1.05!important;color:#fff!important;margin-bottom:16px!important;}
+#wd-cta h2 em{color:#e7ff6e;font-style:italic;}
+#wd-cta p{font-size:17px!important;font-weight:300!important;color:rgba(255,255,255,.5)!important;line-height:1.8!important;margin-bottom:38px!important;}
+#wd-cta .cbtns{display:flex!important;gap:14px!important;justify-content:center!important;flex-wrap:wrap!important;}
+.wd-btn-gold{display:inline-flex;align-items:center;gap:7px;padding:13px 26px!important;border-radius:999px;background:#e7ff6e!important;color:#06070d!important;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:inherit;}
+.wd-btn-gold:hover{background:#f2ff8c!important;transform:translateY(-2px);box-shadow:0 10px 28px rgba(231,255,110,.38);}
+.wd-btn-dk{display:inline-flex;align-items:center;gap:7px;padding:12px 24px!important;border-radius:999px;background:rgba(255,255,255,.08)!important;color:rgba(255,255,255,.75)!important;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.15)!important;cursor:pointer;transition:all .2s;font-family:inherit;}
+.wd-btn-dk:hover{background:rgba(255,255,255,.14)!important;color:#fff!important;}
+
+/* ── FOOTER ── */
+#wd-footer{background:#06070d!important;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07)!important;font-family:inherit;}
+#wd-footer .ft-top{max-width:1280px!important;margin:0 auto!important;padding:72px 40px 48px!important;display:grid!important;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr!important;gap:48px!important;}
+#wd-footer .ft-ln{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.01em;margin-bottom:4px!important;}
+#wd-footer .ft-lt{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;margin-bottom:18px!important;}
+#wd-footer .ft-tl{font-size:13px;line-height:1.75;color:rgba(255,255,255,.38);max-width:260px;margin-bottom:24px!important;}
+#wd-footer .ft-soc{display:flex!important;gap:10px!important;}
+#wd-footer .ft-soc a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12)!important;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;transition:border-color .18s,color .18s;}
+#wd-footer .ft-soc a:hover{border-color:#e7ff6e!important;color:#e7ff6e!important;}
+#wd-footer .ft-col h4{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px!important;}
+#wd-footer .ft-col ul{list-style:none;display:flex!important;flex-direction:column!important;gap:10px!important;padding:0;}
+#wd-footer .ft-col ul a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .18s;}
+#wd-footer .ft-col ul a:hover{color:#fff;}
+#wd-footer .ft-bot{border-top:1px solid rgba(255,255,255,.07)!important;max-width:1280px!important;margin:0 auto!important;padding:24px 40px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:12px!important;}
+#wd-footer .ft-copy{font-size:12px;color:rgba(255,255,255,.28);}
+#wd-footer .ft-leg{display:flex!important;gap:20px!important;}
+#wd-footer .ft-leg a{font-size:12px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .18s;}
+#wd-footer .ft-leg a:hover{color:rgba(255,255,255,.65);}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rv.in{opacity:1!important;transform:translateY(0)!important;}
+.rv.d1{transition-delay:.08s;}.rv.d2{transition-delay:.16s;}.rv.d3{transition-delay:.24s;}.rv.d4{transition-delay:.32s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .wd-wrap{padding:0 24px!important;}
+  #wd-hero{padding:130px 24px 60px!important;}
+  .wd-light,.wd-dark{padding:60px 0!important;}
+  #wd-overview .ov-intro{grid-template-columns:1fr!important;gap:32px!important;}
+  #wd-overview .ov-3{grid-template-columns:1fr!important;}
+  #wd-services .sv{grid-template-columns:1fr!important;gap:24px!important;}
+  #wd-services .sv-cols{grid-template-columns:1fr!important;}
+  #wd-process .pr-intro{grid-template-columns:1fr!important;gap:32px!important;}
+  #wd-process .pr-steps{grid-template-columns:1fr 1fr!important;}
+  #wd-audience .au-grid{grid-template-columns:1fr!important;}
+  #wd-diff .df-2col{grid-template-columns:1fr!important;gap:40px!important;}
+  #wd-cta{padding:60px 24px!important;}
+  #wd-footer .ft-top{grid-template-columns:1fr 1fr!important;gap:36px!important;padding:48px 24px 32px!important;}
+  #wd-footer .ft-brand{grid-column:span 2;}
+  #wd-footer .ft-bot{padding:20px 24px!important;flex-direction:column!important;align-items:flex-start!important;}
+}
+@media(max-width:640px){
+  #wd-process .pr-steps{grid-template-columns:1fr!important;}
+  #wd-footer .ft-top{grid-template-columns:1fr!important;}
+  #wd-footer .ft-brand{grid-column:span 1;}
+}
+</style>
+
+<div id="wd">
+
+<!-- ══ NAV ══ -->
+<nav id="wd-nav">
+  <div class="ni">
+    <a href="https://escher-innovations.com/home-4658" class="logo">
+      <span class="logo-n">Escher Innovations</span>
+      <span class="logo-t">Give · Gain · Grow</span>
+    </a>
+    <ul class="gm">
+      <li class="gi"><a href="https://escher-innovations.com/home-4658" class="gl">Home</a></li>
+      <li class="gi" data-drop="about">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">About<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/our-story" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div><span class="gsn">Our Story</span><span class="gsd">Who Escher is and why we exist</span></div></a></div>
+          <div><a href="https://escher-innovations.com/vision" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg></div><div><span class="gsn">Vision</span><span class="gsd">The future we are building</span></div></a></div>
+          <div><a href="https://escher-innovations.com/mission" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><span class="gsn">Mission</span><span class="gsd">What we do every day</span></div></a></div>
+          <div class="gdiv"></div>
+          <div><a href="https://escher-innovations.com/why-we-exist" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><span class="gsn">Why We Exist</span><span class="gsd">The problem we are solving</span></div></a></div>
+          <div><a href="https://escher-innovations.com/core-values" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><span class="gsn">Core Values</span><span class="gsd">How we operate</span></div></a></div>
+          <div><a href="https://escher-innovations.com/what-we-do" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><span class="gsn">What We Do</span><span class="gsd">Our services and approach</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/enterprise" class="gl">Portfolio</a></li>
+      <li class="gi" data-drop="strategy">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Strategy<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/core-technology" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div><div><span class="gsn">Core Technologies</span><span class="gsd">Membership and platform capabilities</span></div></a></div>
+          <div><a href="https://escher-innovations.com/services" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><span class="gsn">Services</span><span class="gsd">Strategic, financial and operational</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/technology-strategy" class="gl">Technology</a></li>
+      <li class="gi"><a href="https://escher-innovations.com/insight" class="gl">Insights</a></li>
+      <li class="gi" data-drop="team">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Team<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/team-5979" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><span class="gsn">About Us</span><span class="gsd">Our leadership team and story</span></div></a></div>
+          <div><a href="https://escher-innovations.com/governance" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><span class="gsn">Governance</span><span class="gsd">Escher Touche Group structure</span></div></a></div>
+        </div>
+      </li>
+    </ul>
+    <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="gcta" target="_blank">Request Briefing<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="gb" id="wd-burger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="wd-drawer" id="wd-drawer">
+  <div class="wd-ms"><a href="https://escher-innovations.com/home-4658" class="wd-mt" style="text-decoration:none">Home</a></div>
+  <div class="wd-ms" data-mob="about">
+    <button class="wd-mt">About<svg class="wd-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="wd-mch-wrap">
+      <a href="https://escher-innovations.com/our-story" class="wd-mc">Our Story</a>
+      <a href="https://escher-innovations.com/vision" class="wd-mc">Vision</a>
+      <a href="https://escher-innovations.com/mission" class="wd-mc">Mission</a>
+      <a href="https://escher-innovations.com/why-we-exist" class="wd-mc">Why We Exist</a>
+      <a href="https://escher-innovations.com/core-values" class="wd-mc">Core Values</a>
+      <a href="https://escher-innovations.com/what-we-do" class="wd-mc">What We Do</a>
+    </div>
+  </div>
+  <div class="wd-ms"><a href="https://escher-innovations.com/enterprise" class="wd-mt" style="text-decoration:none">Portfolio</a></div>
+  <div class="wd-ms" data-mob="strategy">
+    <button class="wd-mt">Strategy<svg class="wd-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="wd-mch-wrap">
+      <a href="https://escher-innovations.com/core-technology" class="wd-mc">Core Technologies</a>
+      <a href="https://escher-innovations.com/services" class="wd-mc">Services</a>
+    </div>
+  </div>
+  <div class="wd-ms"><a href="https://escher-innovations.com/technology-strategy" class="wd-mt" style="text-decoration:none">Technology</a></div>
+  <div class="wd-ms"><a href="https://escher-innovations.com/insight" class="wd-mt" style="text-decoration:none">Insights</a></div>
+  <div class="wd-ms" data-mob="team">
+    <button class="wd-mt">Team<svg class="wd-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="wd-mch-wrap">
+      <a href="https://escher-innovations.com/team-5979" class="wd-mc">About Us</a>
+      <a href="https://escher-innovations.com/governance" class="wd-mc">Governance</a>
+    </div>
+  </div>
+  <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="wd-mcta" target="_blank">Request Briefing</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="wd-hero">
+  <div class="ey"><span class="ed"></span> About Escher &nbsp;·&nbsp; What We Do <span class="ed"></span></div>
+  <h1>We don't advise.<br><em>We invest, build, and grow.</em></h1>
+  <p class="hs">Escher Innovations partners directly with founders, organizations, and governments — bringing capital, institutional-grade strategy, and hands-on execution to close the gap between ambition and outcome.</p>
+  <div class="hero-pills rv">
+    <span class="hp"><span class="hp-dot"></span>Strategic Advisory</span>
+    <span class="hp"><span class="hp-dot"></span>Capital Deployment</span>
+    <span class="hp"><span class="hp-dot"></span>Digital Transformation</span>
+    <span class="hp"><span class="hp-dot"></span>Operations and Execution</span>
+    <span class="hp"><span class="hp-dot"></span>Sales and Growth</span>
+  </div>
+</section>
+
+<!-- ══ OVERVIEW (light) ══ -->
+<section id="wd-overview" class="wd-light">
+  <div class="wd-wrap">
+    <div class="ov-intro">
+      <div class="rv">
+        <div class="wd-brow wd-brow-l"><span class="wd-bdot"></span>THE ESCHER DIFFERENCE</div>
+        <h2 class="wd-h2 wd-h2-l">Three commitments that define<br><em>every engagement we take.</em></h2>
+        <p class="wd-body wd-body-l" style="margin-top:16px!important">Most advisory firms sell their time and move on. We take equity positions, work alongside you through implementation, and measure our success by the durability of what we build together. This is not a service offering — it is a partnership model built around aligned incentives and shared outcomes.</p>
+      </div>
+      <p class="wd-body wd-body-l rv d1" style="align-self:center">"We only win when you do. That alignment is not a tagline — it is the structural reason our advice is different from every other firm in the market. When we take equity, every recommendation is made with the same urgency and precision we would apply to our own organization."<br><br><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,18,32,.38)">Marcos Villa — Founder &amp; CEO</span></p>
+    </div>
+    <div class="ov-3">
+      <div class="ov-c rv d1">
+        <div class="ov-c-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="ov-c-tag">Commitment 01</div>
+        <h3>We Take Ownership</h3>
+        <p>We take equity positions in the companies we believe in. Our incentives are permanently tied to your outcome — no retainer, no disengagement after delivery. We are in it for the long run because we have structured it that way from day one.</p>
+      </div>
+      <div class="ov-c rv d2">
+        <div class="ov-c-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="ov-c-tag">Commitment 02</div>
+        <h3>Structure Before Speed</h3>
+        <p>Scaling without the right foundation is how businesses lose control. We put governance, accountability, and financial structure in place first — so when capital comes in, your business is built to handle it without fracturing under the pressure of its own growth.</p>
+      </div>
+      <div class="ov-c rv d3">
+        <div class="ov-c-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="ov-c-tag">Commitment 03</div>
+        <h3>More Than a Check</h3>
+        <p>Capital alone does not build great companies. We work alongside you on strategy, operations, and execution — the way a seasoned co-founder would, backed by decades of cross-sector experience and a global network operating across 150+ countries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICE AREAS (dark) ══ -->
+<section id="wd-services" class="wd-dark">
+  <div class="wd-wrap">
+    <div class="rv">
+      <div class="wd-brow wd-brow-d"><span class="wd-bdot"></span>FIVE SERVICE AREAS</div>
+      <h2 class="wd-h2 wd-h2-d">End-to-end capability.<br><em>One integrated partnership.</em></h2>
+      <p class="wd-body wd-body-d" style="max-width:600px;margin-top:14px!important">Every engagement draws from five integrated practice areas. We apply what the situation requires — not what fits a standard retainer model.</p>
+    </div>
+    <div class="sv-list">
+
+      <div class="sv rv">
+        <div class="sv-left">
+          <div class="sv-num">01</div>
+          <div class="sv-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3>Strategic Planning and Development</h3>
+        </div>
+        <div class="sv-right">
+          <p>Comprehensive strategies built through rigorous market research, competitive analysis, and scenario planning — aligned to your vision, your market position, and the structural realities of your industry. We do not produce generic frameworks. We build precise plans for specific organizations in specific conditions.</p>
+          <div class="sv-cols">
+            <div class="sv-col">
+              <h4>What we deliver</h4>
+              <ul>
+                <li>Capital deployment strategy for UHNWIs and institutions</li>
+                <li>Market trend analysis and long-term forecasting</li>
+                <li>International and domestic market expansion planning</li>
+                <li>Competitive positioning and differentiation strategy</li>
+              </ul>
+            </div>
+            <div class="sv-col">
+              <h4>Who it is for</h4>
+              <ul>
+                <li>Founders preparing for institutional fundraising</li>
+                <li>Organizations entering new geographic markets</li>
+                <li>Companies repositioning in response to market shifts</li>
+                <li>Investors seeking structured capital deployment frameworks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sv rv d1">
+        <div class="sv-left">
+          <div class="sv-num">02</div>
+          <div class="sv-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Financial Management and Advisory</h3>
+        </div>
+        <div class="sv-right">
+          <p>Expert guidance to optimize financial performance, restructure capital, and execute high-stakes transactions with precision and institutional-grade discipline. We position businesses correctly before approaching capital markets — because how you arrive determines what terms you receive.</p>
+          <div class="sv-cols">
+            <div class="sv-col">
+              <h4>What we deliver</h4>
+              <ul>
+                <li>Capital raising and debt restructuring advisory</li>
+                <li>Mergers, acquisitions, and investment analysis</li>
+                <li>Budget planning and long-term financial modeling</li>
+                <li>Business credit positioning and lender preparation</li>
+              </ul>
+            </div>
+            <div class="sv-col">
+              <h4>Who it is for</h4>
+              <ul>
+                <li>Companies preparing for their first institutional raise</li>
+                <li>Organizations with complex capital structure challenges</li>
+                <li>Founders navigating M&amp;A processes for the first time</li>
+                <li>Businesses that have been declined and do not know why</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sv rv d2">
+        <div class="sv-left">
+          <div class="sv-num">03</div>
+          <div class="sv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Digital Transformation and Technology</h3>
+        </div>
+        <div class="sv-right">
+          <p>We help organizations modernize operations, implement AI and data intelligence systems, and build the digital infrastructure that creates durable competitive advantage. Technology without strategy produces technical debt. We build both simultaneously — the vision and the systems to execute it.</p>
+          <div class="sv-cols">
+            <div class="sv-col">
+              <h4>What we deliver</h4>
+              <ul>
+                <li>Augmented reality solutions for enterprise and government</li>
+                <li>AI implementation and data analytics architecture</li>
+                <li>Cloud migration and workflow automation</li>
+                <li>CRM infrastructure and operational system design</li>
+              </ul>
+            </div>
+            <div class="sv-col">
+              <h4>Who it is for</h4>
+              <ul>
+                <li>Organizations with fragmented or outdated technology stacks</li>
+                <li>Companies implementing AI without a strategic framework</li>
+                <li>Government agencies modernizing service delivery</li>
+                <li>Businesses building operational infrastructure for scale</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sv rv d1">
+        <div class="sv-left">
+          <div class="sv-num">04</div>
+          <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Operations, Logistics, and Execution</h3>
+        </div>
+        <div class="sv-right">
+          <p>We identify structural inefficiencies and implement tailored solutions that drive productivity, reduce operational cost, and align every function of the business toward its strategic objectives. Most organizations do not fail from bad strategy — they fail from poor execution infrastructure.</p>
+          <div class="sv-cols">
+            <div class="sv-col">
+              <h4>What we deliver</h4>
+              <ul>
+                <li>Process optimization and workflow redesign</li>
+                <li>Supply chain management and resilience planning</li>
+                <li>Organizational design and governance structure</li>
+                <li>Performance management systems and KPI frameworks</li>
+              </ul>
+            </div>
+            <div class="sv-col">
+              <h4>Who it is for</h4>
+              <ul>
+                <li>Scaling companies outgrowing their current systems</li>
+                <li>Organizations with high operational cost and low output</li>
+                <li>Businesses preparing for rapid headcount or revenue growth</li>
+                <li>Companies building for institutional-grade operational maturity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sv rv d2">
+        <div class="sv-left">
+          <div class="sv-num">05</div>
+          <div class="sv-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <h3>Sales, Marketing, and Brand Development</h3>
+        </div>
+        <div class="sv-right">
+          <p>From go-to-market strategy to full brand identity, we build the commercial infrastructure that generates revenue, captures market share, and creates lasting brand equity. A strong product without strong commercial systems stays invisible. We ensure what you build gets to the people who need it.</p>
+          <div class="sv-cols">
+            <div class="sv-col">
+              <h4>What we deliver</h4>
+              <ul>
+                <li>Sales strategy and go-to-market execution</li>
+                <li>Brand identity, messaging, and visual positioning</li>
+                <li>Lead generation and digital marketing infrastructure</li>
+                <li>Customer acquisition and revenue system design</li>
+              </ul>
+            </div>
+            <div class="sv-col">
+              <h4>Who it is for</h4>
+              <ul>
+                <li>Founders who have built a product but cannot scale revenue</li>
+                <li>Companies entering new markets without an established brand</li>
+                <li>Organizations rebuilding commercial strategy after stagnation</li>
+                <li>Businesses seeking institutional-grade market positioning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS (light) ══ -->
+<section id="wd-process" class="wd-light">
+  <div class="wd-wrap">
+    <div class="pr-intro">
+      <div class="rv">
+        <div class="wd-brow wd-brow-l"><span class="wd-bdot"></span>HOW WE WORK</div>
+        <h2 class="wd-h2 wd-h2-l">Four stages. One<br><em>continuous engagement.</em></h2>
+      </div>
+      <p class="wd-body wd-body-l rv d1">We do not deliver a report and leave. Every engagement is structured around four stages that run continuously — so strategy, execution, measurement, and improvement are always operating in parallel.</p>
+    </div>
+    <div class="pr-steps">
+      <div class="pr-step rv d1">
+        <div class="pr-n">01</div>
+        <div class="pr-tag">Discovery</div>
+        <h3>Understand Before We Act</h3>
+        <p>A rigorous diagnostic of your current state, strategic objectives, and the specific gaps between them. We do not prescribe before we understand — and we understand at depth before we recommend a single action.</p>
+      </div>
+      <div class="pr-step rv d2">
+        <div class="pr-n">02</div>
+        <div class="pr-tag">Architecture</div>
+        <h3>Design the System</h3>
+        <p>We translate diagnosis into a structured transformation plan covering strategy, capital structure, governance, technology, and operations — built simultaneously so the infrastructure exists to carry the strategy forward.</p>
+      </div>
+      <div class="pr-step rv d3">
+        <div class="pr-n">03</div>
+        <div class="pr-tag">Execution</div>
+        <h3>Work Alongside You</h3>
+        <p>We engage beyond advisory. Our team works alongside yours — managing implementation, resolving blockers in real time, and making adjustments as market conditions evolve. Strategy lives or dies in execution.</p>
+      </div>
+      <div class="pr-step rv d4">
+        <div class="pr-n">04</div>
+        <div class="pr-tag">Measurement</div>
+        <h3>Track and Compound</h3>
+        <p>We establish clear KPIs, accountability structures, and insight loops from day one. Progress is visible and reviewed continuously — so the organization builds the capacity to grow stronger over time, independent of us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO WE SERVE (dark) ══ -->
+<section id="wd-audience" class="wd-dark">
+  <div class="wd-wrap">
+    <div class="rv">
+      <div class="wd-brow wd-brow-d"><span class="wd-bdot"></span>WHO WE SERVE</div>
+      <h2 class="wd-h2 wd-h2-d">Three audiences.<br><em>One standard of excellence.</em></h2>
+    </div>
+    <div class="au-grid">
+      <div class="au-c rv d1">
+        <div class="au-label">Founders and Entrepreneurs</div>
+        <h3>From Fundable to Institutional</h3>
+        <p>We work with early-stage and growth-stage founders who need the strategic infrastructure, capital access, and operational systems to scale beyond what talent and hustle alone can accomplish.</p>
+        <ul class="au-outcomes">
+          <li>Business credit and capital readiness positioning</li>
+          <li>Governance and board structure before raising institutional capital</li>
+          <li>Go-to-market strategy and revenue infrastructure</li>
+          <li>Deal structuring that protects long-term equity and optionality</li>
+        </ul>
+      </div>
+      <div class="au-c rv d2">
+        <div class="au-label">Corporations and Institutions</div>
+        <h3>Enterprise Transformation</h3>
+        <p>Mid-market and enterprise organizations seeking to modernize operations, enter new markets, implement AI infrastructure, or restructure for the next phase of their evolution.</p>
+        <ul class="au-outcomes">
+          <li>Digital transformation and AI adoption strategy</li>
+          <li>International market expansion and cross-border advisory</li>
+          <li>Operational redesign and performance system implementation</li>
+          <li>M&amp;A advisory and post-merger integration support</li>
+        </ul>
+      </div>
+      <div class="au-c rv d3">
+        <div class="au-label">Governments and Public Entities</div>
+        <h3>Institutional Capability at Scale</h3>
+        <p>Government agencies and public sector institutions that require expert guidance implementing emerging technologies, developing innovation ecosystems, and building the operational capacity to serve their communities effectively.</p>
+        <ul class="au-outcomes">
+          <li>AR and AI implementation in government operations</li>
+          <li>National and regional economic development strategy</li>
+          <li>Public sector innovation infrastructure design</li>
+          <li>Technology procurement strategy and vendor selection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THE DIFFERENCE (light, what sets us apart) ══ -->
+<section id="wd-diff" class="wd-light">
+  <div class="wd-wrap">
+    <div class="rv" style="margin-bottom:48px!important">
+      <div class="wd-brow wd-brow-l"><span class="wd-bdot"></span>THE ESCHER STANDARD</div>
+      <h2 class="wd-h2 wd-h2-l">What you get with Escher<br><em>versus conventional advisory.</em></h2>
+    </div>
+    <div class="df-2col">
+      <div>
+        <div class="df-col-head df-col-head-l">Conventional Advisory</div>
+        <ul class="df-list df-list-l">
+          <li>Delivers a strategy document and bills for time</li>
+          <li>Incentivized to extend the engagement, not to resolve the problem</li>
+          <li>Applies generic frameworks to specific situations</li>
+          <li>Measures success by deliverables, not by outcomes</li>
+          <li>Disengages when the retainer ends, regardless of results</li>
+          <li>Advises from the outside without accountability for implementation</li>
+          <li>No skin in the game — revenue is independent of client success</li>
+          <li>Relationships end when the project ends</li>
+        </ul>
+      </div>
+      <div>
+        <div class="df-col-head df-col-head-r">Escher Innovations</div>
+        <ul class="df-list df-list-r">
+          <li>Takes equity and works alongside you through execution</li>
+          <li>Incentivized to solve the problem permanently — we share the upside</li>
+          <li>Builds precise strategy for your specific organization and market</li>
+          <li>Measures success by the durability and scale of outcomes produced</li>
+          <li>Remains engaged because our equity position demands it</li>
+          <li>Works inside the organization — as a co-founder would</li>
+          <li>Equity alignment means every decision affects us as much as you</li>
+          <li>Built for long-term compounding, not transactional engagements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section id="wd-cta">
+  <div class="ci rv">
+    <div class="wd-brow wd-brow-d" style="justify-content:center;margin-bottom:22px!important"><span class="wd-bdot"></span>START HERE</div>
+    <h2>Ready to work with a partner<br>who is <em>invested in your outcome?</em></h2>
+    <p>Book a $500 consultation and let us show you exactly how Escher can close the gap between where your organization is today and where it needs to go.</p>
+    <div class="cbtns">
+      <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="wd-btn-gold" target="_blank">Book a Consultation — $500</a>
+      <a href="https://escher-innovations.com/services" class="wd-btn-dk">View Full Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="wd-footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-ln">Escher Innovations</div>
+      <div class="ft-lt">Give · Gain · Grow</div>
+      <p class="ft-tl">A global capital and advisory firm dedicated to empowering founders, organizations, and investors to build extraordinary enterprises.</p>
+      <div class="ft-soc">
+        <a href="https://facebook.com" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://instagram.com" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://youtube.com" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#06070d"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Company</h4><ul>
+      <li><a href="https://escher-innovations.com/our-story">Our Story</a></li>
+      <li><a href="https://escher-innovations.com/vision">Vision</a></li>
+      <li><a href="https://escher-innovations.com/mission">Mission</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Portfolio</a></li>
+      <li><a href="https://escher-innovations.com/contact">Contact</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Services</h4><ul>
+      <li><a href="https://escher-innovations.com/services">Capital Readiness</a></li>
+      <li><a href="https://escher-innovations.com/services">Deal Structuring</a></li>
+      <li><a href="https://escher-innovations.com/services">Equity Partnership</a></li>
+      <li><a href="https://escher-innovations.com/products">Strategy</a></li>
+      <li><a href="https://escher-innovations.com/technology-strategy">Technology</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Industries</h4><ul>
+      <li><a href="https://escher-innovations.com/enterprise">Technology</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Healthcare</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Real Estate</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Finance</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">All Industries</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Legal</h4><ul>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Disclaimer</a></li>
+      <li><a href="#">Code of Conduct</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2026 Escher Innovations. All rights reserved. Marcos Villa.</span>
+    <div class="ft-leg"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Disclaimer</a></div>
+  </div>
+</footer>
+
+</div><!-- /wd -->
+
+<script>
+/* ── GHL NUKE ── */
+(function(){
+  function nuke(){
+    var el=document.getElementById('wd');if(!el)return;
+    var cur=el.parentElement;
+    while(cur&&cur!==document.body){
+      cur.style.setProperty('padding-top','0','important');
+      cur.style.setProperty('padding-bottom','0','important');
+      cur.style.setProperty('margin-top','0','important');
+      cur.style.setProperty('margin-bottom','0','important');
+      cur.style.setProperty('min-height','unset','important');
+      cur=cur.parentElement;
+    }
+    ['[data-page-element="Section/V1"]','[data-page-element="Section/V2"]','[data-page-element="Row/V1"]','.page-section','.section-box'].forEach(function(s){
+      document.querySelectorAll(s).forEach(function(n){
+        if(n.contains(el)){
+          n.style.setProperty('padding-top','0','important');
+          n.style.setProperty('padding-bottom','0','important');
+          n.style.setProperty('margin-top','0','important');
+          n.style.setProperty('margin-bottom','0','important');
+          n.style.setProperty('min-height','unset','important');
+        }
+      });
+    });
+  }
+  nuke();
+  window.addEventListener('load',function(){setTimeout(nuke,100);setTimeout(nuke,500);});
+})();
+
+/* ── NAV ── */
+(function(){
+  var nav=document.getElementById('wd-nav');
+  var burger=document.getElementById('wd-burger');
+  var drawer=document.getElementById('wd-drawer');
+  if(!nav)return;
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  var items=Array.from(nav.querySelectorAll('.gi[data-drop]'));
+  items.forEach(function(item){
+    var t=item.querySelector('.gtr');if(!t)return;
+    t.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=item.classList.contains('open');
+      items.forEach(function(i){i.classList.remove('open');var tr=i.querySelector('.gtr');if(tr)tr.setAttribute('aria-expanded','false');});
+      if(!isOpen){item.classList.add('open');t.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.addEventListener('click',function(){items.forEach(function(i){i.classList.remove('open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){items.forEach(function(i){i.classList.remove('open');});nav.classList.remove('mob-open');}});
+  if(burger&&drawer){
+    burger.addEventListener('click',function(e){e.stopPropagation();nav.classList.toggle('mob-open');});
+    Array.from(drawer.querySelectorAll('.wd-ms[data-mob]')).forEach(function(sec){
+      var btn=sec.querySelector('.wd-mt');if(!btn)return;
+      btn.addEventListener('click',function(){
+        var wasOpen=sec.classList.contains('open');
+        Array.from(drawer.querySelectorAll('.wd-ms')).forEach(function(s){s.classList.remove('open');});
+        if(!wasOpen)sec.classList.add('open');
+      });
+    });
+    drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('mob-open');});});
+  }
+})();
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+  },{threshold:0.06});
+  document.querySelectorAll('#wd .rv').forEach(function(el){obs.observe(el);});
+})();
+</script>
