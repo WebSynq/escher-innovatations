@@ -1,0 +1,636 @@
+<!-- ============================================================
+  ESCHER INNOVATIONS — CORE TECHNOLOGIES PAGE
+  URL: /core-technology
+  Professional. No emojis. SVG icons only. All !important.
+  Single GHL Custom HTML block. Set section padding to 0.
+============================================================ -->
+<style>
+[data-page-element="Section/V1"],[data-page-element="Section/V2"],
+[data-page-element="Row/V1"],[data-page-element="Row/V2"],
+[data-page-element="SubSection/V1"],[data-page-element="SubSection/V2"],
+.page-section,.section-box,.funnelish-section,.container-shadow-wrap,.section-content-box{
+  padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important;min-height:unset!important;
+}
+[data-page-element="Section/V1"]>.inner-content,[data-page-element="Section/V2"]>.inner-content,[data-page-element="Row/V1"]>.inner-content{padding-top:0!important;padding-bottom:0!important;}
+</style>
+
+<style>
+#ct *,#ct *::before,#ct *::after{box-sizing:border-box;margin:0;padding:0;}
+#ct{--black:#06070d;--white:#fff;--off:#f6f7f4;--ink:#0b1220;--muted:rgba(11,18,32,.72);--gold:#e7ff6e;--ease:cubic-bezier(.16,1,.3,1);font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+/* NAV */
+#ct-nav *,#ct-nav *::before,#ct-nav *::after{box-sizing:border-box;margin:0;padding:0;}
+#ct-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:1000!important;height:72px!important;font-family:inherit;transition:background .3s,box-shadow .3s;}
+#ct-nav.scrolled{background:rgba(6,7,13,.96)!important;backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06);}
+#ct-nav .ni{max-width:1320px!important;margin:0 auto!important;height:72px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 40px!important;gap:8px;}
+#ct-nav .logo{display:flex!important;flex-direction:column!important;text-decoration:none;line-height:1.15;flex-shrink:0;}
+#ct-nav .logo-n{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em;}
+#ct-nav .logo-t{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;}
+#ct-nav .gm{display:flex!important;align-items:center!important;list-style:none;flex:1;justify-content:center;}
+#ct-nav .gi{position:relative;}
+#ct-nav .gl,.gtr{display:inline-flex;align-items:center;gap:4px;padding:8px 13px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);text-decoration:none;border-radius:999px;border:none;background:none;cursor:pointer;white-space:nowrap;transition:color .18s,background .18s;font-family:inherit;letter-spacing:.01em;line-height:1;}
+#ct-nav .gl:hover,.gtr:hover,#ct-nav .gi.open .gtr,#ct-nav .gl.active{color:#fff;background:rgba(255,255,255,.09);}
+#ct-nav .gc{width:12px;height:12px;opacity:.55;transition:transform .2s;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#ct-nav .gi.open .gc{transform:rotate(180deg);opacity:1;}
+#ct-nav .gd{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:rgba(10,11,18,.97);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;}
+#ct-nav .gi.open .gd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all;}
+#ct-nav .gd::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:6px;background:rgba(255,255,255,.09);clip-path:polygon(50% 0%,0% 100%,100% 100%);}
+#ct-nav .gsl{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;text-decoration:none;transition:background .15s;}
+#ct-nav .gsl:hover{background:rgba(255,255,255,.07);}
+#ct-nav .gsi{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
+#ct-nav .gsi svg{width:14px;height:14px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#ct-nav .gsn{font-size:13px;font-weight:600;color:rgba(255,255,255,.88);display:block;margin-bottom:2px;letter-spacing:-.01em;}
+#ct-nav .gsd{font-size:11px;color:rgba(255,255,255,.38);line-height:1.4;display:block;}
+#ct-nav .gdiv{height:1px;background:rgba(255,255,255,.07);margin:6px 0;}
+#ct-nav .gcta{display:inline-flex!important;align-items:center;gap:6px;padding:9px 20px!important;border-radius:999px;background:#e7ff6e!important;color:#06070d!important;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .18s,transform .18s;}
+#ct-nav .gcta:hover{background:#f2ff8c!important;transform:translateY(-1px);}
+#ct-nav .gb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+#ct-nav .gb span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s;}
+#ct-nav.mob-open .gb span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#ct-nav.mob-open .gb span:nth-child(2){opacity:0;}
+#ct-nav.mob-open .gb span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.ct-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,7,13,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);z-index:999;padding:0 0 24px;max-height:calc(100vh - 72px);overflow-y:auto;}
+#ct-nav.mob-open .ct-drawer{display:block;}
+.ct-ms{border-bottom:1px solid rgba(255,255,255,.06);}
+.ct-mt{display:flex;align-items:center;justify-content:space-between;padding:14px 28px!important;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:inherit;}
+.ct-mch{width:14px;height:14px;opacity:.4;transition:transform .2s;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.ct-ms.open .ct-mch{transform:rotate(180deg);opacity:.8;}
+.ct-mch-wrap{display:none;padding:0 0 8px;}
+.ct-ms.open .ct-mch-wrap{display:block;}
+.ct-mc{display:block;padding:10px 28px 10px 40px!important;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s;}
+.ct-mc:hover{color:#fff;}
+.ct-mcta{margin:20px 28px 0!important;display:block;text-align:center;padding:13px!important;background:#e7ff6e!important;color:#06070d!important;font-weight:700;font-size:14px;border-radius:999px;text-decoration:none;}
+@media(max-width:1024px){#ct-nav .gm{display:none!important;}#ct-nav .gcta{display:none!important;}#ct-nav .gb{display:flex!important;}#ct-nav .ni{padding:0 20px!important;}}
+
+/* HERO */
+#ct-hero{background:#06070d!important;padding:152px 40px 96px!important;position:relative;overflow:hidden;text-align:center;}
+#ct-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(231,255,110,.05) 0%,transparent 70%);pointer-events:none;}
+#ct-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+#ct-hero .ey{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:22px!important;position:relative;z-index:1;}
+#ct-hero .ed{width:5px;height:5px;border-radius:50%;background:#e7ff6e;box-shadow:0 0 8px rgba(231,255,110,.8);}
+#ct-hero h1{font-size:clamp(38px,5.5vw,76px)!important;font-weight:800!important;line-height:.97!important;letter-spacing:-.03em!important;color:#fff!important;margin-bottom:22px!important;position:relative;z-index:1;}
+#ct-hero h1 em{font-style:italic;color:#e7ff6e;}
+#ct-hero .hs{font-size:clamp(16px,2vw,19px)!important;font-weight:300!important;line-height:1.78!important;color:rgba(255,255,255,.58)!important;max-width:660px!important;margin:0 auto 52px!important;position:relative;z-index:1;}
+#ct-hero .hero-pills{display:flex!important;flex-wrap:wrap!important;gap:10px!important;justify-content:center!important;position:relative;z-index:1;}
+#ct-hero .hp{display:inline-flex;align-items:center;gap:9px;padding:10px 18px!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:999px;background:rgba(255,255,255,.04)!important;font-size:12px;font-weight:600;color:rgba(255,255,255,.58);letter-spacing:.06em;}
+#ct-hero .hp-status{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px!important;border-radius:999px;}
+#ct-hero .hp-live{background:rgba(74,222,128,.15);color:rgba(74,222,128,.9);border:1px solid rgba(74,222,128,.25);}
+#ct-hero .hp-beta{background:rgba(251,191,36,.12);color:rgba(251,191,36,.85);border:1px solid rgba(251,191,36,.22);}
+#ct-hero .hp-dev{background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.1);}
+
+/* SHARED */
+.ct-light{background:linear-gradient(180deg,#f6f7f4,#fff)!important;border-top:1px solid rgba(11,18,32,.10)!important;border-bottom:1px solid rgba(11,18,32,.10)!important;padding:88px 0!important;}
+.ct-dark{background:linear-gradient(180deg,rgba(11,18,32,.96),rgba(11,18,32,.92))!important;border-top:1px solid rgba(255,255,255,.08)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:88px 0!important;}
+.ct-wrap{max-width:1180px!important;margin:0 auto!important;padding:0 40px!important;}
+.ct-brow{display:flex!important;align-items:center!important;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px!important;}
+.ct-bdot{width:8px;height:8px;border-radius:99px;background:#e7ff6e;box-shadow:0 0 0 3px rgba(231,255,110,.25);flex-shrink:0;}
+.ct-brow-l{color:rgba(11,18,32,.6);}
+.ct-brow-d{color:rgba(255,255,255,.52);}
+.ct-h2{font-size:clamp(28px,3.6vw,50px)!important;font-weight:800!important;line-height:1.0!important;letter-spacing:-.025em!important;margin-bottom:18px!important;}
+.ct-h2-l{color:#0b1220!important;}.ct-h2-d{color:#fff!important;}
+.ct-h2 em{font-style:italic;}
+.ct-h2-l em{color:rgba(11,18,32,.42);border-bottom:3px solid #e7ff6e;padding-bottom:2px;}
+.ct-h2-d em{color:#e7ff6e;}
+.ct-body{font-size:15px!important;font-weight:300!important;line-height:1.82!important;margin-bottom:16px!important;}
+.ct-body-l{color:rgba(11,18,32,.72)!important;}.ct-body-d{color:rgba(255,255,255,.62)!important;}
+
+/* STATUS BADGES */
+.status-live{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px!important;border-radius:999px;background:rgba(74,222,128,.1);color:rgba(74,222,128,.9);border:1px solid rgba(74,222,128,.22);}
+.status-beta{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px!important;border-radius:999px;background:rgba(251,191,36,.1);color:rgba(251,191,36,.85);border:1px solid rgba(251,191,36,.2);}
+.status-dev{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px!important;border-radius:999px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.1);}
+.status-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.status-live .status-dot{background:rgba(74,222,128,.9);}
+.status-beta .status-dot{background:rgba(251,191,36,.85);}
+.status-dev .status-dot{background:rgba(255,255,255,.4);}
+
+/* PHILOSOPHY (light, intro) */
+#ct-phil .ph-2col{display:grid!important;grid-template-columns:1fr 1fr!important;gap:72px!important;align-items:center!important;}
+#ct-phil .ph-quote{background:#0b1220!important;border-radius:20px!important;padding:40px!important;}
+#ct-phil .ph-quote p{font-size:clamp(15px,1.8vw,19px)!important;font-style:italic;font-weight:300;color:rgba(255,255,255,.8)!important;line-height:1.72!important;margin-bottom:22px!important;}
+#ct-phil .ph-quote cite{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(231,255,110,.7);font-style:normal;}
+#ct-phil .ph-points{display:flex;flex-direction:column;gap:0;margin-top:28px!important;}
+#ct-phil .ph-pt{display:grid!important;grid-template-columns:44px 1fr!important;gap:14px!important;padding:18px 0!important;border-bottom:1px solid rgba(11,18,32,.08)!important;}
+#ct-phil .ph-pt:last-child{border-bottom:none!important;}
+#ct-phil .ph-icon{width:44px;height:44px;border-radius:11px;background:rgba(231,255,110,.1);border:1px solid rgba(231,255,110,.22);display:grid;place-items:center;flex-shrink:0;}
+#ct-phil .ph-icon svg{width:18px;height:18px;stroke:#0b1220;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#ct-phil .ph-text h4{font-size:14px;font-weight:700;color:#0b1220;margin-bottom:4px!important;letter-spacing:-.01em;}
+#ct-phil .ph-text p{font-size:13px;color:rgba(11,18,32,.62);line-height:1.65;}
+
+/* PRODUCTS (dark, full-width deep dive cards) */
+#ct-products .prod-list{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.07)!important;margin-top:48px!important;}
+#ct-products .prod{background:rgba(11,18,32,.7)!important;padding:48px!important;display:grid!important;grid-template-columns:1fr 360px!important;gap:52px!important;align-items:start!important;transition:background .2s;}
+#ct-products .prod:hover{background:rgba(14,16,24,.88)!important;}
+#ct-products .prod-left{}
+#ct-products .prod-meta{display:flex;align-items:center;gap:10px;margin-bottom:18px!important;}
+#ct-products .prod-type{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.32);}
+#ct-products .prod-left h3{font-size:clamp(22px,2.8vw,32px);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:12px!important;line-height:1.15;}
+#ct-products .prod-left .tagline{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#e7ff6e;opacity:.65;margin-bottom:20px!important;}
+#ct-products .prod-left p{font-size:15px;color:rgba(255,255,255,.58);line-height:1.8;margin-bottom:28px!important;}
+#ct-products .prod-left .cta-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .18s;border:1px solid rgba(255,255,255,.1)!important;border-radius:999px;padding:10px 20px!important;}
+#ct-products .prod-left .cta-link:hover{color:#e7ff6e!important;border-color:rgba(231,255,110,.3)!important;}
+#ct-products .prod-left .cta-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+#ct-products .prod-right{}
+#ct-products .prod-panel{background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:16px!important;padding:28px!important;}
+#ct-products .prod-panel h4{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(231,255,110,.6);margin-bottom:16px!important;}
+#ct-products .feat-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+#ct-products .feat-list li{font-size:13.5px;color:rgba(255,255,255,.58);display:flex;align-items:flex-start;gap:10px;line-height:1.55;}
+#ct-products .feat-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:#e7ff6e;flex-shrink:0;margin-top:7px;}
+#ct-products .prod-divider{height:1px;background:rgba(255,255,255,.06)!important;margin:20px 0!important;}
+#ct-products .prod-panel-note{font-size:12px;color:rgba(255,255,255,.32);line-height:1.6;}
+
+/* PLATFORM PRINCIPLES (light, 3 col) */
+#ct-principles .pr-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:1px!important;background:rgba(11,18,32,.1)!important;border:1px solid rgba(11,18,32,.1)!important;margin-top:48px!important;}
+#ct-principles .pr-c{background:#fff!important;padding:36px 28px!important;position:relative;}
+#ct-principles .pr-c::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#e7ff6e,rgba(231,255,110,.12));}
+#ct-principles .pr-icon{width:48px;height:48px;border-radius:12px;background:rgba(231,255,110,.1);border:1px solid rgba(231,255,110,.22);display:grid;place-items:center;margin-bottom:18px!important;}
+#ct-principles .pr-icon svg{width:22px;height:22px;stroke:#0b1220;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#ct-principles .pr-num{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(11,18,32,.3);margin-bottom:10px!important;}
+#ct-principles .pr-c h3{font-size:18px;font-weight:700;color:#0b1220;margin-bottom:8px!important;letter-spacing:-.01em;}
+#ct-principles .pr-c p{font-size:13.5px;color:rgba(11,18,32,.65);line-height:1.72;}
+
+/* ROADMAP (dark) */
+#ct-roadmap .rm-intro{display:grid!important;grid-template-columns:1fr 1fr!important;gap:64px!important;margin-bottom:52px!important;align-items:end!important;}
+#ct-roadmap .rm-list{display:flex;flex-direction:column;gap:0;}
+#ct-roadmap .rm-item{display:grid!important;grid-template-columns:120px 1fr!important;gap:20px!important;border-bottom:1px solid rgba(255,255,255,.07)!important;padding:24px 0!important;}
+#ct-roadmap .rm-item:last-child{border-bottom:none!important;}
+#ct-roadmap .rm-left{display:flex;flex-direction:column;gap:6px;}
+#ct-roadmap .rm-body h4{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px!important;letter-spacing:-.01em;}
+#ct-roadmap .rm-body p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.65;}
+
+/* CTA */
+#ct-cta{background:#06070d!important;padding:96px 40px!important;text-align:center;border-top:1px solid rgba(255,255,255,.08)!important;position:relative;overflow:hidden;}
+#ct-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(231,255,110,.06) 0%,transparent 70%);}
+#ct-cta .ci{position:relative;z-index:1;max-width:600px;margin:0 auto!important;}
+#ct-cta h2{font-size:clamp(30px,4vw,52px)!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1.05!important;color:#fff!important;margin-bottom:16px!important;}
+#ct-cta h2 em{color:#e7ff6e;font-style:italic;}
+#ct-cta p{font-size:17px!important;font-weight:300!important;color:rgba(255,255,255,.5)!important;line-height:1.8!important;margin-bottom:38px!important;}
+#ct-cta .cbtns{display:flex!important;gap:14px!important;justify-content:center!important;flex-wrap:wrap!important;}
+.ct-btn-gold{display:inline-flex;align-items:center;gap:7px;padding:13px 26px!important;border-radius:999px;background:#e7ff6e!important;color:#06070d!important;font-size:14px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s;font-family:inherit;}
+.ct-btn-gold:hover{background:#f2ff8c!important;transform:translateY(-2px);box-shadow:0 10px 28px rgba(231,255,110,.38);}
+.ct-btn-dk{display:inline-flex;align-items:center;gap:7px;padding:12px 24px!important;border-radius:999px;background:rgba(255,255,255,.08)!important;color:rgba(255,255,255,.75)!important;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.15)!important;cursor:pointer;transition:all .2s;font-family:inherit;}
+.ct-btn-dk:hover{background:rgba(255,255,255,.14)!important;color:#fff!important;}
+
+/* FOOTER */
+#ct-footer{background:#06070d!important;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07)!important;font-family:inherit;}
+#ct-footer .ft-top{max-width:1280px!important;margin:0 auto!important;padding:72px 40px 48px!important;display:grid!important;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr!important;gap:48px!important;}
+#ct-footer .ft-ln{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.01em;margin-bottom:4px!important;}
+#ct-footer .ft-lt{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e7ff6e;margin-bottom:18px!important;}
+#ct-footer .ft-tl{font-size:13px;line-height:1.75;color:rgba(255,255,255,.38);max-width:260px;margin-bottom:24px!important;}
+#ct-footer .ft-soc{display:flex!important;gap:10px!important;}
+#ct-footer .ft-soc a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12)!important;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;transition:border-color .18s,color .18s;}
+#ct-footer .ft-soc a:hover{border-color:#e7ff6e!important;color:#e7ff6e!important;}
+#ct-footer .ft-col h4{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:18px!important;}
+#ct-footer .ft-col ul{list-style:none;display:flex!important;flex-direction:column!important;gap:10px!important;padding:0;}
+#ct-footer .ft-col ul a{font-size:13px;color:rgba(255,255,255,.42);text-decoration:none;transition:color .18s;}
+#ct-footer .ft-col ul a:hover{color:#fff;}
+#ct-footer .ft-bot{border-top:1px solid rgba(255,255,255,.07)!important;max-width:1280px!important;margin:0 auto!important;padding:24px 40px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:12px!important;}
+#ct-footer .ft-copy{font-size:12px;color:rgba(255,255,255,.28);}
+#ct-footer .ft-leg{display:flex!important;gap:20px!important;}
+#ct-footer .ft-leg a{font-size:12px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .18s;}
+#ct-footer .ft-leg a:hover{color:rgba(255,255,255,.65);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rv.in{opacity:1!important;transform:translateY(0)!important;}
+.rv.d1{transition-delay:.06s;}.rv.d2{transition-delay:.12s;}.rv.d3{transition-delay:.18s;}.rv.d4{transition-delay:.24s;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .ct-wrap{padding:0 24px!important;}
+  #ct-hero{padding:130px 24px 60px!important;}
+  .ct-light,.ct-dark{padding:60px 0!important;}
+  #ct-phil .ph-2col{grid-template-columns:1fr!important;gap:40px!important;}
+  #ct-products .prod{grid-template-columns:1fr!important;gap:32px!important;padding:32px 24px!important;}
+  #ct-principles .pr-grid{grid-template-columns:1fr!important;}
+  #ct-roadmap .rm-intro{grid-template-columns:1fr!important;gap:28px!important;}
+  #ct-roadmap .rm-item{grid-template-columns:1fr!important;}
+  #ct-cta{padding:60px 24px!important;}
+  #ct-footer .ft-top{grid-template-columns:1fr 1fr!important;gap:36px!important;padding:48px 24px 32px!important;}
+  #ct-footer .ft-brand{grid-column:span 2;}
+  #ct-footer .ft-bot{padding:20px 24px!important;flex-direction:column!important;align-items:flex-start!important;}
+}
+@media(max-width:640px){
+  #ct-footer .ft-top{grid-template-columns:1fr!important;}
+  #ct-footer .ft-brand{grid-column:span 1;}
+}
+</style>
+
+<div id="ct">
+
+<!-- NAV -->
+<nav id="ct-nav">
+  <div class="ni">
+    <a href="https://escher-innovations.com/home-4658" class="logo"><span class="logo-n">Escher Innovations</span><span class="logo-t">Give · Gain · Grow</span></a>
+    <ul class="gm">
+      <li class="gi"><a href="https://escher-innovations.com/home-4658" class="gl">Home</a></li>
+      <li class="gi" data-drop="about">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">About<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/our-story" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div><span class="gsn">Our Story</span><span class="gsd">Who Escher is and why we exist</span></div></a></div>
+          <div><a href="https://escher-innovations.com/vision" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><div><span class="gsn">Vision</span><span class="gsd">The future we are building</span></div></a></div>
+          <div><a href="https://escher-innovations.com/mission" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><span class="gsn">Mission</span><span class="gsd">What we do every day</span></div></a></div>
+          <div class="gdiv"></div>
+          <div><a href="https://escher-innovations.com/why-we-exist" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><span class="gsn">Why We Exist</span><span class="gsd">The problem we are solving</span></div></a></div>
+          <div><a href="https://escher-innovations.com/core-values" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><span class="gsn">Core Values</span><span class="gsd">How we operate</span></div></a></div>
+          <div><a href="https://escher-innovations.com/what-we-do" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><span class="gsn">What We Do</span><span class="gsd">Our services and approach</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/enterprise" class="gl">Portfolio</a></li>
+      <li class="gi" data-drop="strategy">
+        <button class="gtr active" aria-haspopup="true" aria-expanded="false">Strategy<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/core-technology" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div><div><span class="gsn">Core Technologies</span><span class="gsd">Membership and platform capabilities</span></div></a></div>
+          <div><a href="https://escher-innovations.com/services" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><span class="gsn">Services</span><span class="gsd">Strategic, financial and operational</span></div></a></div>
+        </div>
+      </li>
+      <li class="gi"><a href="https://escher-innovations.com/technology-strategy" class="gl">Technology</a></li>
+      <li class="gi"><a href="https://escher-innovations.com/insight" class="gl">Insights</a></li>
+      <li class="gi" data-drop="team">
+        <button class="gtr" aria-haspopup="true" aria-expanded="false">Team<svg class="gc" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="gd">
+          <div><a href="https://escher-innovations.com/team-5979" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><span class="gsn">About Us</span><span class="gsd">Our leadership team and story</span></div></a></div>
+          <div><a href="https://escher-innovations.com/governance" class="gsl"><div class="gsi"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><span class="gsn">Governance</span><span class="gsd">Escher Touche Group structure</span></div></a></div>
+        </div>
+      </li>
+    </ul>
+    <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="gcta" target="_blank">Request Briefing<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="gb" id="ct-burger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="ct-drawer" id="ct-drawer">
+  <div class="ct-ms"><a href="https://escher-innovations.com/home-4658" class="ct-mt" style="text-decoration:none">Home</a></div>
+  <div class="ct-ms" data-mob="about">
+    <button class="ct-mt">About<svg class="ct-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="ct-mch-wrap">
+      <a href="https://escher-innovations.com/our-story" class="ct-mc">Our Story</a>
+      <a href="https://escher-innovations.com/vision" class="ct-mc">Vision</a>
+      <a href="https://escher-innovations.com/mission" class="ct-mc">Mission</a>
+      <a href="https://escher-innovations.com/why-we-exist" class="ct-mc">Why We Exist</a>
+      <a href="https://escher-innovations.com/core-values" class="ct-mc">Core Values</a>
+      <a href="https://escher-innovations.com/what-we-do" class="ct-mc">What We Do</a>
+    </div>
+  </div>
+  <div class="ct-ms"><a href="https://escher-innovations.com/enterprise" class="ct-mt" style="text-decoration:none">Portfolio</a></div>
+  <div class="ct-ms" data-mob="strategy">
+    <button class="ct-mt">Strategy<svg class="ct-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="ct-mch-wrap">
+      <a href="https://escher-innovations.com/core-technology" class="ct-mc">Core Technologies</a>
+      <a href="https://escher-innovations.com/services" class="ct-mc">Services</a>
+    </div>
+  </div>
+  <div class="ct-ms"><a href="https://escher-innovations.com/technology-strategy" class="ct-mt" style="text-decoration:none">Technology</a></div>
+  <div class="ct-ms"><a href="https://escher-innovations.com/insight" class="ct-mt" style="text-decoration:none">Insights</a></div>
+  <div class="ct-ms" data-mob="team">
+    <button class="ct-mt">Team<svg class="ct-mch" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="ct-mch-wrap">
+      <a href="https://escher-innovations.com/team-5979" class="ct-mc">About Us</a>
+      <a href="https://escher-innovations.com/governance" class="ct-mc">Governance</a>
+    </div>
+  </div>
+  <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="ct-mcta" target="_blank">Request Briefing</a>
+</div>
+
+<!-- HERO -->
+<section id="ct-hero">
+  <div class="ey"><span class="ed"></span> Strategy &nbsp;·&nbsp; Core Technologies <span class="ed"></span></div>
+  <h1>Institutional platforms<br><em>built for execution.</em></h1>
+  <p class="hs">Four proprietary platforms designed to strengthen deal flow, portfolio execution, and measurable outcomes — built for operators, investors, and ecosystem partners to scale globally.</p>
+  <div class="hero-pills rv">
+    <span class="hp">Innovation Accelerator <span class="hp-status hp-live">Live</span></span>
+    <span class="hp">Impact Measurement Suite <span class="hp-status hp-beta">Beta</span></span>
+    <span class="hp">Global Innovation Network <span class="hp-status hp-live">Live</span></span>
+    <span class="hp">Consulting Toolkit <span class="hp-status hp-dev">In Development</span></span>
+  </div>
+</section>
+
+<!-- PHILOSOPHY (light) -->
+<section id="ct-phil" class="ct-light">
+  <div class="ct-wrap">
+    <div class="ph-2col">
+      <div class="rv">
+        <div class="ct-brow ct-brow-l"><span class="ct-bdot"></span>PRODUCT PHILOSOPHY</div>
+        <h2 class="ct-h2 ct-h2-l">Platforms built to reduce friction<br><em>between capital and outcomes.</em></h2>
+        <p class="ct-body ct-body-l" style="margin-top:16px!important">Each platform is designed to reinforce accountability, improve decision velocity, and strengthen operational clarity across portfolios and markets. These are not generic SaaS tools — they are institutional infrastructure built from years of direct operating experience across 150+ countries.</p>
+        <div class="ph-points">
+          <div class="ph-pt">
+            <div class="ph-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="ph-text"><h4>Execution-First Design</h4><p>Every product is built to reinforce accountability and operating cadence — not vanity features or dashboard aesthetics.</p></div>
+          </div>
+          <div class="ph-pt">
+            <div class="ph-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="ph-text"><h4>Outcome-Driven Architecture</h4><p>Designed to measure what matters: capital efficiency, operational performance, and the path to durable enterprise value.</p></div>
+          </div>
+          <div class="ph-pt">
+            <div class="ph-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="ph-text"><h4>Globally Scalable Systems</h4><p>Built to adapt across sectors, jurisdictions, and international markets — without breaking consistency or institutional-grade discipline.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="ph-quote">
+          <p>"These platforms exist because we got tired of working around tools that were not built for the complexity of what we do. Every product here was born from a real operational gap — then engineered to close it permanently."</p>
+          <cite>Marcos Villa — Founder &amp; CEO, Escher Innovations</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS (dark) -->
+<section id="ct-products" class="ct-dark">
+  <div class="ct-wrap">
+    <div class="rv">
+      <div class="ct-brow ct-brow-d"><span class="ct-bdot"></span>THE FOUR PLATFORMS</div>
+      <h2 class="ct-h2 ct-h2-d">Each platform targets a specific<br><em>friction point in the stack.</em></h2>
+    </div>
+    <div class="prod-list">
+
+      <!-- PRODUCT 1: Innovation Accelerator -->
+      <div class="prod rv">
+        <div class="prod-left">
+          <div class="prod-meta">
+            <span class="status-live"><span class="status-dot"></span>Live</span>
+            <span class="prod-type">Platform</span>
+          </div>
+          <h3>Innovation Accelerator Platform</h3>
+          <div class="tagline">Deal Flow &nbsp;·&nbsp; Collaboration &nbsp;·&nbsp; Resource Alignment</div>
+          <p>A digital operating layer that connects innovators with resources, mentors, and aligned capital pathways — built to improve velocity without sacrificing diligence. The platform removes the manual friction that slows early-stage companies from moving efficiently through the preparation, positioning, and capital-access process.</p>
+          <p>Designed for founders preparing for institutional capital and for operators managing a pipeline of early-stage engagements simultaneously. The system provides structured workflows that enforce diligence standards while accelerating turnaround time.</p>
+          <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="cta-link" target="_blank">Request Platform Access<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="prod-right">
+          <div class="prod-panel">
+            <h4>Key Features</h4>
+            <ul class="feat-list">
+              <li>Project portfolio management and visibility dashboards</li>
+              <li>Resource matching and partner routing engine</li>
+              <li>Mentor network workflows and engagement tracking</li>
+              <li>Funding connection and diligence readiness scoring</li>
+              <li>Collaboration workspaces and document management</li>
+              <li>Multi-stakeholder access controls and permissions</li>
+            </ul>
+            <div class="prod-divider"></div>
+            <div class="prod-panel-note">Available to Escher portfolio companies and approved ecosystem partners. Inquire for access eligibility.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2: Impact Measurement Suite -->
+      <div class="prod rv">
+        <div class="prod-left">
+          <div class="prod-meta">
+            <span class="status-beta"><span class="status-dot"></span>Beta</span>
+            <span class="prod-type">Analytics</span>
+          </div>
+          <h3>Impact Measurement Suite</h3>
+          <div class="tagline">Performance &nbsp;·&nbsp; ROI &nbsp;·&nbsp; Portfolio Reporting</div>
+          <p>Advanced analytics infrastructure to track operational performance, capital efficiency, and portfolio outcomes — turning reporting into a decision-making advantage rather than a compliance exercise. Built for investment managers, portfolio operators, and leadership teams that need real-time visibility into what is working and what is not.</p>
+          <p>The suite is currently in active beta with select portfolio companies. Full release is planned following the current validation cycle. Organizations interested in early access are invited to submit an inquiry.</p>
+          <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="cta-link" target="_blank">Join Beta Program<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="prod-right">
+          <div class="prod-panel">
+            <h4>Key Features</h4>
+            <ul class="feat-list">
+              <li>Impact metrics dashboard with configurable KPIs</li>
+              <li>ROI analysis and capital efficiency tracking</li>
+              <li>Portfolio performance benchmarking</li>
+              <li>Social impact tracking module (optional)</li>
+              <li>Custom reporting and export infrastructure</li>
+              <li>Investor-grade reporting templates and outputs</li>
+            </ul>
+            <div class="prod-divider"></div>
+            <div class="prod-panel-note">Currently in closed beta. Access is invitation-only during this phase. Submit an inquiry to be considered for the beta program.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3: Global Innovation Network -->
+      <div class="prod rv">
+        <div class="prod-left">
+          <div class="prod-meta">
+            <span class="status-live"><span class="status-dot"></span>Live</span>
+            <span class="prod-type">Network</span>
+          </div>
+          <h3>Global Innovation Network</h3>
+          <div class="tagline">Ecosystem &nbsp;·&nbsp; Partnerships &nbsp;·&nbsp; Cross-Border Expansion</div>
+          <p>A worldwide network layer connecting entrepreneurs, investors, and operators to accelerate partnerships, market entry, and cross-border execution. The network spans 150+ countries and provides access to the relationships, intelligence, and introductions that geography and limited networks would otherwise deny.</p>
+          <p>Access to the Global Innovation Network is available to Escher Innovations partners, portfolio companies, and vetted ecosystem participants. The network operates under selective admission standards to preserve signal quality and relationship integrity.</p>
+          <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="cta-link" target="_blank">Apply for Network Access<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="prod-right">
+          <div class="prod-panel">
+            <h4>Key Features</h4>
+            <ul class="feat-list">
+              <li>Global directory and partner mapping across 150+ countries</li>
+              <li>Collaboration tools and shared project workspaces</li>
+              <li>Knowledge sharing library and execution playbooks</li>
+              <li>Event management and deal flow signal integration</li>
+              <li>Cross-border market intelligence and trend reporting</li>
+              <li>Verified partner network with admission standards</li>
+            </ul>
+            <div class="prod-divider"></div>
+            <div class="prod-panel-note">Network access is selective. All applicants are reviewed for strategic fit and alignment with the network's operating standards.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4: Consulting Toolkit -->
+      <div class="prod rv">
+        <div class="prod-left">
+          <div class="prod-meta">
+            <span class="status-dev"><span class="status-dot"></span>In Development</span>
+            <span class="prod-type">Toolkit</span>
+          </div>
+          <h3>Consulting Toolkit</h3>
+          <div class="tagline">Frameworks &nbsp;·&nbsp; Execution &nbsp;·&nbsp; Client Operations</div>
+          <p>A suite of internal tools and frameworks developed to deliver structured engagement work with greater speed, quality, and repeatability. Currently in active development, the Consulting Toolkit will standardize the assessment, strategy, and execution methodologies used across all Escher engagements — making them available as structured digital workflows for partner organizations.</p>
+          <p>The toolkit represents the digitization of Escher's proprietary consulting methodology — including the Escher Persona Model™, capital readiness frameworks, governance design kits, and client portal infrastructure.</p>
+          <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="cta-link" target="_blank">Register Interest<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="prod-right">
+          <div class="prod-panel">
+            <h4>Planned Features</h4>
+            <ul class="feat-list">
+              <li>Assessment tools and organizational readiness scoring</li>
+              <li>Strategy templates and governance design kits</li>
+              <li>Project management and execution tracking infrastructure</li>
+              <li>Client portal and deliverable library management</li>
+              <li>Escher Persona Model™ digital implementation framework</li>
+              <li>Capital readiness audit and positioning toolkit</li>
+            </ul>
+            <div class="prod-divider"></div>
+            <div class="prod-panel-note">Currently in development. Partners and portfolio companies may register interest to receive priority access upon launch.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM PRINCIPLES (light, 3 col) -->
+<section id="ct-principles" class="ct-light">
+  <div class="ct-wrap">
+    <div class="rv">
+      <div class="ct-brow ct-brow-l"><span class="ct-bdot"></span>HOW WE BUILD</div>
+      <h2 class="ct-h2 ct-h2-l">Three principles behind<br><em>every platform we release.</em></h2>
+      <p class="ct-body ct-body-l" style="max-width:580px;margin-top:14px!important">These are not marketing principles. They are the engineering constraints applied to every product decision — from feature prioritization to access design to performance standards.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr-c rv d1">
+        <div class="pr-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="pr-num">Principle 01</div>
+        <h3>Execution-First</h3>
+        <p>Every feature is evaluated against one question: does this make execution faster, clearer, or more accountable? We do not build for feature count, demonstration aesthetics, or competitive positioning. We build for operational impact — the kind that shows up in outcomes, not presentations.</p>
+      </div>
+      <div class="pr-c rv d2">
+        <div class="pr-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="pr-num">Principle 02</div>
+        <h3>Outcome-Driven</h3>
+        <p>Platforms are designed to measure what matters: capital performance, operational efficiency, and the trajectory toward durable enterprise value. Every dashboard, report, and workflow is oriented toward a decision — not a display. If a data point does not drive action, it does not belong in the product.</p>
+      </div>
+      <div class="pr-c rv d3">
+        <div class="pr-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="pr-num">Principle 03</div>
+        <h3>Scalable Systems</h3>
+        <p>Every platform is architected to operate consistently across sectors, jurisdictions, currencies, and international markets — without requiring localized customization that breaks repeatability. Institutional-grade infrastructure scales because it was designed with global deployment as the baseline, not as an afterthought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP (dark) -->
+<section id="ct-roadmap" class="ct-dark">
+  <div class="ct-wrap">
+    <div class="rm-intro">
+      <div class="rv">
+        <div class="ct-brow ct-brow-d"><span class="ct-bdot"></span>PLATFORM ROADMAP</div>
+        <h2 class="ct-h2 ct-h2-d">Current deployment status<br><em>across all four platforms.</em></h2>
+      </div>
+      <p class="ct-body ct-body-d rv d1">Platform access is selective and tied to strategic alignment. We evaluate all access requests against portfolio fit and ecosystem contribution — because the quality of the network is as important as the functionality of the tools.</p>
+    </div>
+    <div class="rm-list">
+      <div class="rm-item rv">
+        <div class="rm-left">
+          <span class="status-live"><span class="status-dot"></span>Live</span>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:8px!important;">Platform</div>
+        </div>
+        <div class="rm-body">
+          <h4>Innovation Accelerator Platform</h4>
+          <p>Fully deployed and available to Escher portfolio companies and approved ecosystem partners. The platform has been operational through multiple portfolio cycles and is actively used for deal flow management, resource alignment, and capital preparation workflows.</p>
+        </div>
+      </div>
+      <div class="rm-item rv d1">
+        <div class="rm-left">
+          <span class="status-beta"><span class="status-dot"></span>Beta</span>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:8px!important;">Analytics</div>
+        </div>
+        <div class="rm-body">
+          <h4>Impact Measurement Suite</h4>
+          <p>Active beta deployment with select portfolio companies and institutional partners. Currently in the validation cycle with a focus on refining KPI frameworks, reporting accuracy, and data integration reliability. Full release planned following the current validation phase.</p>
+        </div>
+      </div>
+      <div class="rm-item rv d2">
+        <div class="rm-left">
+          <span class="status-live"><span class="status-dot"></span>Live</span>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:8px!important;">Network</div>
+        </div>
+        <div class="rm-body">
+          <h4>Global Innovation Network</h4>
+          <p>Operational across 150+ countries with an active and growing membership of verified entrepreneurs, investors, and operators. Network is operating under selective admission standards to maintain signal quality. New applications are reviewed on a rolling basis.</p>
+        </div>
+      </div>
+      <div class="rm-item rv d3">
+        <div class="rm-left">
+          <span class="status-dev"><span class="status-dot"></span>In Development</span>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:8px!important;">Toolkit</div>
+        </div>
+        <div class="rm-body">
+          <h4>Consulting Toolkit</h4>
+          <p>Currently in active development. The toolkit is being built to digitize and systematize Escher's proprietary engagement methodology — including the Escher Persona Model™, capital readiness frameworks, and governance design infrastructure. Partners may register interest for priority access upon launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="ct-cta">
+  <div class="ci rv">
+    <div class="ct-brow ct-brow-d" style="justify-content:center;margin-bottom:22px!important"><span class="ct-bdot"></span>REQUEST ACCESS</div>
+    <h2>Interested in platform access<br>or <em>partnership?</em></h2>
+    <p>All platform access requests are evaluated for strategic fit. Submit an inquiry and our team will review your eligibility for the Innovation Accelerator, Global Network, or Impact Measurement Suite beta program.</p>
+    <div class="cbtns">
+      <a href="https://link.escher-innovations.com/widget/bookings/master-escher-booking" class="ct-btn-gold" target="_blank">Request a Briefing</a>
+      <a href="https://escher-innovations.com/services" class="ct-btn-dk">View Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="ct-footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-ln">Escher Innovations</div>
+      <div class="ft-lt">Give · Gain · Grow</div>
+      <p class="ft-tl">A global capital and advisory firm dedicated to empowering founders, organizations, and investors to build extraordinary enterprises.</p>
+      <div class="ft-soc">
+        <a href="https://facebook.com" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://instagram.com" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://youtube.com" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#06070d"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Company</h4><ul>
+      <li><a href="https://escher-innovations.com/our-story">Our Story</a></li>
+      <li><a href="https://escher-innovations.com/vision">Vision</a></li>
+      <li><a href="https://escher-innovations.com/mission">Mission</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Portfolio</a></li>
+      <li><a href="https://escher-innovations.com/contact">Contact</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Strategy</h4><ul>
+      <li><a href="https://escher-innovations.com/core-technology">Core Technologies</a></li>
+      <li><a href="https://escher-innovations.com/services">Services</a></li>
+      <li><a href="https://escher-innovations.com/technology-strategy">Technology</a></li>
+      <li><a href="https://escher-innovations.com/products">Products</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Industries</h4><ul>
+      <li><a href="https://escher-innovations.com/enterprise">Technology</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Healthcare</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Real Estate</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">Finance</a></li>
+      <li><a href="https://escher-innovations.com/enterprise">All Industries</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Legal</h4><ul>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Disclaimer</a></li>
+      <li><a href="#">Code of Conduct</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2026 Escher Innovations. All rights reserved. Marcos Villa.</span>
+    <div class="ft-leg"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Disclaimer</a></div>
+  </div>
+</footer>
+
+</div><!-- /ct -->
+
+<script>
+(function(){
+  function nuke(){var el=document.getElementById('ct');if(!el)return;var cur=el.parentElement;while(cur&&cur!==document.body){cur.style.setProperty('padding-top','0','important');cur.style.setProperty('padding-bottom','0','important');cur.style.setProperty('margin-top','0','important');cur.style.setProperty('margin-bottom','0','important');cur.style.setProperty('min-height','unset','important');cur=cur.parentElement;}['[data-page-element="Section/V1"]','[data-page-element="Section/V2"]','[data-page-element="Row/V1"]','.page-section','.section-box'].forEach(function(s){document.querySelectorAll(s).forEach(function(n){if(n.contains(el)){n.style.setProperty('padding-top','0','important');n.style.setProperty('padding-bottom','0','important');n.style.setProperty('margin-top','0','important');n.style.setProperty('margin-bottom','0','important');n.style.setProperty('min-height','unset','important');}});});}
+  nuke();window.addEventListener('load',function(){setTimeout(nuke,100);setTimeout(nuke,500);});
+})();
+(function(){
+  var nav=document.getElementById('ct-nav');var burger=document.getElementById('ct-burger');var drawer=document.getElementById('ct-drawer');if(!nav)return;
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var items=Array.from(nav.querySelectorAll('.gi[data-drop]'));
+  items.forEach(function(item){var t=item.querySelector('.gtr');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();var isOpen=item.classList.contains('open');items.forEach(function(i){i.classList.remove('open');var tr=i.querySelector('.gtr');if(tr)tr.setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');t.setAttribute('aria-expanded','true');}});});
+  document.addEventListener('click',function(){items.forEach(function(i){i.classList.remove('open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){items.forEach(function(i){i.classList.remove('open');});nav.classList.remove('mob-open');}});
+  if(burger&&drawer){burger.addEventListener('click',function(e){e.stopPropagation();nav.classList.toggle('mob-open');});Array.from(drawer.querySelectorAll('.ct-ms[data-mob]')).forEach(function(sec){var btn=sec.querySelector('.ct-mt');if(!btn)return;btn.addEventListener('click',function(){var wasOpen=sec.classList.contains('open');Array.from(drawer.querySelectorAll('.ct-ms')).forEach(function(s){s.classList.remove('open');});if(!wasOpen)sec.classList.add('open');});});drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('mob-open');});});}
+})();
+(function(){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.06});document.querySelectorAll('#ct .rv').forEach(function(el){obs.observe(el);});})();
+</script>
